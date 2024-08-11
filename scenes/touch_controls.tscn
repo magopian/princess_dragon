@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://doiby2e2ghhjd"]
+
+[ext_resource type="Texture2D" uid="uid://cnvxm3betafhi" path="res://assets/sprites/arrow_button_left.png" id="1_cc76p"]
+[ext_resource type="Texture2D" uid="uid://5kvy84kknwci" path="res://assets/sprites/arrow_button_up.png" id="2_p5x7f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1l33p"]
+load_path = "res://.godot/imported/joystick_tip.png-95989d4495f4fb8387b93ac5f53ed669.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8xsv"]
+radius = 65.76
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vpej"]
+radius = 65.76
+
+[node name="Touch controls" type="CanvasLayer"]
+
+[node name="Left-Right" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = 400.0
+grow_vertical = 0
+
+[node name="Left Button" type="TextureRect" parent="Left-Right"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Left-Right/Left Button"]
+position = Vector2(-100, 2.08165e-12)
+texture_normal = SubResource("CompressedTexture2D_1l33p")
+shape = SubResource("CircleShape2D_c8xsv")
+action = "move_left"
+visibility_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Left-Right/Left Button/TouchScreenButton"]
+texture = ExtResource("1_cc76p")
+centered = false
+offset = Vector2(10, 10)
+
+[node name="Right Button" type="TextureRect" parent="Left-Right"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Left-Right/Right Button"]
+position = Vector2(100, 2.08165e-12)
+texture_normal = SubResource("CompressedTexture2D_1l33p")
+shape = SubResource("CircleShape2D_c8xsv")
+action = "move_right"
+visibility_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Left-Right/Right Button/TouchScreenButton"]
+texture = ExtResource("1_cc76p")
+centered = false
+offset = Vector2(10, 10)
+flip_h = true
+
+[node name="Jump Button" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -300.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Jump Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Jump Button/TextureRect"]
+texture_normal = SubResource("CompressedTexture2D_1l33p")
+shape = SubResource("CircleShape2D_2vpej")
+action = "jump"
+visibility_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Jump Button/TextureRect/TouchScreenButton"]
+texture = ExtResource("2_p5x7f")
+centered = false
+offset = Vector2(10, 10)
