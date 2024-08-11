@@ -493,6 +493,9 @@ limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="CoyoteTimer" type="Timer" parent="Player"]
+one_shot = true
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_wfpck")]
