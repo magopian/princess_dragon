@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bas5rhubpsgvd"]
+
+[ext_resource type="Script" path="res://addons/gdscript_formatter/scripts/preference.gd" id="1_m3143"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_y3g5a"]
+alt_pressed = true
+shift_pressed = true
+pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_u4u1q"]
+events = [SubResource("InputEventKey_y3g5a")]
+
+[resource]
+script = ExtResource("1_m3143")
+line_length = 100
+format_on_save = true
+shortcut = SubResource("Shortcut_u4u1q")
+fast_but_unsafe = false
+gdformat_command = "/Users/mathieu/.local/bin/gdformat"
+pip_command = "/opt/homebrew/bin/pipx"

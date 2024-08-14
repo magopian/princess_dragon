@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dtrhqf8ws4yxy"]
+[gd_scene load_steps=29 format=3 uid="uid://dtrhqf8ws4yxy"]
 
 [ext_resource type="Texture2D" uid="uid://bdheg38c1n4g2" path="res://assets/sprites/knight.png" id="1_ixncy"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xlikq"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="3_hwptp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oarv6"]
 atlas = ExtResource("1_ixncy")
@@ -171,6 +172,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_f2hjr"]
 radius = 5.0
 
+[sub_resource type="Curve" id="Curve_ktwxj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_838rp"]
+offsets = PackedFloat32Array(0, 0.463333)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.72549)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -185,6 +194,20 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_f2hjr")
+
+[node name="Trail" type="Line2D" parent="."]
+show_behind_parent = true
+top_level = true
+position = Vector2(0, -6)
+width = 4.0
+width_curve = SubResource("Curve_ktwxj")
+gradient = SubResource("Gradient_838rp")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_hwptp")
+TRAIL_LENGTH = 200
+
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
 
