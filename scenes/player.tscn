@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtrhqf8ws4yxy"]
+[gd_scene load_steps=27 format=3 uid="uid://dtrhqf8ws4yxy"]
 
 [ext_resource type="Texture2D" uid="uid://bdheg38c1n4g2" path="res://assets/sprites/knight.png" id="1_ixncy"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xlikq"]
@@ -185,3 +185,10 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_f2hjr")
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -42)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
