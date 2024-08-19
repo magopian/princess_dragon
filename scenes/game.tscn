@@ -81,9 +81,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TouchControls" parent="." instance=ExtResource("10_3t3ic")]
 
-[node name="Player" parent="." instance=ExtResource("1_8y8tl")]
-position = Vector2(71, 32)
-
 [node name="Level1" type="Node" parent="."]
 
 [node name="TileMap" type="TileMapLayer" parent="Level1"]
@@ -197,3 +194,6 @@ theme_override_fonts/font = ExtResource("7_otp5r")
 theme_override_font_sizes/font_size = 8
 text = "You made it!"
 metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="Level1" instance=ExtResource("1_8y8tl")]
+position = Vector2(72, 32)

@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var SPEED: float = 100.0
 @export var JUMP_VELOCITY: float = -300.0
 @export var COYOTE_TIME: float = 0.1
+@export var JUMP_BUFFER: float = 0.1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,7 +25,13 @@ func _physics_process(delta):
 
 
 func handle_jump():
-	if Input.is_action_just_pressed("jump") and can_jump():
+	# Jump buffer
+	if Input.is_action_just_pressed("jump") and not is_on_floor():
+		jump_buffer_timer.start(JUMP_BUFFER)
+
+	if (Input.is_action_just_pressed("jump") or jump_buffer_timer.time_left) and can_jump():
+		if jump_buffer_timer.time_left:
+			print("JUMP BUFFER")
 		velocity.y = JUMP_VELOCITY
 
 

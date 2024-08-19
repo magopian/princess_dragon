@@ -196,3 +196,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="Trail" parent="." instance=ExtResource("3_0x5rx")]
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+one_shot = true

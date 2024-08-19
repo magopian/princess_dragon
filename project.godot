@@ -22,6 +22,8 @@ Music="*res://scenes/music.tscn"
 [display]
 
 window/size/always_on_top=true
+window/size/window_width_override=2304
+window/size/window_height_override=1296
 window/stretch/mode="canvas_items"
 window/stretch/scale=4.0
 
