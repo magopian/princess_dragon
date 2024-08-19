@@ -2,6 +2,7 @@ extends Control
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var start: Button = $CanvasLayer/Buttons/Start
+@onready var debug_scene: PackedScene = preload("res://scenes/level_debug.tscn")
 
 
 func _ready() -> void:
@@ -18,7 +19,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_debug_pressed() -> void:
-	print("load the debug scene")
+	get_tree().change_scene_to_packed(debug_scene)
 
 
 func _on_quit_pressed() -> void:
