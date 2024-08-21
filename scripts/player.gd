@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var SPEED: float = 100.0
+@export var FRICTION: float = 8.0
 @export var JUMP_VELOCITY: float = -300.0
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
@@ -61,7 +62,7 @@ func apply_movement(direction):
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, FRICTION)
 
 	var was_on_floor: bool = is_on_floor()
 	move_and_slide()
