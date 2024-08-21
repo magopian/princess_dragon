@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var FRICTION: float = 8.0
 @export var JUMP_VELOCITY: float = -300.0
 @export var FALL_FASTER: float = 1.5
+@export var JUMP_CUT: float = 10.0
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
 
@@ -33,6 +34,9 @@ func handle_gravity(delta) -> void:
 
 
 func handle_jump() -> void:
+	if Input.is_action_just_released("jump") and is_jumping():
+		velocity.y /= JUMP_CUT
+
 	# Jump buffer
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		jump_buffer_timer.start(JUMP_BUFFER)
