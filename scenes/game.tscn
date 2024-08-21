@@ -67,6 +67,7 @@ unique_name_in_owner = true
 script = ExtResource("1_ip4bh")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
+z_index = 1
 offset_left = 602.0
 offset_top = -173.0
 offset_right = 701.0
