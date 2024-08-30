@@ -35,7 +35,7 @@ func handle_gravity(delta: float) -> void:
 
 func handle_jump() -> void:
 	if Input.is_action_just_released("jump") and is_jumping():
-		print("JUMP CUT")
+		Debug.jump_cut.emit()
 		velocity.y /= JUMP_CUT
 
 	# Jump buffer
@@ -44,9 +44,9 @@ func handle_jump() -> void:
 
 	if (Input.is_action_just_pressed("jump") or jump_buffer_timer.time_left) and can_jump():
 		if coyote_timer.time_left > 0:
-			print("JUMP COYOTEYED")
-		if jump_buffer_timer.time_left:
-			print("JUMP BUFFERRED")
+			Debug.jump_coyoteyed.emit()
+		elif jump_buffer_timer.time_left:
+			Debug.jump_buffered.emit()
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_timer.stop()
 
