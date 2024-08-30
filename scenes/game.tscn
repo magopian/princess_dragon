@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=17 format=4 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="1_8y8tl"]
 [ext_resource type="PackedScene" uid="uid://bxcuknasdyddo" path="res://scenes/main_menu.tscn" id="1_c0ohi"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ip4bh"]
+[ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
 [ext_resource type="FontFile" uid="uid://dqmd7hotah5xg" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_saggl"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_dtriv"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="4_wfpck"]
@@ -199,3 +200,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="Level1" instance=ExtResource("1_8y8tl")]
 position = Vector2(72, 32)
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("2_olrm6")]
+visible = false

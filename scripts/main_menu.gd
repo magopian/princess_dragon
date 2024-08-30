@@ -10,8 +10,9 @@ func _ready() -> void:
 
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("menu"):
-		canvas_layer.visible = not canvas_layer.visible
+	pass
+	#if Input.is_action_just_pressed("menu"):
+	#	canvas_layer.visible = not canvas_layer.visible
 
 
 func _on_start_pressed() -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://c530n52vwpwe5"]
+[gd_scene load_steps=7 format=4 uid="uid://c530n52vwpwe5"]
 
 [ext_resource type="Texture2D" uid="uid://bbx2jokqhrotq" path="res://assets/sprites/world_tileset.png" id="1_5yop1"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_q50ro"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="3_tc7re"]
+[ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="4_xr11k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dlc0"]
 texture = ExtResource("1_5yop1")
@@ -183,3 +184,9 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAA
 tile_set = ExtResource("2_q50ro")
 
 [node name="Player" parent="." instance=ExtResource("3_tc7re")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("4_xr11k")]
+visible = false
