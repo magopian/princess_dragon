@@ -5,10 +5,11 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var SPEED: float = 100.0
+@export var ACCELERATION: float = 10.0
 @export var FRICTION: float = 8.0
 @export var JUMP_VELOCITY: float = -300.0
-@export var FALL_FASTER: float = 1.5
-@export var JUMP_CUT: float = 10.0
+@export var FALL_FASTER: float = 1.2
+@export var JUMP_CUT: float = 5.0
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
 
@@ -16,7 +17,7 @@ extends CharacterBody2D
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
-func _physics_process(delta):
+func _physics_process(delta: float):
 	handle_gravity(delta)
 	handle_jump()
 	var direction: float = get_direction()
@@ -24,8 +25,7 @@ func _physics_process(delta):
 	apply_movement(direction)
 
 
-func handle_gravity(delta) -> void:
-	# Add the gravity.
+func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
 		if not is_jumping():  # If the character is falling, fall faster.
 			velocity.y += gravity * delta * FALL_FASTER
@@ -35,6 +35,7 @@ func handle_gravity(delta) -> void:
 
 func handle_jump() -> void:
 	if Input.is_action_just_released("jump") and is_jumping():
+		print("JUMP CUT")
 		velocity.y /= JUMP_CUT
 
 	# Jump buffer
@@ -42,9 +43,12 @@ func handle_jump() -> void:
 		jump_buffer_timer.start(JUMP_BUFFER)
 
 	if (Input.is_action_just_pressed("jump") or jump_buffer_timer.time_left) and can_jump():
+		if coyote_timer.time_left > 0:
+			print("JUMP COYOTEYED")
 		if jump_buffer_timer.time_left:
-			print("JUMP BUFFER")
+			print("JUMP BUFFERRED")
 		velocity.y = JUMP_VELOCITY
+		jump_buffer_timer.stop()
 
 
 func get_direction() -> float:
@@ -52,7 +56,7 @@ func get_direction() -> float:
 	return Input.get_axis("move_left", "move_right")
 
 
-func handle_animations(direction) -> void:
+func handle_animations(direction: float) -> void:
 	# Flip the sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -69,10 +73,10 @@ func handle_animations(direction) -> void:
 		animated_sprite.play("jump")
 
 
-func apply_movement(direction) -> void:
-	if direction:
-		velocity.x = direction * SPEED
-	else:
+func apply_movement(direction: float) -> void:
+	if direction:  # We're moving
+		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+	else:  # We're stopping
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
 
 	var was_on_floor: bool = is_on_floor()
@@ -86,8 +90,4 @@ func is_jumping() -> bool:
 
 
 func can_jump() -> bool:
-	if is_on_floor():
-		return true
-	if coyote_timer.time_left > 0:
-		return true
-	return false
+	return is_on_floor() or coyote_timer.time_left > 0
