@@ -1,32 +1,44 @@
 extends Control
 
-@onready var canvas_layer: CanvasLayer = $CanvasLayer
-@onready var start: Button = $CanvasLayer/Buttons/Start
-@onready var debug_scene: PackedScene = preload("res://scenes/level_debug.tscn")
+@onready var levels: Node = %Levels
+@onready var pause_menu: Control = %PauseMenu
+@onready var start: Button = $MarginContainer/Buttons/Start
 
 
 func _ready() -> void:
+	display(true)
+	pause_menu.display(false)
+	pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	start.grab_focus()
 
 
-func _process(_delta) -> void:
-	pass
-	#if Input.is_action_just_pressed("menu"):
-	#	canvas_layer.visible = not canvas_layer.visible
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause_menu") and visible:
+		get_tree().quit()
 
 
 func _on_start_pressed() -> void:
-	canvas_layer.visible = false
+	display(false)
+	pause_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	%Levels.start_game()
 
 
 func _on_debug_pressed() -> void:
-	get_tree().change_scene_to_packed(debug_scene)
+	display(false)
+	pause_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	%Levels.debug_level()
 
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_canvas_layer_visibility_changed() -> void:
-	if canvas_layer.visible:
+func display(is_displayed: bool) -> void:
+	visible = is_displayed
+	get_tree().paused = is_displayed
+
+
+func _on_visibility_changed() -> void:
+	if visible:
+		pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 		start.grab_focus()

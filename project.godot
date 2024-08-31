@@ -32,6 +32,10 @@ window/stretch/scale=4.0
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
 
+[gui]
+
+theme/custom="res://theme.tres"
+
 [input]
 
 jump={

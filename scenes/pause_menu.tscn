@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckmg3uavjya6r"]
+[gd_scene load_steps=2 format=3 uid="uid://ckmg3uavjya6r"]
 
-[ext_resource type="Theme" uid="uid://bb0fpj048smll" path="res://theme.tres" id="1_3v7kq"]
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_o1an0"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_o1an0"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -22,48 +21,50 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.364706, 0.364706, 0.364706, 0.886275)
 
-[node name="Label" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -69.0
-offset_top = 9.0
-offset_right = 69.0
-offset_bottom = 32.0
-grow_horizontal = 2
-theme = ExtResource("1_3v7kq")
-text = "Pause Menu"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Back to the game" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-theme = ExtResource("1_3v7kq")
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Pause Menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Back to the game" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_right = NodePath("../Back to main menu")
+focus_neighbor_bottom = NodePath("../Back to main menu")
 text = "Back to the game"
 
-[node name="Back to main menu" type="Button" parent="VBoxContainer"]
+[node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_3v7kq")
+focus_neighbor_left = NodePath("../Back to the game")
+focus_neighbor_top = NodePath("../Back to the game")
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
 text = "Back to main menu"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_3v7kq")
+focus_neighbor_left = NodePath("../Back to main menu")
+focus_neighbor_top = NodePath("../Back to main menu")
+focus_neighbor_right = NodePath("../Back to the game")
+focus_neighbor_bottom = NodePath("../Back to the game")
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
