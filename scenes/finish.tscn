@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://gxltxotgbr1j"]
 
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="1_prham"]
-[ext_resource type="Script" path="res://scenes/finish.gd" id="1_qbw4i"]
+[ext_resource type="Script" path="res://scripts/finish.gd" id="1_qbw4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdy3b"]
 size = Vector2(26, 37)

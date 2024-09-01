@@ -1,8 +1,10 @@
 extends Node
 
-var score = 0
+signal new_score
+
+var score: int = 0
 
 
 func add_point():
 	score += 1
-	print("New score: ", score)
+	new_score.emit(score)

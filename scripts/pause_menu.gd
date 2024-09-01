@@ -13,16 +13,19 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
-		display(!visible)
+		if visible:
+			_on_back_to_the_game_pressed()
+		else:
+			display(!visible)
 
 
 func _on_back_to_the_game_pressed() -> void:
+	%Score.visible = true
 	display(false)
 
 
 func _on_back_to_main_menu_pressed() -> void:
 	display(false)
-	process_mode = Node.PROCESS_MODE_DISABLED
 	main_menu.display(true)
 
 
@@ -38,3 +41,4 @@ func display(is_displayed: bool) -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		back_to_the_game.grab_focus()
+		%Score.visible = false

@@ -2,6 +2,7 @@ extends Node
 
 @onready var levels: Array[Node] = []
 @onready var level_debug: Node2D = $LevelDebug
+@onready var current_level: Node2D
 
 
 func _ready() -> void:
@@ -10,7 +11,12 @@ func _ready() -> void:
 
 func start_game() -> void:
 	var first_level: Node2D = levels[0]
+	%Score.show()
 	change_level_to(first_level)
+
+
+func change_to_next_level() -> void:
+	pass
 
 
 func debug_level() -> void:
@@ -22,4 +28,14 @@ func change_level_to(level: Node2D) -> void:
 		child.hide()
 		remove_child(child)
 	add_child(level)
+	current_level = level
+	var finish: Area2D = current_level.find_child("Finish")
+	if finish and finish.has_signal("level_finished"):
+		finish.connect("level_finished", _on_level_finished)
 	level.show()
+
+
+func _on_level_finished():
+	var current_index: int = levels.find(current_level)
+	var next_level: Node2D = levels[current_index + 1]
+	call_deferred("change_level_to", next_level)

@@ -7,7 +7,6 @@ extends Control
 func _ready() -> void:
 	display(true)
 	pause_menu.display(false)
-	pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	start.grab_focus()
 
 
@@ -18,13 +17,13 @@ func _process(_delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	display(false)
-	pause_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	%Score.visible = true
 	%Levels.start_game()
 
 
 func _on_debug_pressed() -> void:
 	display(false)
-	pause_menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	%Score.visible = true
 	%Levels.debug_level()
 
 
@@ -39,5 +38,5 @@ func display(is_displayed: bool) -> void:
 
 func _on_visibility_changed() -> void:
 	if visible:
-		pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 		start.grab_focus()
+		%Score.visible = false

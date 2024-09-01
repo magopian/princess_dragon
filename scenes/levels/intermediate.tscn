@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cpbvjxjteoyku"]
+[gd_scene load_steps=13 format=4 uid="uid://cpbvjxjteoyku"]
 
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="1_mh6hu"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_7boeu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/slime.tscn" id="5_wskrr"]
 [ext_resource type="FontFile" uid="uid://btbwyj1np053s" path="res://assets/fonts/PixelOperator8.ttf" id="6_upmi1"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="7_abmyn"]
+[ext_resource type="PackedScene" uid="uid://gxltxotgbr1j" path="res://scenes/finish.tscn" id="8_6wo6o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r2qdh"]
 
@@ -49,7 +50,6 @@ _data = {
 }
 
 [node name="Intermediate" type="Node2D"]
-visible = false
 position = Vector2(1, 0)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -167,3 +167,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("7_abmyn")]
 position = Vector2(72, 32)
+
+[node name="Finish" parent="." instance=ExtResource("8_6wo6o")]
+position = Vector2(626, -160)

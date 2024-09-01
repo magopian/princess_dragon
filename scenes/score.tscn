@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1hmxu3da7j1u"]
+
+[ext_resource type="Theme" uid="uid://bb0fpj048smll" path="res://theme.tres" id="1_1qnc5"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_sg745"]
+[ext_resource type="Texture2D" uid="uid://jdirx383laml" path="res://assets/sprites/coin.png" id="2_3p53y"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 54.0
+offset_bottom = 36.0
+script = ExtResource("1_sg745")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 54.0
+offset_bottom = 36.0
+theme = ExtResource("1_1qnc5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("2_3p53y")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="LabelScore" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"

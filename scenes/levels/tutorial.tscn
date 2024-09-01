@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3d1tgifhwkhd"]
+[gd_scene load_steps=11 format=4 uid="uid://d3d1tgifhwkhd"]
 
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="1_b6app"]
+[ext_resource type="Script" path="res://scripts/levels/tutorial.gd" id="1_x0u1m"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_80wxp"]
 [ext_resource type="PackedScene" uid="uid://bavkiaax6pgda" path="res://scenes/kill_zone.tscn" id="3_jscfs"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="4_i64d2"]
@@ -13,9 +14,10 @@
 
 [node name="Tutorial" type="Node2D"]
 position = Vector2(1, 0)
+script = ExtResource("1_x0u1m")
 
 [node name="Player" parent="." instance=ExtResource("7_15ybc")]
-position = Vector2(19, 64)
+position = Vector2(34, 64)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(10, 0)
@@ -151,3 +153,9 @@ position = Vector2(1211, 77)
 
 [node name="Finish" parent="." instance=ExtResource("8_m6r7r")]
 position = Vector2(1858, 49)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1654, 51)
+scale = Vector2(0.75, 2.9)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
