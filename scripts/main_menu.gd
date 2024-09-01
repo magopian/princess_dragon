@@ -1,6 +1,5 @@
 extends Control
 
-@onready var levels: Node = %Levels
 @onready var pause_menu: Control = %PauseMenu
 @onready var start: Button = $MarginContainer/Buttons/Start
 

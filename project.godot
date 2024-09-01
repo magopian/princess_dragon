@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/music.tscn"
 Debug="*res://scenes/debug.tscn"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
@@ -65,6 +66,11 @@ pause_menu={
 
 pointing/emulate_touch_from_mouse=true
 pointing/emulate_mouse_from_touch=false
+
+[layer_names]
+
+2d_physics/layer_1="Floor and walls"
+2d_physics/layer_2="Player"
 
 [rendering]
 
