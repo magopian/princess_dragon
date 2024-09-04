@@ -20,7 +20,8 @@ theme = ExtResource("1_1qnc5")
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="CoinSprite" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 texture = ExtResource("2_3p53y")
@@ -28,5 +29,7 @@ expand_mode = 2
 stretch_mode = 2
 
 [node name="LabelScore" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/outline_size = 1
 text = "0"

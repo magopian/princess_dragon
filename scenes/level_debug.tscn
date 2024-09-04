@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://c530n52vwpwe5"]
+[gd_scene load_steps=7 format=4 uid="uid://c530n52vwpwe5"]
 
 [ext_resource type="Texture2D" uid="uid://bbx2jokqhrotq" path="res://assets/sprites/world_tileset.png" id="1_5yop1"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_q50ro"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="3_tc7re"]
+[ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="4_y8e54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dlc0"]
 texture = ExtResource("1_5yop1")
@@ -186,18 +187,103 @@ tile_set = ExtResource("2_q50ro")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -118.0
-offset_top = -47.0
+offset_top = -91.0
 offset_right = 144.0
-offset_bottom = -31.0
+offset_bottom = -75.0
 text = "THIS IS A DEBUG LEVEL"
 
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = -53.0
-offset_top = 69.0
-offset_right = 289.0
-offset_bottom = 94.0
+[node name="Label2" type="Label" parent="."]
+offset_left = -171.0
+offset_top = 22.0
+offset_right = 171.0
+offset_bottom = 47.0
 theme_override_font_sizes/font_size = 10
 text = "If you're not here on purpose, then you've reached the end of the game (for now ;)"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(48, -9)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(64, -9)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(80, -9)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(96, -9)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(112, -9)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(128, -9)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(144, -9)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(48, -22)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(64, -22)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(80, -22)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(96, -22)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(112, -22)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(128, -22)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(144, -22)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(48, -35)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(64, -35)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(80, -35)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(96, -35)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(112, -35)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(128, -35)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(144, -35)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(48, -49)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(64, -49)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(80, -49)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(96, -49)
+
+[node name="Coin26" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(112, -49)
+
+[node name="Coin27" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(128, -49)
+
+[node name="Coin28" parent="Coins" instance=ExtResource("4_y8e54")]
+position = Vector2(144, -49)

@@ -11,12 +11,11 @@ func _ready() -> void:
 
 func start_game() -> void:
 	var first_level: Node2D = levels[0]
+	first_level.score_node = %Score
+	# Move the score label up so it disappears
+	%Score.position.y -= %Score.size.y
 	%Score.show()
 	change_level_to(first_level)
-
-
-func change_to_next_level() -> void:
-	pass
 
 
 func debug_level() -> void:
