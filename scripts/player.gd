@@ -4,11 +4,12 @@ class_name Player extends CharacterBody2D
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var SPEED: float = 100.0
+@export var SPEED: float = 150.0
 @export var ACCELERATION: float = 10.0
 @export var FRICTION: float = 8.0
 @export var JUMP_VELOCITY: float = -300.0
-@export var FALL_FASTER: float = 1.2
+@export var FALL_FASTER: float = 3.0
+@export var MAX_FALL_SPEED: float = 800.0
 @export var JUMP_CUT: float = 5.0
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
@@ -31,6 +32,7 @@ func handle_gravity(delta: float) -> void:
 			velocity.y += gravity * delta * FALL_FASTER
 		else:
 			velocity.y += gravity * delta
+		velocity.y = clamp(velocity.y, -MAX_FALL_SPEED, MAX_FALL_SPEED)
 
 
 func handle_jump() -> void:

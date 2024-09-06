@@ -169,8 +169,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f2hjr"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e0x7h"]
+radius = 6.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -184,8 +185,8 @@ animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_f2hjr")
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_e0x7h")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
