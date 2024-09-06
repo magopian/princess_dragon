@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqd43afhp3wuo"]
+
+[ext_resource type="Script" path="res://scripts/show_score_ui_notifier.gd" id="1_kxkma"]
+
+[node name="ShowScoreUINotifier" type="VisibleOnScreenNotifier2D"]
+position = Vector2(355, 34)
+scale = Vector2(0.75, 2.9)
+script = ExtResource("1_kxkma")
+
+[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]

@@ -7,8 +7,8 @@
 [node name="Score" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -36.0
 offset_right = 54.0
-offset_bottom = 36.0
 script = ExtResource("1_sg745")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

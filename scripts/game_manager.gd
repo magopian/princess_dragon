@@ -1,6 +1,7 @@
 extends Node
 
 signal new_score(score: int, coin: Area2D)
+signal show_score_ui
 
 var score: int = 0
 

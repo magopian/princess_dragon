@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=11 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://bxcuknasdyddo" path="res://scenes/main_menu.tscn" id="1_c0ohi"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
-[ext_resource type="PackedScene" uid="uid://d3d1tgifhwkhd" path="res://scenes/levels/jumping_around.tscn" id="4_vlujy"]
+[ext_resource type="PackedScene" uid="uid://dnt3fgtkkhqxv" path="res://scenes/levels/platforms_everywhere.tscn" id="3_d8kc8"]
+[ext_resource type="PackedScene" uid="uid://tm04dphj77uk" path="res://scenes/levels/jumping_around.tscn" id="4_vlujy"]
+[ext_resource type="PackedScene" uid="uid://dsrmxjo8jlxei" path="res://scenes/levels/_level_debug.tscn" id="5_omyjy"]
 [ext_resource type="Script" path="res://scripts/levels.gd" id="5_v1q6a"]
-[ext_resource type="PackedScene" uid="uid://cpbvjxjteoyku" path="res://scenes/levels/intermediate.tscn" id="5_xs3xh"]
+[ext_resource type="PackedScene" uid="uid://dwdloki5wj446" path="res://scenes/levels/intermediate.tscn" id="5_xs3xh"]
 [ext_resource type="PackedScene" uid="uid://b1hmxu3da7j1u" path="res://scenes/score.tscn" id="9_ryf5o"]
 [ext_resource type="PackedScene" uid="uid://doiby2e2ghhjd" path="res://scenes/touch_controls.tscn" id="10_3t3ic"]
-[ext_resource type="PackedScene" uid="uid://c530n52vwpwe5" path="res://scenes/level_debug.tscn" id="12_ohcij"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
 
 [node name="Game" type="Node2D"]
@@ -20,10 +21,15 @@ script = ExtResource("5_v1q6a")
 [node name="Jumping around" parent="Levels" instance=ExtResource("4_vlujy")]
 visible = false
 
+[node name="Platforms everywhere" parent="Levels" instance=ExtResource("3_d8kc8")]
+visible = false
+position = Vector2(2368.36, -59.5281)
+
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
 visible = false
+position = Vector2(2, 0)
 
-[node name="LevelDebug" parent="Levels" instance=ExtResource("12_ohcij")]
+[node name="Debug Level" parent="Levels" instance=ExtResource("5_omyjy")]
 visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]

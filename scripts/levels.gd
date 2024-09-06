@@ -1,8 +1,8 @@
 extends Node
 
 @onready var levels: Array[Node] = []
-@onready var level_debug: Node2D = $LevelDebug
 @onready var current_level: Node2D
+@onready var level_debug: Node2D = $"Debug Level"
 
 
 func _ready() -> void:
@@ -12,10 +12,6 @@ func _ready() -> void:
 
 func start_game() -> void:
 	var first_level: Node2D = levels[0]
-	first_level.score_node = %Score
-	# Move the score label up so it disappears
-	%Score.position.y -= %Score.size.y
-	%Score.show()
 	change_level_to(first_level)
 
 
