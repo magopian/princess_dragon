@@ -46,7 +46,7 @@ focus_neighbor_left = NodePath("../Quit")
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_right = NodePath("../Back to main menu")
 focus_neighbor_bottom = NodePath("../Back to main menu")
-text = "Back to the game"
+text = "Resume"
 
 [node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

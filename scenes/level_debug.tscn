@@ -202,7 +202,7 @@ text = "If you're not here on purpose, then you've reached the end of the game (
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Coins" type="Node" parent="."]
+[node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_y8e54")]
 position = Vector2(48, -9)

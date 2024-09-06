@@ -7,6 +7,7 @@ extends Node
 
 func _ready() -> void:
 	levels = get_children()
+	disable_levels()
 
 
 func start_game() -> void:
@@ -23,15 +24,21 @@ func debug_level() -> void:
 
 
 func change_level_to(level: Node2D) -> void:
-	for child in get_children():
-		child.hide()
-		remove_child(child)
+	disable_levels()
 	add_child(level)
 	current_level = level
 	var finish: Area2D = current_level.find_child("Finish")
 	if finish and finish.has_signal("level_finished"):
 		finish.connect("level_finished", _on_level_finished)
+	level.process_mode = Node.PROCESS_MODE_INHERIT
 	level.show()
+
+
+func disable_levels():
+	for child in get_children():
+		child.hide()
+		child.process_mode = Node.PROCESS_MODE_DISABLED
+		remove_child(child)
 
 
 func _on_level_finished():
