@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
 
 [node name="Game" type="Node2D"]
-position = Vector2(1, 0)
 
 [node name="Levels" type="Node" parent="."]
 unique_name_in_owner = true
