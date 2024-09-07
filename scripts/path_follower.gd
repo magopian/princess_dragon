@@ -28,7 +28,6 @@ func _ready() -> void:
 				curve.get_point_position(i), curve.get_point_out(i), curve.get_point_in(i)
 			)
 	proportional_speed = speed / curve.get_baked_length()
-	print("proportional speed", proportional_speed)
 
 
 func _process(delta: float) -> void:
