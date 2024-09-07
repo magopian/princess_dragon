@@ -23,7 +23,6 @@ visible = false
 
 [node name="Platforms everywhere" parent="Levels" instance=ExtResource("3_d8kc8")]
 visible = false
-position = Vector2(2368.36, -59.5281)
 
 [node name="I know kung fu" parent="Levels" instance=ExtResource("5_wptdp")]
 visible = false
