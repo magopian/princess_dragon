@@ -76,7 +76,6 @@ metadata/_edit_group_ = true
 [node name="PathFollower3" parent="Platforms" index="9" instance=ExtResource("3_k0ovh")]
 position = Vector2(658, -59)
 curve = SubResource("Curve2D_lhexk")
-speed = 0.1
 metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower3" index="1" instance=ExtResource("2_2b123")]

@@ -1,6 +1,7 @@
 extends Path2D
 
-@export var speed: float = 0.2
+@export var speed: float = 60
+@onready var proportional_speed: float
 @onready var path_2d: PathFollow2D = $Path2D
 @onready var remote_transform_2d: RemoteTransform2D = $Path2D/RemoteTransform2D
 @onready var is_closed_path: bool
@@ -26,7 +27,9 @@ func _ready() -> void:
 			curve.add_point(
 				curve.get_point_position(i), curve.get_point_out(i), curve.get_point_in(i)
 			)
+	proportional_speed = speed / curve.get_baked_length()
+	print("proportional speed", proportional_speed)
 
 
 func _process(delta: float) -> void:
-	path_2d.progress_ratio += speed * delta
+	path_2d.progress_ratio += proportional_speed * delta
