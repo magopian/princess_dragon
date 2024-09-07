@@ -25,12 +25,12 @@ visible = false
 visible = false
 position = Vector2(2368.36, -59.5281)
 
+[node name="I know kung fu" parent="Levels" instance=ExtResource("5_wptdp")]
+visible = false
+
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
 visible = false
 position = Vector2(2, 0)
-
-[node name="I know kung fu" parent="Levels" instance=ExtResource("5_wptdp")]
-visible = false
 
 [node name="Debug Level" parent="Levels" instance=ExtResource("5_omyjy")]
 visible = false
