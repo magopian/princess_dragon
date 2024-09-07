@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnt3fgtkkhqxv"]
+[gd_scene load_steps=9 format=4 uid="uid://dnt3fgtkkhqxv"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_keh1k"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="2_2b123"]
+[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_pv4lo"]
 [ext_resource type="PackedScene" uid="uid://0jmcfy3qrj0l" path="res://scenes/path_follower.tscn" id="3_k0ovh"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="4_naeub"]
-[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_pv4lo"]
 
 [sub_resource type="Curve2D" id="Curve2D_x7lu7"]
 _data = {
@@ -62,12 +62,14 @@ position = Vector2(330, -20)
 [node name="PathFollower" parent="Platforms" index="7" instance=ExtResource("3_k0ovh")]
 position = Vector2(330, -59)
 curve = SubResource("Curve2D_x7lu7")
+metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower" index="1" instance=ExtResource("2_2b123")]
 
 [node name="PathFollower2" parent="Platforms" index="8" instance=ExtResource("3_k0ovh")]
 position = Vector2(514, -59)
 curve = SubResource("Curve2D_jahwr")
+metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower2" index="1" instance=ExtResource("2_2b123")]
 
@@ -75,6 +77,7 @@ curve = SubResource("Curve2D_jahwr")
 position = Vector2(658, -59)
 curve = SubResource("Curve2D_lhexk")
 speed = 0.1
+metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower3" index="1" instance=ExtResource("2_2b123")]
 
