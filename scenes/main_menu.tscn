@@ -78,7 +78,8 @@ focus_neighbor_bottom = NodePath("../Start")
 text = "Quit
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="VersionLabel" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -92,7 +93,7 @@ offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 4
-text = "Version: 2024-09-07 12:02"
+text = "Version: "
 horizontal_alignment = 2
 vertical_alignment = 2
 

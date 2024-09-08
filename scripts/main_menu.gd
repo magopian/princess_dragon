@@ -2,12 +2,14 @@ extends Control
 
 @onready var pause_menu: Control = %PauseMenu
 @onready var start: Button = $MarginContainer/Buttons/Start
+@onready var version_label: Label = %VersionLabel
 
 
 func _ready() -> void:
 	display(true)
 	pause_menu.display(false)
 	start.grab_focus()
+	version_label.text += ProjectSettings.get_setting("application/config/version")
 
 
 func _process(_delta: float) -> void:
