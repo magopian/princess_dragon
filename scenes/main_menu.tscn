@@ -53,27 +53,17 @@ size_flags_vertical = 8
 [node name="Start" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../Quit")
 focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_right = NodePath("../Debug")
-focus_neighbor_bottom = NodePath("../Debug")
 text = "Start game"
 
 [node name="Debug" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../Start")
-focus_neighbor_top = NodePath("../Start")
-focus_neighbor_right = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Quit")
 text = "Debug"
 
 [node name="Quit" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
-focus_neighbor_left = NodePath("../Debug")
-focus_neighbor_top = NodePath("../Debug")
-focus_neighbor_right = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../Start")
 text = "Quit
 "

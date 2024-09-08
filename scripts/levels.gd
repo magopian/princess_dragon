@@ -12,6 +12,7 @@ func _ready() -> void:
 	levels = get_children()
 	disable_levels()
 	GameManager.player_killed.connect(_on_player_killed)
+	GameManager.restart_level.connect(reload_level)
 
 
 func start_game() -> void:
@@ -40,20 +41,20 @@ func reload_level() -> void:
 	add_child(current_level)
 
 
-func disable_levels():
+func disable_levels() -> void:
 	for child in get_children():
 		child.hide()
 		child.process_mode = Node.PROCESS_MODE_DISABLED
 		remove_child(child)
 
 
-func _on_level_finished():
+func _on_level_finished() -> void:
 	var current_index: int = levels.find(current_level)
 	var next_level: Node2D = levels[current_index + 1]
 	call_deferred("change_level_to", next_level)
 
 
-func _on_player_killed(body):
+func _on_player_killed(body) -> void:
 	GameManager.score = 0
 	Engine.time_scale = 0.2
 	get_tree().root.add_child(wasted)

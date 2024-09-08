@@ -42,29 +42,24 @@ size_flags_vertical = 8
 
 [node name="Back to the game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Quit")
 focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_right = NodePath("../Back to main menu")
-focus_neighbor_bottom = NodePath("../Back to main menu")
 text = "Resume"
+
+[node name="Restart the level" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart level"
 
 [node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Back to the game")
-focus_neighbor_top = NodePath("../Back to the game")
-focus_neighbor_right = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Quit")
 text = "Back to main menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../Back to main menu")
-focus_neighbor_top = NodePath("../Back to main menu")
-focus_neighbor_right = NodePath("../Back to the game")
 focus_neighbor_bottom = NodePath("../Back to the game")
 text = "Quit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart the level" to="." method="_on_restart_the_level_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
