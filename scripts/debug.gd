@@ -13,7 +13,6 @@ func _ready() -> void:
 		jump_coyoteyed.connect(_on_jump_coyoteyed)
 		jump_cut.connect(_on_jump_cut)
 	if DEBUG_PLAYER_KILLED:
-		print("connecting")
 		GameManager.player_killed.connect(_on_player_killed)
 
 

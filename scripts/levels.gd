@@ -34,6 +34,12 @@ func change_level_to(level: Node2D) -> void:
 	level.show()
 
 
+func reload_level() -> void:
+	remove_child(current_level)
+	current_level = load(current_level.scene_file_path).instantiate()
+	add_child(current_level)
+
+
 func disable_levels():
 	for child in get_children():
 		child.hide()
@@ -54,5 +60,5 @@ func _on_player_killed(body):
 	body.get_node("CollisionShape2D").queue_free()
 	await get_tree().create_timer(0.2).timeout
 	Engine.time_scale = 1
+	reload_level()
 	get_tree().root.remove_child(wasted)
-	get_tree().reload_current_scene()
