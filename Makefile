@@ -17,3 +17,5 @@ export: update_version git_bump_version export_from_godot upload_to_itch
 	cd exports && rm -rf Archive.zip && zip Archive *
 
 
+itch_status:
+	../butler-darwin-amd64/butler status magopian/princess-dragon:html
