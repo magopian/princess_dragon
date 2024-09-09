@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func start_game() -> void:
 	var first_level: Node2D = levels[0]
+	print("start game")
 	change_level_to(first_level)
 
 
