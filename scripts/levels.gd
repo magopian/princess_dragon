@@ -13,6 +13,7 @@ func _ready() -> void:
 	disable_levels()
 	GameManager.player_killed.connect(_on_player_killed)
 	GameManager.restart_level.connect(reload_level)
+	GameManager.level_finished.connect(_on_level_finished)
 
 
 func start_game() -> void:
@@ -29,8 +30,6 @@ func change_level_to(level: Node2D) -> void:
 	add_child(level)
 	current_level = level
 	var finish: Area2D = current_level.find_child("Finish")
-	if finish and finish.has_signal("level_finished"):
-		finish.connect("level_finished", _on_level_finished)
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 	level.show()
 
@@ -55,7 +54,6 @@ func _on_level_finished() -> void:
 
 
 func _on_player_killed(body) -> void:
-	GameManager.score = 0
 	Engine.time_scale = 0.2
 	get_tree().root.add_child(wasted)
 	body.get_node("CollisionShape2D").queue_free()

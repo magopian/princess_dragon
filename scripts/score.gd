@@ -9,6 +9,10 @@ func _ready() -> void:
 	GameManager.show_score_ui.connect(_on_show_score_ui)
 
 
+func _process(_delta: float) -> void:
+	label_score.text = str(GameManager.score)
+
+
 func _on_show_score_ui() -> void:
 	# Display the score label!
 	var tween: Tween = get_tree().create_tween()
