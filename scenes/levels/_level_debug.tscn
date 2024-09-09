@@ -118,5 +118,4 @@ position = Vector2(128, -49)
 position = Vector2(144, -49)
 
 [node name="Finish" parent="." index="7"]
-process_mode = 4
-visible = false
+position = Vector2(-118, 49)

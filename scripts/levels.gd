@@ -50,7 +50,9 @@ func disable_levels() -> void:
 
 func _on_level_finished() -> void:
 	var current_index: int = levels.find(current_level)
-	var next_level: Node2D = levels[current_index + 1]
+	current_index = clamp(current_index + 1, 0, levels.size() - 1)
+	print("current_index", current_index)
+	var next_level: Node2D = levels[current_index]
 	call_deferred("change_level_to", next_level)
 
 
