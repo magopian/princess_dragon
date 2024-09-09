@@ -28,15 +28,16 @@ func debug_level() -> void:
 	change_level_to(level_debug)
 
 
-func add_level(level: Node2D) -> void:
+func start_level(level: Node2D) -> void:
 	level = load(level.scene_file_path).instantiate()
 	add_child(level)
+	GameManager.start_level.emit(level)
 
 
 func change_level_to(level: Node2D) -> void:
 	current_level = level
 	disable_levels()
-	add_level(current_level)
+	start_level(current_level)
 
 
 func reload_level() -> void:
@@ -51,7 +52,6 @@ func disable_levels() -> void:
 func _on_level_finished() -> void:
 	var current_index: int = levels.find(current_level)
 	current_index = clamp(current_index + 1, 0, levels.size() - 1)
-	print("current_index", current_index)
 	var next_level: Node2D = levels[current_index]
 	call_deferred("change_level_to", next_level)
 

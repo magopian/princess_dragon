@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	label_score.text = str(GameManager.score)
+	label_score.text = str(GameManager.get_total_score())
 
 
 func _on_show_score_ui() -> void:
