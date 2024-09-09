@@ -5,6 +5,8 @@ signal show_score_ui
 signal player_killed(body: Node2D)
 signal restart_level
 signal level_finished
+signal start_game
+signal start_debug_level
 
 @onready var score: int = 0
 # Score is "banked" once the level changes to the next level.
@@ -15,6 +17,8 @@ func _ready() -> void:
 	player_killed.connect(reset_score_to_banked.unbind(1))
 	restart_level.connect(reset_score_to_banked)
 	level_finished.connect(bank_score)
+	start_game.connect(reset_score)
+	start_debug_level.connect(reset_score)
 
 
 func add_point(coin: Area2D):
@@ -24,6 +28,11 @@ func add_point(coin: Area2D):
 
 func bank_score() -> void:
 	score_banked = score
+
+
+func reset_score() -> void:
+	score = 0
+	score_banked = 0
 
 
 func reset_score_to_banked() -> void:

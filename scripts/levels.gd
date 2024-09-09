@@ -14,6 +14,8 @@ func _ready() -> void:
 	GameManager.player_killed.connect(_on_player_killed)
 	GameManager.restart_level.connect(reload_level)
 	GameManager.level_finished.connect(_on_level_finished)
+	GameManager.start_game.connect(start_game)
+	GameManager.start_debug_level.connect(debug_level)
 
 
 func start_game() -> void:
@@ -26,25 +28,23 @@ func debug_level() -> void:
 	change_level_to(level_debug)
 
 
-func change_level_to(level: Node2D) -> void:
-	disable_levels()
+func add_level(level: Node2D) -> void:
+	level = load(level.scene_file_path).instantiate()
 	add_child(level)
+
+
+func change_level_to(level: Node2D) -> void:
 	current_level = level
-	var finish: Area2D = current_level.find_child("Finish")
-	level.process_mode = Node.PROCESS_MODE_INHERIT
-	level.show()
+	disable_levels()
+	add_level(current_level)
 
 
 func reload_level() -> void:
-	remove_child(current_level)
-	current_level = load(current_level.scene_file_path).instantiate()
-	add_child(current_level)
+	change_level_to(current_level)
 
 
 func disable_levels() -> void:
 	for child in get_children():
-		child.hide()
-		child.process_mode = Node.PROCESS_MODE_DISABLED
 		remove_child(child)
 
 

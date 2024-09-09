@@ -20,13 +20,13 @@ func _process(_delta: float) -> void:
 func _on_start_pressed() -> void:
 	display(false)
 	%Score.visible = true
-	%Levels.start_game()
+	GameManager.start_game.emit()
 
 
 func _on_debug_pressed() -> void:
 	display(false)
 	%Score.visible = true
-	%Levels.debug_level()
+	GameManager.start_debug_level.emit()
 
 
 func _on_quit_pressed() -> void:
