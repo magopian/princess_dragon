@@ -39,6 +39,9 @@ func get_level_score() -> int:
 
 
 func set_level_score(updated_score: int) -> void:
+	if not current_level:
+		# When running the current scene instead of running the game.
+		return
 	score_per_level[current_level.name] = updated_score
 
 
