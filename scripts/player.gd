@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var SPEED: float = 150.0
 @export var ACCELERATION: float = 10.0
@@ -13,12 +14,19 @@ class_name Player extends CharacterBody2D
 @export var JUMP_CUT: float = 5.0
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
+@export var TELEPORT_SPEED: float = 0.2
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var original_position: Vector2
 
 
-func _physics_process(delta: float):
+func _ready() -> void:
+	original_position = global_position
+	GameManager.player_killed.connect(_on_player_killed)
+
+
+func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	handle_jump()
 	var direction: float = get_direction()
@@ -93,3 +101,27 @@ func is_jumping() -> bool:
 
 func can_jump() -> bool:
 	return is_on_floor() or coyote_timer.time_left > 0
+
+
+func _on_player_killed(_body) -> void:
+	if not is_inside_tree():
+		# Are we the player that's currently in the Scene tree?
+		return
+
+	modulate.a = 0.4
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	# Prevent the player from collecting coins when teleporting back.
+	collision_layer = 0
+
+	# Animate the teleport of the player back to the beginning of the level.
+	var distance: float = global_position.distance_to(original_position)
+	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(
+		self, "global_position", original_position, distance * TELEPORT_SPEED / 100
+	)
+	await tween.finished
+
+	modulate.a = 1.0
+	set_physics_process(true)
+	collision_layer = 2

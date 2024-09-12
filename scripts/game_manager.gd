@@ -19,7 +19,6 @@ signal start_debug_level
 
 func _ready() -> void:
 	add_point.connect(_on_add_point)
-	player_killed.connect(reset_level_score.unbind(1))
 	restart_level.connect(reset_level_score)
 	start_game.connect(reset_score)
 	start_level.connect(_on_start_level)
@@ -39,8 +38,8 @@ func get_level_score() -> int:
 		return 0
 
 
-func set_level_score(new_score: int) -> void:
-	score_per_level[current_level.name] = new_score
+func set_level_score(updated_score: int) -> void:
+	score_per_level[current_level.name] = updated_score
 
 
 func _on_add_point(coin: Area2D) -> void:

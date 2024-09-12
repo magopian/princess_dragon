@@ -28,5 +28,8 @@ func _on_jump_cut() -> void:
 	print("Jump cut")
 
 
-func _on_player_killed(_body) -> void:
+func _on_player_killed(player) -> void:
 	print("Player killed")
+	var distance: float = player.global_position.distance_to(player.original_position)
+	print("distance to teleport: ", distance)
+	print("time to teleport: ", distance * player.TELEPORT_SPEED / 100)
