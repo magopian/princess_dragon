@@ -115,6 +115,10 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="RestartLevel" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry level"
+
 [node name="NextLevel" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -127,4 +131,5 @@ libraries = {
 }
 autoplay = "display"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

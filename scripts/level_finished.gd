@@ -11,3 +11,7 @@ func _ready() -> void:
 
 func _on_next_level_pressed() -> void:
 	GameManager.next_level.emit(level)
+
+
+func _on_restart_level_pressed() -> void:
+	GameManager.restart_level.emit()
