@@ -29,6 +29,8 @@ func _ready() -> void:
 	start_debug_level.connect(reset_score)
 	level_finished.connect(save_time_elapsed)
 
+	load_game_save()
+
 
 func _process(_delta: float) -> void:
 	pass
@@ -71,6 +73,7 @@ func get_time_elapsed() -> float:
 
 func save_time_elapsed() -> void:
 	score_per_level[current_level.name]["time_elapsed"] = get_time_elapsed()
+	save_score_to_file()
 
 
 func _on_add_point(coin: Area2D) -> void:
@@ -90,3 +93,32 @@ func reset_score() -> void:
 
 func reset_level_score() -> void:
 	score = 0
+
+
+func save_score_to_file() -> void:
+	var save_file: FileAccess = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var json_string: String = JSON.stringify(score_per_level)
+	save_file.store_line(json_string)
+
+
+func load_game_save() -> void:
+	if not FileAccess.file_exists("user://savegame.save"):
+		return  # Error! We don't have a save to load.
+
+	var save_file: FileAccess = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json_string: String = save_file.get_line()
+	var json: JSON = JSON.new()
+	var parse_result: Error = json.parse(json_string)
+
+	if not parse_result == OK:
+		print(
+			"JSON Parse Error: ",
+			json.get_error_message(),
+			" in ",
+			json_string,
+			" at line ",
+			json.get_error_line()
+		)
+		return
+	score_per_level = json.get_data()
+	print("Loaded the saved game: ", score_per_level)
