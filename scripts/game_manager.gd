@@ -26,9 +26,9 @@ const empty_score: Dictionary = {
 func _ready() -> void:
 	add_point.connect(_on_add_point)
 	restart_level.connect(reset_level_score)
-	start_game.connect(reset_score)
+	start_game.connect(reset_level_score)
 	start_level.connect(_on_start_level)
-	start_debug_level.connect(reset_score)
+	start_debug_level.connect(reset_level_score)
 	level_finished.connect(save_level_score)
 
 	load_game_save()
@@ -95,10 +95,6 @@ func _on_start_level(level: Node2D) -> void:
 	current_level = level
 	reset_level_score()
 	time_started = Time.get_ticks_msec()
-
-
-func reset_score() -> void:
-	score_per_level = {}
 
 
 func reset_level_score() -> void:
