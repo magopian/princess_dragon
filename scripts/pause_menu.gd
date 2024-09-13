@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_back_to_the_game_pressed() -> void:
-	%Score.visible = true
 	display(false)
 
 
@@ -39,10 +38,8 @@ func display(is_displayed: bool) -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		back_to_the_game.grab_focus()
-		%Score.visible = false
 
 
 func _on_restart_the_level_pressed() -> void:
-	%Score.visible = true
 	display(false)
 	GameManager.restart_level.emit()

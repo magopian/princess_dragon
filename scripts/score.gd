@@ -15,11 +15,15 @@ func _process(_delta: float) -> void:
 
 func _on_show_score_ui() -> void:
 	# Display the score label!
+	if not is_visible_in_tree():
+		return
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2.ZERO, 1).set_trans(Tween.TRANS_BOUNCE)
 
 
 func _on_new_score(score: int, coin: Area2D) -> void:
+	if not is_inside_tree():
+		return
 	label_score.text = str(score)
 	# Animate the score label
 	var tween: Tween = get_tree().create_tween()

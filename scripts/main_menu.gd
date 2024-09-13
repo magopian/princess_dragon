@@ -19,13 +19,11 @@ func _process(_delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	display(false)
-	%Score.visible = true
 	GameManager.start_game.emit()
 
 
 func _on_debug_pressed() -> void:
 	display(false)
-	%Score.visible = true
 	GameManager.start_debug_level.emit()
 
 
@@ -41,4 +39,3 @@ func display(is_displayed: bool) -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		start.grab_focus()
-		%Score.visible = false

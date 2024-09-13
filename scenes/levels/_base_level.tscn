@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://bs5ektkfh3xp6"]
+[gd_scene load_steps=8 format=4 uid="uid://bs5ektkfh3xp6"]
 
+[ext_resource type="PackedScene" uid="uid://b1hmxu3da7j1u" path="res://scenes/score.tscn" id="1_0rm1m"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="2_qoykj"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="3_4y51c"]
 [ext_resource type="PackedScene" uid="uid://dqd43afhp3wuo" path="res://scenes/show_score_ui_notifier.tscn" id="4_0ow8c"]
@@ -10,6 +11,12 @@
 
 [node name="Base Level" type="Node2D"]
 position = Vector2(1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" parent="CanvasLayer" instance=ExtResource("1_0rm1m")]
+offset_left = 1.0
+offset_right = 55.0
 
 [node name="Player" parent="." instance=ExtResource("2_qoykj")]
 position = Vector2(34, 64)

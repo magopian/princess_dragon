@@ -30,6 +30,7 @@ func start_debug_level() -> void:
 func start_level(level: Node2D) -> void:
 	level = load(level.scene_file_path).instantiate()
 	add_child(level)
+	level.process_mode = Node.PROCESS_MODE_INHERIT
 	GameManager.start_level.emit(level)
 
 
@@ -46,6 +47,7 @@ func reload_level() -> void:
 func disable_levels() -> void:
 	for child in get_children():
 		remove_child(child)
+		child.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _on_level_finished() -> void:
