@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://bs5ektkfh3xp6"]
+[gd_scene load_steps=10 format=4 uid="uid://bs5ektkfh3xp6"]
 
 [ext_resource type="PackedScene" uid="uid://b1hmxu3da7j1u" path="res://scenes/score.tscn" id="1_0rm1m"]
+[ext_resource type="Script" path="res://scripts/time_label.gd" id="2_3i7xn"]
+[ext_resource type="Texture2D" uid="uid://be8hi7w0tq6fr" path="res://assets/nine_patch_rounded_box.png" id="2_d7rgo"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="2_qoykj"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="3_4y51c"]
 [ext_resource type="PackedScene" uid="uid://dqd43afhp3wuo" path="res://scenes/show_score_ui_notifier.tscn" id="4_0ow8c"]
@@ -17,6 +19,39 @@ position = Vector2(1, 0)
 [node name="Score" parent="CanvasLayer" instance=ExtResource("1_0rm1m")]
 offset_left = 1.0
 offset_right = 55.0
+
+[node name="ColorRect" type="NinePatchRect" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.74902)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 13.0
+grow_horizontal = 2
+texture = ExtResource("2_d7rgo")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -3.5
+offset_right = 26.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "99.999"
+script = ExtResource("2_3i7xn")
 
 [node name="Player" parent="." instance=ExtResource("2_qoykj")]
 position = Vector2(34, 64)
