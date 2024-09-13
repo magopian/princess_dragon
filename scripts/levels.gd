@@ -62,16 +62,17 @@ func display_level_finished_screen(level: Node2D) -> void:
 	add_child(level_finished_screen_instantiated)
 
 
+func remove_level_finished_screen() -> void:
+	if level_finished_screen_instantiated:
+		remove_child(level_finished_screen_instantiated)
+		level_finished_screen_instantiated.queue_free()
+		level_finished_screen_instantiated = null
+	get_tree().paused = false
+
+
 func start_next_level(from_level: Node2D) -> void:
 	remove_level_finished_screen()
 	var current_index: int = levels.find(from_level)
 	current_index = clamp(current_index + 1, 0, levels.size() - 1)
 	var next_level: Node2D = levels[current_index]
 	call_deferred("change_level_to", next_level)
-
-
-func remove_level_finished_screen() -> void:
-	if level_finished_screen_instantiated:
-		remove_child(level_finished_screen_instantiated)
-		level_finished_screen_instantiated = null
-	get_tree().paused = false
