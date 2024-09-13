@@ -6,13 +6,18 @@ extends CanvasLayer
 @onready var coins_collected: Label = %CoinsCollected
 @onready var time_elapsed: Label = %TimeElapsed
 @onready var level_name: Label = %LevelName
+@onready var best_coins_collected: Label = %BestCoinsCollected
+@onready var best_time_elapsed: Label = %BestTimeElapsed
 
 
 func _ready() -> void:
 	next_level.grab_focus()
-	level_name.text = GameManager.current_level.name
-	coins_collected.text = str(GameManager.get_level_coins())
-	time_elapsed.text = str(GameManager.get_time_elapsed() / 1000)
+	level_name.text = GameManager.get_level_name()
+	var level_score: Dictionary = GameManager.get_level_score()
+	coins_collected.text = str(level_score["coins"])
+	best_coins_collected.text = str(level_score["best_coins"])
+	time_elapsed.text = str(level_score["time_elapsed"] / 1000)
+	best_time_elapsed.text = str(level_score["best_time_elapsed"] / 1000)
 
 
 func _on_next_level_pressed() -> void:

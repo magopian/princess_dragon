@@ -18,7 +18,9 @@ signal next_level(level: Node2D)
 @onready var score_per_level: Dictionary = {}
 @onready var time_started: float
 
-const empty_score: Dictionary = {"coins": 0, "time_elapsed": 0}
+const empty_score: Dictionary = {
+	"coins": 0, "best_coins": 0, "time_elapsed": 0, "best_time_elapsed": 0
+}
 
 
 func _ready() -> void:
@@ -27,13 +29,15 @@ func _ready() -> void:
 	start_game.connect(reset_score)
 	start_level.connect(_on_start_level)
 	start_debug_level.connect(reset_score)
-	level_finished.connect(save_time_elapsed)
+	level_finished.connect(save_level_score)
 
 	load_game_save()
 
 
-func _process(_delta: float) -> void:
-	pass
+func get_level_name() -> String:
+	if not current_level:
+		return "no current level"
+	return current_level.name
 
 
 func get_total_coins() -> int:
@@ -71,8 +75,14 @@ func get_time_elapsed() -> float:
 	return Time.get_ticks_msec() - time_started
 
 
-func save_time_elapsed() -> void:
-	score_per_level[current_level.name]["time_elapsed"] = get_time_elapsed()
+func save_level_score() -> void:
+	var time_elapsed: float = get_time_elapsed()
+	score_per_level[current_level.name]["time_elapsed"] = time_elapsed
+	var best_time_elapsed: float = score_per_level[current_level.name]["best_time_elapsed"]
+	if time_elapsed < best_time_elapsed or best_time_elapsed == 0:
+		score_per_level[current_level.name]["best_time_elapsed"] = time_elapsed
+	if get_level_coins() > score_per_level[current_level.name]["best_coins"]:
+		score_per_level[current_level.name]["best_coins"] = get_level_coins()
 	save_score_to_file()
 
 
