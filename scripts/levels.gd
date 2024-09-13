@@ -3,6 +3,8 @@ extends Node
 @onready var levels: Array[Node] = []
 @onready var current_level: Node2D
 @onready var level_debug: Node2D = $"Debug Level"
+@onready var level_finished_screen: PackedScene = preload("res://scenes/level_finished.tscn")
+var level_finished_screen_instantiated: CanvasLayer
 
 
 func _ready() -> void:
@@ -11,7 +13,8 @@ func _ready() -> void:
 	GameManager.restart_level.connect(reload_level)
 	GameManager.level_finished.connect(_on_level_finished)
 	GameManager.start_game.connect(start_game)
-	GameManager.start_debug_level.connect(debug_level)
+	GameManager.start_debug_level.connect(start_debug_level)
+	GameManager.next_level.connect(start_next_level)
 
 
 func start_game() -> void:
@@ -20,7 +23,7 @@ func start_game() -> void:
 	change_level_to(first_level)
 
 
-func debug_level() -> void:
+func start_debug_level() -> void:
 	change_level_to(level_debug)
 
 
@@ -46,7 +49,21 @@ func disable_levels() -> void:
 
 
 func _on_level_finished() -> void:
-	var current_index: int = levels.find(current_level)
+	get_tree().paused = true
+	display_level_finished_screen(current_level)
+
+
+func display_level_finished_screen(level: Node2D) -> void:
+	level_finished_screen_instantiated = level_finished_screen.instantiate()
+	level_finished_screen_instantiated.level = level
+	add_child(level_finished_screen_instantiated)
+
+
+func start_next_level(from_level: Node2D) -> void:
+	remove_child(level_finished_screen_instantiated)
+	level_finished_screen_instantiated = null
+	get_tree().paused = false
+	var current_index: int = levels.find(from_level)
 	current_index = clamp(current_index + 1, 0, levels.size() - 1)
 	var next_level: Node2D = levels[current_index]
 	call_deferred("change_level_to", next_level)

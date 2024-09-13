@@ -20,6 +20,7 @@ unique_name_in_owner = true
 script = ExtResource("5_v1q6a")
 
 [node name="Moving around" parent="Levels" instance=ExtResource("2_mo0w0")]
+visible = false
 
 [node name="Jumping around" parent="Levels" instance=ExtResource("4_vlujy")]
 visible = false

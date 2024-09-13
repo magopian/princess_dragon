@@ -9,6 +9,7 @@ signal level_finished
 signal start_game
 signal start_level(level: Node2D)
 signal start_debug_level
+signal next_level(level: Node2D)
 
 @onready var score: int:
 	get = get_level_score,
