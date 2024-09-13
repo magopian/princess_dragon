@@ -111,6 +111,14 @@ size_flags_vertical = 0
 text = "Level finished!"
 horizontal_alignment = 1
 
+[node name="LevelName" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "Level name"
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -128,6 +136,8 @@ text = "Coins collected:"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+text = "0"
 horizontal_alignment = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
@@ -142,6 +152,8 @@ text = "Time elapsed:"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+text = "999.999"
 horizontal_alignment = 2
 
 [node name="RestartLevel" type="Button" parent="MarginContainer/VBoxContainer"]
