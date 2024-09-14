@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfvlwjq7o05rn"]
+[gd_scene load_steps=8 format=3 uid="uid://dfvlwjq7o05rn"]
 
 [ext_resource type="Script" path="res://scripts/level_finished.gd" id="1_q27x0"]
 
@@ -77,6 +77,67 @@ _data = {
 "display": SubResource("Animation_in7ra")
 }
 
+[sub_resource type="Animation" id="Animation_2t0qi"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/NewBestCoins:theme_override_colors/font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.94902, 0, 0.239216), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 0.239216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NewBestTime:theme_override_colors/font_color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.94902, 0, 0.239216), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 0.239216)]
+}
+
+[sub_resource type="Animation" id="Animation_0kwu4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NewBestTime:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.94902, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/NewBestCoins:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.94902, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lx5le"]
+_data = {
+"RESET": SubResource("Animation_0kwu4"),
+"flash": SubResource("Animation_2t0qi")
+}
+
 [node name="LevelFinished" type="CanvasLayer"]
 process_mode = 3
 layer = 9
@@ -132,21 +193,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Coins collected:"
 
-[node name="CoinsCollected" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Coins" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
 text = "0"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="NewBestCoins" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+text = "NEW!"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Best:"
 horizontal_alignment = 2
 
-[node name="BestCoinsCollected" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="BestCoins" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
@@ -159,23 +230,33 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Time elapsed:"
+text = "Time:"
 
-[node name="TimeElapsed" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
 text = "999.999"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="NewBestTime" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+text = "NEW!"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Best:"
 horizontal_alignment = 2
 
-[node name="BestTimeElapsed" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="BestTime" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
@@ -194,11 +275,17 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 8
 text = "Next level"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="FadeInScreen" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_amso4")
 }
 autoplay = "display"
+
+[node name="FlashNewScore" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lx5le")
+}
+autoplay = "flash"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
