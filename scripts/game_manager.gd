@@ -8,6 +8,8 @@ signal restart_level
 signal level_finished
 signal start_level(level: Node2D)
 signal next_level(level: Node2D)
+signal savegame_selected(savegame_name: String)
+signal savegame_deleted(savegame_name: String)
 
 @onready var score: int:
 	get = get_level_coins,
@@ -15,10 +17,13 @@ signal next_level(level: Node2D)
 @onready var current_level: Node2D
 @onready var score_per_level: Dictionary = {}
 @onready var time_started: float
+@onready var savegame_name: String
 
 const empty_score: Dictionary = {
 	"coins": 0, "best_coins": 0, "time_elapsed": 0, "best_time_elapsed": 0
 }
+
+const SAVEGAME_FILENAME = "user://savegames/%s.save"
 
 
 func _ready() -> void:
@@ -26,8 +31,8 @@ func _ready() -> void:
 	restart_level.connect(reset_level_score)
 	start_level.connect(_on_start_level)
 	level_finished.connect(save_level_score)
-
-	load_game_save()
+	savegame_selected.connect(_on_save_game_selected)
+	savegame_deleted.connect(_on_save_game_deleted)
 
 
 func get_level_name() -> String:
@@ -38,7 +43,9 @@ func get_level_name() -> String:
 
 func get_total_coins() -> int:
 	var level_scores: Array = score_per_level.values()
-	var total_coins: int = level_scores.reduce(func(accum, score): return accum + score["coins"], 0)
+	var total_coins: int = level_scores.reduce(
+		func(accum, score_): return accum + score_["coins"], 0
+	)
 	return total_coins
 
 
@@ -76,7 +83,7 @@ func save_level_score() -> void:
 		score_per_level[current_level.name]["best_time_elapsed"] = time_elapsed
 	if get_level_coins() > score_per_level[current_level.name]["best_coins"]:
 		score_per_level[current_level.name]["best_coins"] = get_level_coins()
-	save_score_to_file()
+	save_score_to_file(savegame_name)
 
 
 func _on_add_point(coin: Area2D) -> void:
@@ -94,17 +101,30 @@ func reset_level_score() -> void:
 	score = 0
 
 
-func save_score_to_file() -> void:
-	var save_file: FileAccess = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+func save_score_to_file(save_name: String) -> void:
+	var save_file: FileAccess = FileAccess.open(SAVEGAME_FILENAME % save_name, FileAccess.WRITE)
 	var json_string: String = JSON.stringify(score_per_level)
 	save_file.store_line(json_string)
 
 
-func load_game_save() -> void:
-	if not FileAccess.file_exists("user://savegame.save"):
+func _on_save_game_selected(save_name: String) -> void:
+	savegame_name = save_name
+	load_game_save(save_name)
+
+
+func _on_save_game_deleted(save_name: String) -> void:
+	savegame_name = ""
+	DirAccess.remove_absolute(SAVEGAME_FILENAME % save_name)
+
+
+func load_game_save(save_name: String) -> void:
+	var filename: String = SAVEGAME_FILENAME % save_name
+	print("loading save from: ", filename)
+	if not FileAccess.file_exists(filename):
+		score_per_level = {}
 		return  # Error! We don't have a save to load.
 
-	var save_file: FileAccess = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var save_file: FileAccess = FileAccess.open(filename, FileAccess.READ)
 	var json_string: String = save_file.get_line()
 	var json: JSON = JSON.new()
 	var parse_result: Error = json.parse(json_string)
