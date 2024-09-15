@@ -12,19 +12,7 @@ func _ready() -> void:
 	disable_levels()
 	GameManager.restart_level.connect(reload_level)
 	GameManager.level_finished.connect(_on_level_finished)
-	GameManager.start_game.connect(start_game)
-	GameManager.start_debug_level.connect(start_debug_level)
 	GameManager.next_level.connect(start_next_level)
-
-
-func start_game() -> void:
-	var first_level: Node2D = levels[0]
-	print("start game")
-	change_level_to(first_level)
-
-
-func start_debug_level() -> void:
-	change_level_to(level_debug)
 
 
 func start_level(level: Node2D) -> void:

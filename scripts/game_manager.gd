@@ -6,9 +6,7 @@ signal show_score_ui
 signal player_killed(body: Node2D)
 signal restart_level
 signal level_finished
-signal start_game
 signal start_level(level: Node2D)
-signal start_debug_level
 signal next_level(level: Node2D)
 
 @onready var score: int:
@@ -26,9 +24,7 @@ const empty_score: Dictionary = {
 func _ready() -> void:
 	add_point.connect(_on_add_point)
 	restart_level.connect(reset_level_score)
-	start_game.connect(reset_level_score)
 	start_level.connect(_on_start_level)
-	start_debug_level.connect(reset_level_score)
 	level_finished.connect(save_level_score)
 
 	load_game_save()
@@ -62,11 +58,8 @@ func set_level_coins(updated_coins: int) -> void:
 	score_per_level[current_level.name] = updated_score
 
 
-func get_level_score() -> Dictionary:
-	if current_level:
-		return score_per_level.get(current_level.name, empty_score)
-	else:
-		return empty_score
+func get_level_score(level: Node2D) -> Dictionary:
+	return score_per_level.get(level.name, empty_score)
 
 
 func get_time_elapsed() -> float:

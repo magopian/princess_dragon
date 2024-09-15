@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpoqqx3m81s8c"]
+
+[ext_resource type="Texture2D" uid="uid://m1jqj1oamf54" path="res://assets/sprites/clock.png" id="1_e65ab"]
+[ext_resource type="Texture2D" uid="uid://jdirx383laml" path="res://assets/sprites/coin.png" id="1_hqoe0"]
+
+[node name="LevelSelectionButton" type="Button"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "test"
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Time" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "10.999"
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("1_e65ab")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Coins" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "100/100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("1_hqoe0")
+expand_mode = 1
+stretch_mode = 1

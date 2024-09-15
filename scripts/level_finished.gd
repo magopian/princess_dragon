@@ -15,7 +15,7 @@ extends CanvasLayer
 func _ready() -> void:
 	next_level.grab_focus()
 	level_name.text = GameManager.get_level_name()
-	var level_score: Dictionary = GameManager.get_level_score()
+	var level_score: Dictionary = GameManager.get_level_score(level)
 	coins.text = str(level_score["coins"])
 	best_coins.text = str(level_score["best_coins"])
 	time.text = str(level_score["time_elapsed"] / 1000)
