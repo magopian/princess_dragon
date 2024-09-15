@@ -56,11 +56,6 @@ size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
 text = "Start game"
 
-[node name="Debug" type="Button" parent="MarginContainer/Buttons"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Debug"
-
 [node name="Quit" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -87,7 +82,5 @@ text = "Version: "
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/Buttons/Debug" to="." method="_on_debug_pressed"]
 [connection signal="pressed" from="MarginContainer/Buttons/Quit" to="." method="_on_quit_pressed"]

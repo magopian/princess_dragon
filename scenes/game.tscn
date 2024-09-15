@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=13 format=3 uid="uid://cxkgr3tnk4cqp"]
 
-[ext_resource type="PackedScene" uid="uid://bxcuknasdyddo" path="res://scenes/main_menu.tscn" id="1_c0ohi"]
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
 [ext_resource type="PackedScene" uid="uid://dnt3fgtkkhqxv" path="res://scenes/levels/platforms_everywhere.tscn" id="3_d8kc8"]
@@ -10,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dn5xlaw8lcey8" path="res://scenes/levels/i_know_kung_fu.tscn" id="5_wptdp"]
 [ext_resource type="PackedScene" uid="uid://dwdloki5wj446" path="res://scenes/levels/intermediate.tscn" id="5_xs3xh"]
 [ext_resource type="PackedScene" uid="uid://doiby2e2ghhjd" path="res://scenes/touch_controls.tscn" id="10_3t3ic"]
+[ext_resource type="PackedScene" uid="uid://d0o87dk8k3fgm" path="res://scenes/level_selection.tscn" id="11_d4od2"]
+[ext_resource type="Script" path="res://scripts/level_selection.gd" id="12_c3qws"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
 
 [node name="Game" type="Node2D"]
@@ -46,20 +47,9 @@ process_mode = 3
 visible = false
 script = ExtResource("13_72h71")
 
-[node name="MainMenu" parent="UI" instance=ExtResource("1_c0ohi")]
-unique_name_in_owner = true
-process_mode = 3
-visible = false
-anchors_preset = 15
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-
 [node name="PauseMenu" parent="UI" instance=ExtResource("2_olrm6")]
 unique_name_in_owner = true
 visible = false
+
+[node name="LevelSelection" parent="UI" instance=ExtResource("11_d4od2")]
+script = ExtResource("12_c3qws")

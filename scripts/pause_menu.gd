@@ -2,15 +2,13 @@ extends Control
 
 @onready var back_to_the_game: Button = $"MarginContainer/VBoxContainer/Back to the game"
 
-@onready var main_menu: Control = %MainMenu
-
 
 func _ready() -> void:
 	display(false)
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause_menu"):
+	if Input.is_action_just_pressed("menu"):
 		if visible:
 			_on_back_to_the_game_pressed()
 		else:
@@ -23,7 +21,7 @@ func _on_back_to_the_game_pressed() -> void:
 
 func _on_back_to_main_menu_pressed() -> void:
 	display(false)
-	main_menu.display(true)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func _on_quit_pressed() -> void:
