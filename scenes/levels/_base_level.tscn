@@ -20,7 +20,7 @@ position = Vector2(1, 0)
 offset_left = 1.0
 offset_right = 55.0
 
-[node name="ColorRect" type="NinePatchRect" parent="CanvasLayer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.74902)
 anchors_preset = 5
 anchor_left = 0.5
@@ -36,7 +36,7 @@ patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
 
-[node name="TimeLabel" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="TimeLabel" type="Label" parent="CanvasLayer/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
