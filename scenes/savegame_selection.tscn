@@ -44,6 +44,7 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
 
 [node name="Savegames" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
