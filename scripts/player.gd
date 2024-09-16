@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
 	handle_jump()
 	var direction: float = get_direction()
+	handle_drop_through_platform()
 	handle_animations(direction)
 	apply_movement(direction)
 
@@ -59,6 +60,11 @@ func handle_jump() -> void:
 			Debug.jump_buffered.emit()
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_timer.stop()
+
+
+func handle_drop_through_platform() -> void:
+	if Input.is_action_pressed("ui_down") and is_on_floor():
+		position.y += 1
 
 
 func get_direction() -> float:
