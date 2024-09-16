@@ -23,7 +23,10 @@ func create_button(level: Node2D) -> void:
 	var button: Button = level_selection_button.instantiate()
 	button.text = level.name
 	var score: Dictionary = GameManager.get_level_score(level)
-	var total_coins: int = level.get_node("Coins").get_child_count()
+	var coins_node: Node2D = level.get_node("Coins")
+	var total_coins: int = 0
+	if coins_node:
+		total_coins = coins_node.get_child_count()
 	button.get_node("%Coins").text = str(score["best_coins"]) + "/" + str(total_coins)
 	button.get_node("%Time").text = str(score["best_time_elapsed"] / 1000)
 	button.pressed.connect(level_selected.bind(level))
