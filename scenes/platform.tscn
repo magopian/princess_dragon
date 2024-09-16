@@ -1,18 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8vod4bww124x"]
+[gd_scene load_steps=5 format=3 uid="uid://b8vod4bww124x"]
 
 [ext_resource type="Texture2D" uid="uid://c473oe06q4cfl" path="res://assets/sprites/platforms.png" id="1_bjwh0"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1_r0grt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyasi"]
-size = Vector2(32, 8)
+size = Vector2(32, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bbai"]
+size = Vector2(32, 11.5)
 
 [node name="Platform" type="AnimatableBody2D"]
+script = ExtResource("1_r0grt")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.5)
 texture = ExtResource("1_bjwh0")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yyasi")
 one_way_collision = true
+
+[node name="Passthrough" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Passthrough"]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_8bbai")
+
+[connection signal="body_entered" from="Passthrough" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Passthrough" to="." method="_on_area_2d_body_exited"]
