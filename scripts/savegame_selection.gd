@@ -2,6 +2,8 @@ extends Control
 
 @onready var savegame_button: PackedScene = preload("res://scenes/savegame_button.tscn")
 
+var deleting_savegame_button: SavegameButton
+
 
 func _ready() -> void:
 	var files: PackedStringArray = list_files_in_directory("user://savegames")
@@ -16,7 +18,7 @@ func _ready() -> void:
 
 func add_new_save() -> void:
 	var line_edit: LineEdit = LineEdit.new()
-	line_edit.text = "save game 1"
+	line_edit.text = "save game " + str(%Savegames.get_child_count() + 1)
 	line_edit.text_submitted.connect(_on_new_save)
 	%Savegames.add_child(line_edit)
 	line_edit.grab_focus()
@@ -52,9 +54,17 @@ func savegame_selected(savegame_name: String) -> void:
 
 
 func savegame_deleted(button: SavegameButton) -> void:
-	var savegame_name: String = button.get_node("%Name").text
-	button.queue_free()
-	GameManager.savegame_deleted.emit(savegame_name)
+	deleting_savegame_button = button
+	%ConfirmDeleteSave.show()
+
+
+func _on_confirm_delete_save_canceled() -> void:
+	deleting_savegame_button = null
+
+
+func _on_confirm_delete_save_confirmed() -> void:
+	deleting_savegame_button.queue_free()
+	GameManager.savegame_deleted.emit(deleting_savegame_button.get_node("%Name").text)
 
 
 func _on_add_savegame_pressed() -> void:

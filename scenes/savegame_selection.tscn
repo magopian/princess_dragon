@@ -57,4 +57,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Add save file"
 
+[node name="ConfirmDeleteSave" type="ConfirmationDialog" parent="ColorRect/MarginContainer"]
+unique_name_in_owner = true
+title = "ARE YOU SURE?"
+initial_position = 1
+size = Vector2i(282, 100)
+dialog_text = "Delete the save file
+and lose all data?"
+
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/AddSavegame" to="." method="_on_add_savegame_pressed"]
+[connection signal="canceled" from="ColorRect/MarginContainer/ConfirmDeleteSave" to="." method="_on_confirm_delete_save_canceled"]
+[connection signal="confirmed" from="ColorRect/MarginContainer/ConfirmDeleteSave" to="." method="_on_confirm_delete_save_confirmed"]
