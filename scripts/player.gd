@@ -19,6 +19,7 @@ class_name Player extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var original_position: Vector2
+var asked_to_jump: bool = false
 
 
 func _ready() -> void:
@@ -58,6 +59,7 @@ func handle_jump() -> void:
 		elif jump_buffer_timer.time_left:
 			Debug.jump_buffered.emit()
 		velocity.y = JUMP_VELOCITY
+		asked_to_jump = true
 		jump_buffer_timer.stop()
 
 
@@ -91,8 +93,9 @@ func apply_movement(direction: float) -> void:
 
 	var was_on_floor: bool = is_on_floor()
 	move_and_slide()
-	if was_on_floor and not is_on_floor() and not is_jumping():
+	if was_on_floor and not is_on_floor() and not asked_to_jump:
 		coyote_timer.start(COYOTE_TIME)
+	asked_to_jump = false
 
 
 func is_jumping() -> bool:
