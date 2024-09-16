@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=14 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
 [ext_resource type="PackedScene" uid="uid://dnt3fgtkkhqxv" path="res://scenes/levels/platforms_everywhere.tscn" id="3_d8kc8"]
-[ext_resource type="PackedScene" uid="uid://tm04dphj77uk" path="res://scenes/levels/jumping_around.tscn" id="4_vlujy"]
+[ext_resource type="PackedScene" uid="uid://cikqc5nvkfifo" path="res://scenes/levels/long_jumps.tscn" id="4_huao0"]
+[ext_resource type="PackedScene" uid="uid://tm04dphj77uk" path="res://scenes/levels/high_jumps.tscn" id="4_vlujy"]
 [ext_resource type="PackedScene" uid="uid://dsrmxjo8jlxei" path="res://scenes/levels/_level_debug.tscn" id="5_omyjy"]
 [ext_resource type="Script" path="res://scripts/levels.gd" id="5_v1q6a"]
 [ext_resource type="PackedScene" uid="uid://dn5xlaw8lcey8" path="res://scenes/levels/i_know_kung_fu.tscn" id="5_wptdp"]
@@ -22,7 +23,10 @@ script = ExtResource("5_v1q6a")
 [node name="Moving around" parent="Levels" instance=ExtResource("2_mo0w0")]
 visible = false
 
-[node name="Jumping around" parent="Levels" instance=ExtResource("4_vlujy")]
+[node name="High jumps" parent="Levels" instance=ExtResource("4_vlujy")]
+visible = false
+
+[node name="Long jumps" parent="Levels" instance=ExtResource("4_huao0")]
 visible = false
 
 [node name="Platforms everywhere" parent="Levels" instance=ExtResource("3_d8kc8")]

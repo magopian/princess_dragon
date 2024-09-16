@@ -76,6 +76,8 @@ func get_time_elapsed() -> float:
 
 
 func save_level_score() -> void:
+	if not current_level:
+		return  # When testing a single level
 	var time_elapsed: float = get_time_elapsed()
 	score_per_level[current_level.name]["time_elapsed"] = time_elapsed
 	var best_time_elapsed: float = score_per_level[current_level.name]["best_time_elapsed"]
