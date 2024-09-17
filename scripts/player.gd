@@ -6,8 +6,8 @@ class_name Player extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var SPEED: float = 150.0
-@export var ACCELERATION: float = 10.0
-@export var FRICTION: float = 12.0
+@export var ACCELERATION: float = 20.0
+@export var FRICTION: float = 20.0
 @export var JUMP_VELOCITY: float = -300.0
 @export var FALL_FASTER: float = 3.0
 @export var MAX_FALL_SPEED: float = 800.0
