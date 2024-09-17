@@ -2,7 +2,6 @@ extends Node
 
 @onready var levels: Array[Node] = []
 @onready var current_level: Node2D
-@onready var level_debug: Node2D = $"Debug Level"
 @onready var level_finished_screen: PackedScene = preload("res://scenes/level_finished.tscn")
 var level_finished_screen_instantiated: CanvasLayer
 

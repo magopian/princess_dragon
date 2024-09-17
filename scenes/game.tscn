@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cikqc5nvkfifo" path="res://scenes/levels/long_jumps.tscn" id="4_huao0"]
 [ext_resource type="PackedScene" uid="uid://tm04dphj77uk" path="res://scenes/levels/high_jumps.tscn" id="4_vlujy"]
 [ext_resource type="PackedScene" uid="uid://b6w21trkvqa5d" path="res://scenes/levels/jumping_around.tscn" id="5_h52bv"]
-[ext_resource type="PackedScene" uid="uid://dsrmxjo8jlxei" path="res://scenes/levels/_level_debug.tscn" id="5_omyjy"]
+[ext_resource type="PackedScene" uid="uid://dsrmxjo8jlxei" path="res://scenes/levels/the_end.tscn" id="5_omyjy"]
 [ext_resource type="Script" path="res://scripts/levels.gd" id="5_v1q6a"]
 [ext_resource type="PackedScene" uid="uid://dn5xlaw8lcey8" path="res://scenes/levels/i_know_kung_fu.tscn" id="5_wptdp"]
 [ext_resource type="PackedScene" uid="uid://dwdloki5wj446" path="res://scenes/levels/intermediate.tscn" id="5_xs3xh"]
@@ -51,7 +51,7 @@ visible = false
 visible = false
 position = Vector2(2, 0)
 
-[node name="Debug Level" parent="Levels" instance=ExtResource("5_omyjy")]
+[node name="The End" parent="Levels" instance=ExtResource("5_omyjy")]
 visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
