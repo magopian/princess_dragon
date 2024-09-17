@@ -15,6 +15,7 @@ upload_to_itch:
 
 export: update_version git_bump_version export_from_godot upload_to_itch
 	cd exports && rm -rf Archive.zip && zip Archive *
+	sleep 10
 	@echo "Version exported:" $(DATE)
 
 itch_status:
