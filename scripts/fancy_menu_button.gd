@@ -9,7 +9,7 @@ func _ready() -> void:
 	focus_entered.connect(playSound)
 	mouse_entered.connect(playSound)
 	audio_stream_player_2d.stream = load("res://assets/sounds/temp/drop_003.ogg")
-	audio_stream_player_2d.bus = "SFX"
+	audio_stream_player_2d.bus = "Sounds"
 	add_child(audio_stream_player_2d)
 	initial_scale = scale
 	pivot_offset = size / 2  # Center the pivot so the scaling is centered.

@@ -235,8 +235,8 @@ randomness = 1.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_wvmh3")
-bus = &"SFX"
+bus = &"Sounds"
 
 [node name="FallSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_onlfy")
-bus = &"SFX"
+bus = &"Sounds"
