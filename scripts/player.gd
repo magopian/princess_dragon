@@ -9,7 +9,7 @@ class_name Player extends CharacterBody2D
 @export var ACCELERATION: float = 20.0
 @export var FRICTION: float = 20.0
 @export var JUMP_VELOCITY: float = -300.0
-@export var FALL_FASTER: float = 3.0
+@export var FALL_FASTER: float = 2.2
 @export var MAX_FALL_SPEED: float = 800.0
 @export var JUMP_CUT: float = 5.0
 @export var COYOTE_TIME: float = 0.1
