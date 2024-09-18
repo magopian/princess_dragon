@@ -10,13 +10,14 @@ git_bump_version:
 export_from_godot:
 	/Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "Princess Dragon" exports/index.html
 
-upload_to_itch:
-	../butler-darwin-amd64/butler push exports/Archive.zip magopian/princess-dragon:html
-
-export: update_version git_bump_version export_from_godot upload_to_itch
+export: update_version git_bump_version export_from_godot
 	cd exports && rm -rf Archive.zip && zip Archive *
-	sleep 10
-	@echo "Version exported:" $(DATE)
+
+upload_to_itch: export
+	../butler-darwin-amd64/butler push exports/Archive.zip magopian/princess-dragon:html
 
 itch_status:
 	../butler-darwin-amd64/butler status magopian/princess-dragon:html
+
+export_to_itch: export upload_to_itch
+	@echo "Version uploaded to itch:" $(DATE)
