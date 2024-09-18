@@ -61,6 +61,7 @@ func handle_jump() -> void:
 		velocity.y = JUMP_VELOCITY
 		asked_to_jump = true
 		emit_jump_particles()
+		$JumpSound.play()
 		jump_buffer_timer.stop()
 
 
@@ -98,6 +99,7 @@ func apply_movement(direction: float) -> void:
 		coyote_timer.start(COYOTE_TIME)
 	if not was_on_floor and is_on_floor():
 		emit_jump_particles()
+		$FallSound.play()
 	asked_to_jump = false
 
 

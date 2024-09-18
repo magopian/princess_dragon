@@ -1,8 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtrhqf8ws4yxy"]
+[gd_scene load_steps=32 format=3 uid="uid://dtrhqf8ws4yxy"]
 
 [ext_resource type="Texture2D" uid="uid://bdheg38c1n4g2" path="res://assets/sprites/knight.png" id="1_ixncy"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xlikq"]
 [ext_resource type="PackedScene" uid="uid://ft2bs12ouq7t" path="res://scenes/trail.tscn" id="3_0x5rx"]
+[ext_resource type="AudioStream" uid="uid://dys0e2o5nc2ln" path="res://assets/sounds/jump.wav" id="4_wvmh3"]
+[ext_resource type="AudioStream" uid="uid://bf7x0a03gaq6r" path="res://assets/sounds/temp/click_005.ogg" id="5_onlfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oarv6"]
 atlas = ExtResource("1_ixncy")
@@ -200,7 +202,7 @@ script = ExtResource("1_xlikq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_oph6r")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -230,3 +232,11 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wvmh3")
+bus = &"SFX"
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_onlfy")
+bus = &"SFX"
