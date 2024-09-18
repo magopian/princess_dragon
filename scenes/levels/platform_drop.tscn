@@ -280,7 +280,6 @@ position = Vector2(58, 36)
 [node name="PathFollower3" parent="Platforms" index="9" instance=ExtResource("5_trjxy")]
 position = Vector2(188, 2)
 curve = SubResource("Curve2D_i4cxm")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower3" index="1" instance=ExtResource("4_b4rob")]
@@ -289,7 +288,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower4" parent="Platforms" index="10" instance=ExtResource("5_trjxy")]
 position = Vector2(188, -14)
 curve = SubResource("Curve2D_c6uh6")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower4" index="1" instance=ExtResource("4_b4rob")]
@@ -298,7 +296,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower7" parent="Platforms" index="11" instance=ExtResource("5_trjxy")]
 position = Vector2(12, -174)
 curve = SubResource("Curve2D_c6uh6")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower7" index="1" instance=ExtResource("4_b4rob")]
@@ -307,7 +304,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower8" parent="Platforms" index="12" instance=ExtResource("5_trjxy")]
 position = Vector2(116, -230)
 curve = SubResource("Curve2D_rw5tm")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower8" index="1" instance=ExtResource("4_b4rob")]
@@ -316,7 +312,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower10" parent="Platforms" index="13" instance=ExtResource("5_trjxy")]
 position = Vector2(308, -230)
 curve = SubResource("Curve2D_rw5tm")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower10" index="1" instance=ExtResource("4_b4rob")]
@@ -325,7 +320,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower9" parent="Platforms" index="14" instance=ExtResource("5_trjxy")]
 position = Vector2(156, -230)
 curve = SubResource("Curve2D_ge3nk")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower9" index="1" instance=ExtResource("4_b4rob")]
@@ -334,7 +328,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower5" parent="Platforms" index="15" instance=ExtResource("5_trjxy")]
 position = Vector2(188, -141)
 curve = SubResource("Curve2D_i4cxm")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower5" index="1" instance=ExtResource("4_b4rob")]
@@ -343,7 +336,6 @@ position = Vector2(-18, 0)
 [node name="PathFollower6" parent="Platforms" index="16" instance=ExtResource("5_trjxy")]
 position = Vector2(12, -157)
 curve = SubResource("Curve2D_i4cxm")
-speed = 40.0
 metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower6" index="1" instance=ExtResource("4_b4rob")]

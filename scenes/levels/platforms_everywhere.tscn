@@ -8,15 +8,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_x7lu7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 94, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 94, 1)
 }
-point_count = 4
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_jahwr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 113, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 113)
 }
-point_count = 4
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_lhexk"]
 _data = {
@@ -73,6 +73,7 @@ metadata/_edit_group_ = true
 [node name="PathFollower3" parent="Platforms" index="9" instance=ExtResource("3_k0ovh")]
 position = Vector2(658, -59)
 curve = SubResource("Curve2D_lhexk")
+time_to_loop = 10.0
 metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower3" index="1" instance=ExtResource("2_2b123")]
