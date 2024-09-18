@@ -60,6 +60,7 @@ func handle_jump() -> void:
 			Debug.jump_buffered.emit()
 		velocity.y = JUMP_VELOCITY
 		asked_to_jump = true
+		emit_jump_particles()
 		jump_buffer_timer.stop()
 
 
@@ -95,6 +96,8 @@ func apply_movement(direction: float) -> void:
 	move_and_slide()
 	if was_on_floor and not is_on_floor() and not asked_to_jump:
 		coyote_timer.start(COYOTE_TIME)
+	if not was_on_floor and is_on_floor():
+		emit_jump_particles()
 	asked_to_jump = false
 
 
@@ -128,3 +131,8 @@ func _on_player_killed(_body) -> void:
 	modulate.a = 1.0
 	set_physics_process(true)
 	collision_layer = 2
+
+
+func emit_jump_particles():
+	$JumpParticles.restart()
+	$JumpParticles.emitting = true

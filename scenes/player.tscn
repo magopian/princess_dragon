@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dtrhqf8ws4yxy"]
+[gd_scene load_steps=30 format=3 uid="uid://dtrhqf8ws4yxy"]
 
 [ext_resource type="Texture2D" uid="uid://bdheg38c1n4g2" path="res://assets/sprites/knight.png" id="1_ixncy"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xlikq"]
@@ -173,6 +173,25 @@ animations = [{
 radius = 6.0
 height = 14.0
 
+[sub_resource type="Curve" id="Curve_08ssn"]
+_data = [Vector2(0, 0.516), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hjhyf"]
+curve = SubResource("Curve_08ssn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l8g16"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(4, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 1.0
+initial_velocity_max = 10.07
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+alpha_curve = SubResource("CurveTexture_hjhyf")
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -202,3 +221,12 @@ position_smoothing_speed = 7.0
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="JumpParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_l8g16")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
