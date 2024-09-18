@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b43xd355f3bju"]
+[gd_scene load_steps=3 format=3 uid="uid://b43xd355f3bju"]
 
 [ext_resource type="Script" path="res://scripts/savegame_selection.gd" id="1_45x0a"]
+[ext_resource type="Script" path="res://scripts/button_with_sound.gd" id="2_p2gpu"]
 
 [node name="SavegameSelection" type="Control"]
 layout_mode = 3
@@ -57,6 +58,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Add save file"
+script = ExtResource("2_p2gpu")
 
 [node name="ConfirmDeleteSave" type="ConfirmationDialog" parent="ColorRect/MarginContainer"]
 unique_name_in_owner = true

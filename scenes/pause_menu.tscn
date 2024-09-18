@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckmg3uavjya6r"]
+[gd_scene load_steps=3 format=3 uid="uid://ckmg3uavjya6r"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_o1an0"]
+[ext_resource type="Script" path="res://scripts/button_with_sound.gd" id="2_dsv4m"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -44,19 +45,23 @@ size_flags_vertical = 8
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 text = "Resume"
+script = ExtResource("2_dsv4m")
 
 [node name="Restart the level" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Restart level"
+script = ExtResource("2_dsv4m")
 
 [node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back to main menu"
+script = ExtResource("2_dsv4m")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Back to the game")
 text = "Quit"
+script = ExtResource("2_dsv4m")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]

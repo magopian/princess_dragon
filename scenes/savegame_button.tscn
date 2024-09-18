@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyigpq1fm22fa"]
+[gd_scene load_steps=3 format=3 uid="uid://cyigpq1fm22fa"]
 
 [ext_resource type="Script" path="res://scripts/savegame_button.gd" id="1_brg77"]
+[ext_resource type="Script" path="res://scripts/button_with_sound.gd" id="2_dsrfw"]
 
 [node name="SavegameButton" type="HBoxContainer"]
 script = ExtResource("1_brg77")
@@ -12,6 +13,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 8
 text = "Save game 1"
 alignment = 0
+script = ExtResource("2_dsrfw")
 
 [node name="Delete" type="Button" parent="."]
 unique_name_in_owner = true
@@ -19,3 +21,4 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Delete
 "
+script = ExtResource("2_dsrfw")

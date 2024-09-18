@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxcuknasdyddo"]
+[gd_scene load_steps=5 format=3 uid="uid://bxcuknasdyddo"]
 
 [ext_resource type="Texture2D" uid="uid://c1ihics7it8s7" path="res://assets/menu_background.png" id="1_6lkhv"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jb031"]
+[ext_resource type="Script" path="res://scripts/button_with_sound.gd" id="3_2674g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7ooy"]
 texture = ExtResource("1_6lkhv")
@@ -55,6 +56,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
 text = "Start game"
+script = ExtResource("3_2674g")
 
 [node name="Quit" type="Button" parent="MarginContainer/Buttons"]
 layout_mode = 2
@@ -62,6 +64,7 @@ size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../Start")
 text = "Quit
 "
+script = ExtResource("3_2674g")
 
 [node name="VersionLabel" type="Label" parent="."]
 unique_name_in_owner = true
