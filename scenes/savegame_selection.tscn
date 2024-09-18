@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b43xd355f3bju"]
 
 [ext_resource type="Script" path="res://scripts/savegame_selection.gd" id="1_45x0a"]
-[ext_resource type="Script" path="res://scripts/button_with_sound.gd" id="2_p2gpu"]
+[ext_resource type="Script" path="res://scripts/fancy_menu_button.gd" id="2_p2gpu"]
 
 [node name="SavegameSelection" type="Control"]
 layout_mode = 3
