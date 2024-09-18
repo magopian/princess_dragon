@@ -1,7 +1,6 @@
 extends Path2D
 
-@export var speed: float = 60
-@onready var proportional_speed: float
+@export var time_to_loop: float = 4
 @onready var path_2d: PathFollow2D = $Path2D
 @onready var remote_transform_2d: RemoteTransform2D = $Path2D/RemoteTransform2D
 @onready var is_closed_path: bool
@@ -19,16 +18,11 @@ func _ready() -> void:
 	var point_count: int = curve.point_count
 	is_closed_path = curve.get_point_position(0) == curve.get_point_position(curve.point_count - 1)
 
-	# If not, "complete" the path by miroring it.
+	var tween: Tween = get_tree().create_tween().set_loops()
 	if not is_closed_path:
-		for i in range(point_count - 1, -1, -1):
-			# We "mirror" the curve, so each point needs to be added with the "out" as
-			# its "in".
-			curve.add_point(
-				curve.get_point_position(i), curve.get_point_out(i), curve.get_point_in(i)
-			)
-	proportional_speed = speed / curve.get_baked_length()
-
-
-func _process(delta: float) -> void:
-	path_2d.progress_ratio += proportional_speed * delta
+		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+		tween.tween_property(path_2d, "progress_ratio", 1, time_to_loop / 2)
+		tween.tween_property(path_2d, "progress_ratio", 0, time_to_loop / 2)
+	else:
+		tween.set_trans(Tween.TRANS_LINEAR)
+		tween.tween_property(path_2d, "progress_ratio", 1, time_to_loop).as_relative()
