@@ -30,41 +30,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Pause Menu"
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+text = "Level title"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="Back to the game" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back to the game" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../Quit")
 text = "Resume"
 script = ExtResource("2_dsv4m")
 
-[node name="Restart the level" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Restart the level" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Restart level"
 script = ExtResource("2_dsv4m")
 
-[node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back to main menu" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Back to main menu"
 script = ExtResource("2_dsv4m")
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Back to the game")
 text = "Quit"
 script = ExtResource("2_dsv4m")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart the level" to="." method="_on_restart_the_level_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Back to the game" to="." method="_on_back_to_the_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Restart the level" to="." method="_on_restart_the_level_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

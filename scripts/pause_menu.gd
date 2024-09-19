@@ -1,8 +1,5 @@
 extends Control
 
-@onready var back_to_the_game: Button = $"MarginContainer/VBoxContainer/Back to the game"
-
-
 func _ready() -> void:
 	display(false)
 
@@ -31,11 +28,13 @@ func _on_quit_pressed() -> void:
 func display(is_displayed: bool) -> void:
 	visible = is_displayed
 	get_tree().paused = is_displayed
+	if visible:
+		%LevelTitle.text = GameManager.current_level.name
 
 
 func _on_visibility_changed() -> void:
 	if visible:
-		back_to_the_game.grab_focus()
+		%"Back to the game".grab_focus()
 
 
 func _on_restart_the_level_pressed() -> void:
