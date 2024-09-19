@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=4 uid="uid://dhuic3x4hmook"]
+
+[ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_2yvn6"]
+[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_m5swj"]
+[ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_6qeub"]
+
+[node name="Vertigo" instance=ExtResource("1_2yvn6")]
+
+[node name="Score" parent="CanvasLayer" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="TileMapLayer" parent="TileMap" index="4"]
+tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAADAAIAAAAAAAAAAAAHAAAAAAAAAAAAAAD//wQAAAAAAAAAAAADAAMAAAAAAAAAAAAHAAEAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAAQAP7/AAAAAAAAAAANAP7/AAAAAAAAAAARAPz/AAAAAAAAAAASAPz/AAAAAAAAAAATAPz/AAAAAAAAAAAUAPz/AAAAAAAAAAAaAPz/AAAAAAAAAAAbAPz/AAAAAAAAAAAVAPz/AAAAAAAAAAAWAPz/AAAAAAAAAAAcAPz/AAAAAAAAAAAdAPz/AAAAAAAAAAAeAPz/AAAAAAAAAAAfAPz/AAAAAAAAAAAgAPn/AAAAAAAAAAAhAPn/AAAAAAAAAAAiAPn/AAAAAAAAAAAjAPn/AAAAAAAAAAAlAPb/AAAAAAAAAAAmAPb/AAAAAAAAAAAnAPb/AAAAAAAAAAAoAPb/AAAAAAAAAAD9/wIAAAAAAAAAAAD7/wAAAAAAAAAAAAArAPP/AAAAAAAAAAAsAPP/AAAAAAAAAAAtAPP/AAAAAAAAAAAuAPP/AAAAAAAAAAAyAPH/AAAAAAAAAAAzAPH/AAAAAAAAAAA0APH/AAAAAAAAAAA1APH/AAAAAAAAAAA=")
+tile_set = ExtResource("2_m5swj")
+
+[node name="Finish" parent="." index="5"]
+position = Vector2(834, -272)
+
+[node name="Coins" type="Node2D" parent="." index="6"]
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource("3_6qeub")]
+position = Vector2(-62, -7)
+
+[node name="Coin2" parent="Coins" index="1" instance=ExtResource("3_6qeub")]
+position = Vector2(-30, 25)
+
+[node name="Coin3" parent="Coins" index="2" instance=ExtResource("3_6qeub")]
+position = Vector2(66, 25)
+
+[node name="Coin4" parent="Coins" index="3" instance=ExtResource("3_6qeub")]
+position = Vector2(306, -71)
+
+[node name="Coin5" parent="Coins" index="4" instance=ExtResource("3_6qeub")]
+position = Vector2(322, -71)
+
+[node name="Coin6" parent="Coins" index="5" instance=ExtResource("3_6qeub")]
+position = Vector2(338, -71)
+
+[node name="Coin7" parent="Coins" index="6" instance=ExtResource("3_6qeub")]
+position = Vector2(402, -103)
+
+[node name="Coin8" parent="Coins" index="7" instance=ExtResource("3_6qeub")]
+position = Vector2(530, -119)
+
+[node name="Coin9" parent="Coins" index="8" instance=ExtResource("3_6qeub")]
+position = Vector2(610, -167)
+
+[node name="Coin10" parent="Coins" index="9" instance=ExtResource("3_6qeub")]
+position = Vector2(706, -215)

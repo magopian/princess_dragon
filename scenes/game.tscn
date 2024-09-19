@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=20 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://scenes/levels/moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dwdloki5wj446" path="res://scenes/levels/intermediate.tscn" id="5_xs3xh"]
 [ext_resource type="PackedScene" uid="uid://cwtpo10nf6awj" path="res://scenes/levels/platforms.tscn" id="6_jx57u"]
 [ext_resource type="PackedScene" uid="uid://d3n0uk41hgn61" path="res://scenes/levels/platform_drop.tscn" id="7_5cy4t"]
+[ext_resource type="PackedScene" uid="uid://sjqiotmtbj5x" path="res://scenes/levels/falling.tscn" id="9_gyrt6"]
 [ext_resource type="PackedScene" uid="uid://doiby2e2ghhjd" path="res://scenes/touch_controls.tscn" id="10_3t3ic"]
+[ext_resource type="PackedScene" uid="uid://dowornorqbjdw" path="res://scenes/levels/up_and_down.tscn" id="10_mkh4s"]
+[ext_resource type="PackedScene" uid="uid://dhuic3x4hmook" path="res://scenes/levels/vertigo.tscn" id="11_3522c"]
 [ext_resource type="PackedScene" uid="uid://d0o87dk8k3fgm" path="res://scenes/level_selection.tscn" id="11_d4od2"]
 [ext_resource type="Script" path="res://scripts/level_selection.gd" id="12_c3qws"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
@@ -42,6 +45,15 @@ visible = false
 visible = false
 
 [node name="Platforms everywhere" parent="Levels" instance=ExtResource("3_d8kc8")]
+visible = false
+
+[node name="Falling" parent="Levels" instance=ExtResource("9_gyrt6")]
+visible = false
+
+[node name="Up and down" parent="Levels" instance=ExtResource("10_mkh4s")]
+visible = false
+
+[node name="Vertigo" parent="Levels" instance=ExtResource("11_3522c")]
 visible = false
 
 [node name="I know kung fu" parent="Levels" instance=ExtResource("5_wptdp")]
