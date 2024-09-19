@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdihnupqoskx7"]
+[gd_scene load_steps=3 format=3 uid="uid://cdihnupqoskx7"]
 
 [ext_resource type="PackedScene" uid="uid://dgwmkldoluvqb" path="res://scenes/volume_selector.tscn" id="1_g0kme"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_ld4ov"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ld4ov")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -59,15 +61,19 @@ theme_override_font_sizes/font_size = 8
 text = "Muted"
 
 [node name="Muted" type="CheckBox" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="VolumeSelector" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+[node name="MasterVolume" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="VolumeSelector2" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+[node name="MusicVolume" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+unique_name_in_owner = true
 layout_mode = 2
 audio_bus = 1
 
-[node name="VolumeSelector3" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+[node name="SoundsVolume" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
+unique_name_in_owner = true
 layout_mode = 2
 audio_bus = 2

@@ -10,6 +10,9 @@ signal start_level(level: Node2D)
 signal next_level(level: Node2D)
 signal savegame_selected(savegame_name: String)
 signal savegame_deleted(savegame_name: String)
+# Preferences
+signal muted_preference_changed(muted: bool)
+signal volume_preference_changed(audio_bus: int, volume: float)
 
 @onready var score: int:
 	get = get_level_coins,
@@ -18,6 +21,7 @@ signal savegame_deleted(savegame_name: String)
 @onready var score_per_level: Dictionary = {}
 @onready var time_started: float
 @onready var savegame_name: String
+@onready var user_prefs: UserPreferences
 
 const empty_score: Dictionary = {
 	"coins": 0, "best_coins": 0, "time_elapsed": 0, "best_time_elapsed": 0
@@ -27,12 +31,21 @@ const SAVEGAME_FILENAME = "user://savegames/%s.save"
 
 
 func _ready() -> void:
+	manage_user_prefs()
 	add_point.connect(_on_add_point)
 	restart_level.connect(reset_level_score)
 	start_level.connect(_on_start_level)
 	level_finished.connect(save_level_score)
 	savegame_selected.connect(_on_save_game_selected)
 	savegame_deleted.connect(_on_save_game_deleted)
+
+
+func manage_user_prefs() -> void:
+	# User preferences
+	user_prefs = UserPreferences.load_or_create()
+	user_prefs.apply_preferences()
+	muted_preference_changed.connect(user_prefs.set_muted)
+	volume_preference_changed.connect(user_prefs.set_volume_level)
 
 
 func get_level_name() -> String:
