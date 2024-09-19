@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdihnupqoskx7"]
+[gd_scene load_steps=4 format=3 uid="uid://cdihnupqoskx7"]
 
 [ext_resource type="PackedScene" uid="uid://dgwmkldoluvqb" path="res://scenes/volume_selector.tscn" id="1_g0kme"]
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_ld4ov"]
+[ext_resource type="Script" path="res://scripts/fancy_menu_button.gd" id="3_i17q8"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -63,6 +64,7 @@ text = "Muted"
 [node name="Muted" type="CheckBox" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../MainMenu")
 
 [node name="MasterVolume" parent="ColorRect/MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("1_g0kme")]
 unique_name_in_owner = true
@@ -77,3 +79,12 @@ audio_bus = 1
 unique_name_in_owner = true
 layout_mode = 2
 audio_bus = 2
+
+[node name="MainMenu" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../VBoxContainer/HBoxContainer4/Muted")
+text = "Back to main menu"
+script = ExtResource("3_i17q8")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
