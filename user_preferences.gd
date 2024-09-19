@@ -7,6 +7,7 @@ enum AUDIO_BUS { MASTER, MUSIC, SOUNDS }
 	AUDIO_BUS.MUSIC: 0.7,
 	AUDIO_BUS.SOUNDS: 0.7,
 }
+@export_file("*.save") var savegame_file: String
 
 
 func save() -> void:
@@ -28,12 +29,18 @@ func set_volume_level(audio_bus: AUDIO_BUS, volume_level: float):
 	save()
 
 
+func set_savegame_file(new_savegame_file: String):
+	savegame_file = new_savegame_file
+	save()
+
+
 func apply_preferences() -> void:
 	print("applying preferences")
 	AudioServer.set_bus_mute(AUDIO_BUS.MASTER, muted)
 	for audio_bus in range(AUDIO_BUS.size()):
 		var volume_level: float = get_volume_level(audio_bus)
 		AudioServer.set_bus_volume_db(audio_bus, linear_to_db(volume_level))
+	GameManager.load_game_save(savegame_file)
 
 
 static func load_or_create() -> UserPreferences:

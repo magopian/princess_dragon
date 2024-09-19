@@ -13,5 +13,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_on_main_menu_pressed()
 
 
+func _on_savegame_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/savegame_selection.tscn")
+
+
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

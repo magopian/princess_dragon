@@ -20,7 +20,6 @@ signal volume_preference_changed(audio_bus: int, volume: float)
 @onready var current_level: Node2D
 @onready var score_per_level: Dictionary = {}
 @onready var time_started: float
-@onready var savegame_name: String
 @onready var user_prefs: UserPreferences
 
 const empty_score: Dictionary = {
@@ -98,7 +97,7 @@ func save_level_score() -> void:
 		score_per_level[current_level.name]["best_time_elapsed"] = time_elapsed
 	if get_level_coins() > score_per_level[current_level.name]["best_coins"]:
 		score_per_level[current_level.name]["best_coins"] = get_level_coins()
-	save_score_to_file(savegame_name)
+	save_score_to_file(user_prefs.savegame_file)
 
 
 func _on_add_point(coin: Area2D) -> void:
@@ -123,12 +122,11 @@ func save_score_to_file(save_name: String) -> void:
 
 
 func _on_save_game_selected(save_name: String) -> void:
-	savegame_name = save_name
+	user_prefs.set_savegame_file(save_name)
 	load_game_save(save_name)
 
 
 func _on_save_game_deleted(save_name: String) -> void:
-	savegame_name = ""
 	DirAccess.remove_absolute(SAVEGAME_FILENAME % save_name)
 
 

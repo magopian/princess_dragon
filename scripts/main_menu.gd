@@ -15,7 +15,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/savegame_selection.tscn")
+	if GameManager.user_prefs.savegame_file:
+		# We already have an existing savegame file, go straight to the level selection.
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/savegame_selection.tscn")
 
 
 func _on_options_pressed() -> void:

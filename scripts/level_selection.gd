@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu") and visible:
-		get_tree().change_scene_to_file("res://scenes/savegame_selection.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
 func create_button(level: Node2D) -> void:

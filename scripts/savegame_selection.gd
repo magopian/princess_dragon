@@ -3,6 +3,7 @@ extends Control
 @onready var savegame_button: PackedScene = preload("res://scenes/savegame_button.tscn")
 
 var deleting_savegame_button: SavegameButton
+var first_time: bool = true
 
 
 func _ready() -> void:
@@ -14,6 +15,7 @@ func _ready() -> void:
 		add_new_save()
 		return
 	%Savegames.get_child(0).get_node("%Name").grab_focus()
+	first_time = not GameManager.user_prefs.savegame_file
 
 
 func add_new_save() -> void:
@@ -26,7 +28,7 @@ func add_new_save() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu") and visible:
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 
 func _on_new_save(save_name: String) -> void:
@@ -50,7 +52,11 @@ func create_savegame_button(file: String) -> void:
 
 func savegame_selected(savegame_name: String) -> void:
 	GameManager.savegame_selected.emit(savegame_name)
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if first_time:
+		# Go straight to the game
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 
 func savegame_deleted(button: SavegameButton) -> void:
