@@ -79,12 +79,20 @@ func handle_animations(direction: float) -> void:
 
 	# Play animation
 	if is_on_floor():
+		if animated_sprite.animation == "land" and animated_sprite.is_playing():
+			return  # Finish playing the "land" animation
+		if animated_sprite.animation == "fall":
+			animated_sprite.play("land")
+			return
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
 	else:
-		animated_sprite.play("jump")
+		if velocity.y < 0:  # Going up
+			animated_sprite.play("jump")
+		else:  # Falling
+			animated_sprite.play("fall")
 
 
 func apply_movement(direction: float) -> void:
