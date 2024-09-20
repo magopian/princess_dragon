@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://btgmwcwmygfia"]
+
+[ext_resource type="Script" path="res://scripts/green_slime.gd" id="1_pe7ie"]
+[ext_resource type="Texture2D" uid="uid://dv6us00v6ltcp" path="res://assets/sprites/slime_green.png" id="2_qjgbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8lqi"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17eib"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7b4u"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t3ww"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xxmp"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa0ot"]
+atlas = ExtResource("2_qjgbr")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wr2k4"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_f8lqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17eib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7b4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t3ww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xxmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa0ot")
+}],
+"loop": true,
+"name": &"stunned",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj74y"]
+size = Vector2(10, 12)
+
+[node name="GreenSlime" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_pe7ie")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_wr2k4")
+animation = &"stunned"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_bj74y")
+debug_color = Color(0.969835, 0.0963039, 0.370126, 0.42)

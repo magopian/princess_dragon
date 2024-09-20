@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_7boeu"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_pv4lo"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="4_gbqxk"]
-[ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/slime.tscn" id="5_wskrr"]
+[ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="5_wskrr"]
 
 [sub_resource type="Animation" id="Animation_p8wxl"]
 length = 0.001
@@ -99,7 +99,7 @@ libraries = {
 }
 autoplay = "move"
 
-[node name="Slime" parent="." index="7" instance=ExtResource("5_wskrr")]
+[node name="PurpleSlime" parent="." index="7" instance=ExtResource("5_wskrr")]
 position = Vector2(602, 128)
 
 [node name="Finish" parent="." index="8"]

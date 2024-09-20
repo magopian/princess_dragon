@@ -35,6 +35,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
 
+[global_group]
+
+Enemy=""
+
 [gui]
 
 theme/custom="res://theme.tres"

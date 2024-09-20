@@ -15,6 +15,7 @@ class_name Player extends CharacterBody2D
 @export var COYOTE_TIME: float = 0.1
 @export var JUMP_BUFFER: float = 0.1
 @export var TELEPORT_SPEED: float = 0.2
+@export var BOUNCE_VELOCITY: float = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -33,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	var direction: float = get_direction()
 	handle_animations(direction)
 	apply_movement(direction)
+	handle_bounce()
 
 
 func handle_gravity(delta: float) -> void:
@@ -109,6 +111,27 @@ func apply_movement(direction: float) -> void:
 		emit_jump_particles()
 		$FallSound.play()
 	asked_to_jump = false
+
+
+func handle_bounce() -> void:
+	for i in get_slide_collision_count():
+		var collision: KinematicCollision2D = get_slide_collision(i)
+		var collider: Object = collision.get_collider()
+		# If the collision is with ground
+		if collider == null:
+			continue
+
+		# If the collider is with an enemy
+		if collision.get_collider().is_in_group("Enemy"):
+			var enemy = collision.get_collider()
+			# we check that we are hitting it from above.
+			if Vector2.UP.dot(collision.get_normal()) > 0.1:
+				if enemy.has_method("stun"):
+					enemy.stun()
+				velocity.y = BOUNCE_VELOCITY
+				break  # Prevent further duplicate calls.
+			else:
+				_on_player_killed(collider)
 
 
 func is_jumping() -> bool:
