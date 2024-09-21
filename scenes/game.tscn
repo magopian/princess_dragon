@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=22 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://scenes/levels/moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://scripts/level_selection.gd" id="12_c3qws"]
 [ext_resource type="PackedScene" uid="uid://dhkmt6mvhv1d2" path="res://scenes/levels/green_slimes.tscn" id="13_3jmtw"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
+[ext_resource type="PackedScene" uid="uid://coub8mfq2yxsd" path="res://scenes/levels/slime_jump.tscn" id="14_5sfjp"]
 
 [node name="Game" type="Node2D"]
 
@@ -61,6 +62,9 @@ visible = false
 visible = false
 
 [node name="Green Slimes" parent="Levels" instance=ExtResource("13_3jmtw")]
+visible = false
+
+[node name="Slime Jump" parent="Levels" instance=ExtResource("14_5sfjp")]
 visible = false
 
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
