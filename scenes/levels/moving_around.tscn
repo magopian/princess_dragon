@@ -156,15 +156,15 @@ scale = Vector2(0.949999, 2.05)
 [node name="Labels" type="Node2D" parent="." index="6"]
 
 [node name="Label" type="Label" parent="Labels" index="0"]
-offset_left = 22.0
-offset_top = -138.0
-offset_right = 133.0
-offset_bottom = -115.0
+offset_left = -21.0
+offset_top = -140.0
+offset_right = 178.0
+offset_bottom = -117.0
 theme_override_colors/font_color = Color(0, 0, 0.172549, 1)
 theme_override_fonts/font = ExtResource("4_16v5f")
 theme_override_font_sizes/font_size = 8
-text = "<- or q to go left
--> or d to go right"
+text = "Left arrow or 'q' to move left
+Right arrow or 'd' to move right"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label8" type="Label" parent="Labels" index="1"]
