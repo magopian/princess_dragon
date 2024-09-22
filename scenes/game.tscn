@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=26 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://scenes/levels/moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://beg5q1y6lmny6" path="res://scenes/levels/slime_danger.tscn" id="15_qoigw"]
 [ext_resource type="PackedScene" uid="uid://vfuwk8sevgvg" path="res://scenes/levels/labyrinth.tscn" id="16_22o2j"]
 [ext_resource type="PackedScene" uid="uid://blbprsc68huk6" path="res://scenes/levels/bridges.tscn" id="17_gpoy7"]
+[ext_resource type="PackedScene" uid="uid://dr4kgsiillugv" path="res://scenes/levels/leap_of_faith.tscn" id="18_5nung"]
 
 [node name="Game" type="Node2D"]
 
@@ -77,6 +78,9 @@ visible = false
 visible = false
 
 [node name="Elora\'s Bridges" parent="Levels" instance=ExtResource("17_gpoy7")]
+visible = false
+
+[node name="Elora\'s Leap of faith" parent="Levels" instance=ExtResource("18_5nung")]
 visible = false
 
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
