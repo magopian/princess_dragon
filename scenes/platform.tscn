@@ -11,13 +11,14 @@ size = Vector2(32, 11.5)
 
 [node name="Platform" type="AnimatableBody2D"]
 script = ExtResource("1_r0grt")
+platform_type = 1
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 0.5)
 texture = ExtResource("1_bjwh0")
 region_enabled = true
-region_rect = Rect2(16, 0, 32, 9)
+region_rect = Rect2(16, 16, 32, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
