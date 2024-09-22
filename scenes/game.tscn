@@ -72,7 +72,7 @@ visible = false
 [node name="Slime danger" parent="Levels" instance=ExtResource("15_qoigw")]
 visible = false
 
-[node name="Labyrinth" parent="Levels" instance=ExtResource("16_22o2j")]
+[node name="Elora\'s Labyrinth" parent="Levels" instance=ExtResource("16_22o2j")]
 visible = false
 
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
