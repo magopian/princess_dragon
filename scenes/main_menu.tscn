@@ -1,24 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxcuknasdyddo"]
 
-[ext_resource type="Texture2D" uid="uid://c1ihics7it8s7" path="res://assets/menu_background.png" id="1_6lkhv"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jb031"]
+[ext_resource type="Texture2D" uid="uid://dceui7oeqd8mv" path="res://assets/PrincessDragon.png" id="2_mfu82"]
 [ext_resource type="Script" path="res://scripts/fancy_menu_button.gd" id="3_2674g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7ooy"]
-texture = ExtResource("1_6lkhv")
-modulate_color = Color(0.316167, 0.316167, 0.316167, 1)
+texture = ExtResource("2_mfu82")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -81.0
-offset_right = 144.0
-offset_bottom = 81.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jb031")
@@ -43,12 +36,14 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/outline_size = 4
 text = "Princess Dragon"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="Start" type="Button" parent="MarginContainer/Buttons"]

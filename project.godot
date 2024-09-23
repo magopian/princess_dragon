@@ -14,6 +14,7 @@ config/name="Princess Dragon"
 config/version="2024-09-23 08:51"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://assets/PrincessDragon.png"
 config/icon="res://icon.svg"
 
 [autoload]
