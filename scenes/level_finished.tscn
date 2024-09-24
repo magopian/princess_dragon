@@ -2,6 +2,33 @@
 
 [ext_resource type="Script" path="res://scripts/level_finished.gd" id="1_q27x0"]
 
+[sub_resource type="Animation" id="Animation_6kc5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_in7ra"]
 resource_name = "display"
 length = 0.5
@@ -44,37 +71,37 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_6kc5u"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_amso4"]
+_data = {
+"RESET": SubResource("Animation_6kc5u"),
+"display": SubResource("Animation_in7ra")
+}
+
+[sub_resource type="Animation" id="Animation_0kwu4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NewBestTime:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(1, 0.94902, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/NewBestCoins:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_amso4"]
-_data = {
-"RESET": SubResource("Animation_6kc5u"),
-"display": SubResource("Animation_in7ra")
+"update": 0,
+"values": [Color(1, 0.94902, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_2t0qi"]
@@ -103,33 +130,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 0.94902, 0, 0.239216), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 1), Color(1, 0.94902, 0, 0.239216)]
-}
-
-[sub_resource type="Animation" id="Animation_0kwu4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/NewBestTime:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.94902, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/NewBestCoins:theme_override_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.94902, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lx5le"]
