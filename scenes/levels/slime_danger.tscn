@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://beg5q1y6lmny6"]
+[gd_scene load_steps=6 format=4 uid="uid://ch4etd2pgpfin"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_vh6rj"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_v56tf"]
@@ -239,6 +239,8 @@ position = Vector2(402, 16)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("4_krnyc")]
 position = Vector2(666, 56)
+platform_type = 0
 
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("4_krnyc")]
 position = Vector2(634, 56)
+platform_type = 0

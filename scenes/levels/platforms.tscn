@@ -129,21 +129,27 @@ position = Vector2(74, 56)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("4_e1rga")]
 position = Vector2(74, 20)
+platform_type = 0
 
 [node name="Platform3" parent="Platforms" index="1" instance=ExtResource("4_e1rga")]
 position = Vector2(394, 28)
+platform_type = 0
 
 [node name="Platform4" parent="Platforms" index="2" instance=ExtResource("4_e1rga")]
 position = Vector2(426, 28)
+platform_type = 0
 
 [node name="Platform5" parent="Platforms" index="3" instance=ExtResource("4_e1rga")]
 position = Vector2(458, 28)
+platform_type = 0
 
 [node name="Platform6" parent="Platforms" index="4" instance=ExtResource("4_e1rga")]
 position = Vector2(362, 28)
+platform_type = 0
 
 [node name="Platform2" parent="Platforms" index="5" instance=ExtResource("4_e1rga")]
 position = Vector2(-6, -28)
+platform_type = 0
 
 [node name="PathFollower" parent="Platforms" index="6" instance=ExtResource("5_wf73r")]
 position = Vector2(140, -28)
@@ -152,6 +158,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower" index="1" instance=ExtResource("4_e1rga")]
 position = Vector2(-18, 0)
+platform_type = 0
 
 [node name="PathFollower2" parent="Platforms" index="7" instance=ExtResource("5_wf73r")]
 position = Vector2(268, -28)
@@ -160,6 +167,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower2" index="1" instance=ExtResource("4_e1rga")]
 position = Vector2(-18, 0)
+platform_type = 0
 
 [node name="PathFollower3" parent="Platforms" index="8" instance=ExtResource("5_wf73r")]
 position = Vector2(634, -26)
@@ -168,6 +176,8 @@ metadata/_edit_group_ = true
 
 [node name="Platform3" parent="Platforms/PathFollower3" index="1" instance=ExtResource("4_e1rga")]
 position = Vector2(-18, 0)
+platform_type = 0
 
 [node name="Platform7" parent="Platforms" index="9" instance=ExtResource("4_e1rga")]
 position = Vector2(682, -72)
+platform_type = 0

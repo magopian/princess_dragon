@@ -89,9 +89,11 @@ position = Vector2(885, 9)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("4_gbqxk")]
 position = Vector2(74, 56)
+platform_type = 0
 
 [node name="Platform2" parent="Platforms" index="1" instance=ExtResource("4_gbqxk")]
 position = Vector2(410, 100)
+platform_type = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2" index="2"]
 libraries = {

@@ -21,10 +21,10 @@
 [ext_resource type="PackedScene" path="res://scenes/levels/green_slimes.tscn" id="13_3jmtw"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
 [ext_resource type="PackedScene" path="res://scenes/levels/slime_jump.tscn" id="14_5sfjp"]
-[ext_resource type="PackedScene" path="res://scenes/levels/slime_danger.tscn" id="15_qoigw"]
-[ext_resource type="PackedScene" path="res://scenes/levels/labyrinth.tscn" id="16_22o2j"]
+[ext_resource type="PackedScene" uid="uid://ch4etd2pgpfin" path="res://scenes/levels/slime_danger.tscn" id="15_qoigw"]
+[ext_resource type="PackedScene" uid="uid://b0gvwrmiw5van" path="res://scenes/levels/labyrinth.tscn" id="16_22o2j"]
 [ext_resource type="PackedScene" path="res://scenes/levels/bridges.tscn" id="17_gpoy7"]
-[ext_resource type="PackedScene" path="res://scenes/levels/leap_of_faith.tscn" id="18_5nung"]
+[ext_resource type="PackedScene" uid="uid://d3fscnbqpomng" path="res://scenes/levels/leap_of_faith.tscn" id="18_5nung"]
 [ext_resource type="PackedScene" uid="uid://cjoeo3ug1js4w" path="res://scenes/levels/deception.tscn" id="19_4ux7q"]
 
 [node name="Game" type="Node2D"]

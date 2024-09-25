@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://dr4kgsiillugv"]
+[gd_scene load_steps=6 format=4 uid="uid://d3fscnbqpomng"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_tbykd"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_i0juy"]
@@ -242,16 +242,15 @@ position = Vector2(514, 240)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("4_dcygb")]
 position = Vector2(571, 101)
-platform_type = 2
 
 [node name="Platform3" parent="Platforms" index="1" instance=ExtResource("4_dcygb")]
 position = Vector2(1179, 277)
-platform_type = 2
 
-[node name="Platform4" parent="Platforms" index="2" instance=ExtResource("4_dcygb")]
+[node name="Platform5" parent="Platforms" index="2" instance=ExtResource("4_dcygb")]
+position = Vector2(1234, 429)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("4_dcygb")]
 position = Vector2(713, 212)
-platform_type = 2
 
-[node name="Platform2" parent="Platforms" index="3" instance=ExtResource("4_dcygb")]
+[node name="Platform2" parent="Platforms" index="4" instance=ExtResource("4_dcygb")]
 position = Vector2(571, 53)
-platform_type = 2

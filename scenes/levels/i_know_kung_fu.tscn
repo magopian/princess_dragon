@@ -300,6 +300,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower2" parent="Platforms" index="1" instance=ExtResource("4_av0gb")]
 position = Vector2(96, -64)
@@ -308,6 +309,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower2" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower9" parent="Platforms" index="2" instance=ExtResource("4_av0gb")]
 position = Vector2(528, -176)
@@ -316,6 +318,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower9" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower10" parent="Platforms" index="3" instance=ExtResource("4_av0gb")]
 position = Vector2(970, -184)
@@ -324,6 +327,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower10" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower3" parent="Platforms" index="4" instance=ExtResource("4_av0gb")]
 position = Vector2(310, -140)
@@ -332,6 +336,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower3" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower4" parent="Platforms" index="5" instance=ExtResource("4_av0gb")]
 position = Vector2(361, 0)
@@ -340,6 +345,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower4" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower5" parent="Platforms" index="6" instance=ExtResource("4_av0gb")]
 position = Vector2(361, -160)
@@ -348,6 +354,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower5" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower7" parent="Platforms" index="7" instance=ExtResource("4_av0gb")]
 position = Vector2(473, 0)
@@ -356,6 +363,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower7" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower8" parent="Platforms" index="8" instance=ExtResource("4_av0gb")]
 position = Vector2(473, -160)
@@ -364,6 +372,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower8" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower11" parent="Platforms" index="9" instance=ExtResource("4_av0gb")]
 position = Vector2(1001, 0)
@@ -372,6 +381,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower11" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower12" parent="Platforms" index="10" instance=ExtResource("4_av0gb")]
 position = Vector2(1001, -160)
@@ -380,6 +390,7 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower12" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="PathFollower6" parent="Platforms" index="11" instance=ExtResource("4_av0gb")]
 position = Vector2(724, -207)
@@ -389,21 +400,27 @@ metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platforms/PathFollower6" index="1" instance=ExtResource("5_xubf0")]
 position = Vector2(-167, 229)
+platform_type = 0
 
 [node name="Platform" parent="Platforms" index="12" instance=ExtResource("5_xubf0")]
 position = Vector2(522, -24)
+platform_type = 0
 
 [node name="Platform2" parent="Platforms" index="13" instance=ExtResource("5_xubf0")]
 position = Vector2(554, -24)
+platform_type = 0
 
 [node name="Platform3" parent="Platforms" index="14" instance=ExtResource("5_xubf0")]
 position = Vector2(586, -24)
+platform_type = 0
 
 [node name="Platform4" parent="Platforms" index="15" instance=ExtResource("5_xubf0")]
 position = Vector2(618, 219)
+platform_type = 0
 
 [node name="Platform5" parent="Platforms" index="16" instance=ExtResource("5_xubf0")]
 position = Vector2(490, 219)
+platform_type = 0
 
 [node name="Finish" parent="." index="7"]
 position = Vector2(1770, 33)
