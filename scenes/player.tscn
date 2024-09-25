@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dtrhqf8ws4yxy"]
+[gd_scene load_steps=48 format=3 uid="uid://dtrhqf8ws4yxy"]
 
 [ext_resource type="Texture2D" uid="uid://bdheg38c1n4g2" path="res://assets/sprites/knight.png" id="1_ixncy"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xlikq"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dys0e2o5nc2ln" path="res://assets/sounds/jump.wav" id="4_wvmh3"]
 [ext_resource type="Texture2D" uid="uid://c057qtajqik65" path="res://assets/sprites/princess_dragon_land.png" id="5_2p2vy"]
 [ext_resource type="AudioStream" uid="uid://bf7x0a03gaq6r" path="res://assets/sounds/temp/click_005.ogg" id="5_onlfy"]
+[ext_resource type="PackedScene" uid="uid://5bvgxd6v1kol" path="res://scenes/shaker.tscn" id="6_4v3dh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0l82k"]
 atlas = ExtResource("2_sbcls")
@@ -315,6 +316,8 @@ zoom = Vector2(0.7, 0.7)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[node name="Shaker" parent="Camera2D" instance=ExtResource("6_4v3dh")]
 
 [node name="Trail" parent="." instance=ExtResource("3_0x5rx")]
 

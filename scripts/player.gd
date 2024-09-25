@@ -147,6 +147,7 @@ func _on_player_killed(_body) -> void:
 		# Are we the player that's currently in the Scene tree?
 		return
 
+	$Camera2D/Shaker.apply_shake()
 	modulate.a = 0.4
 	velocity = Vector2.ZERO
 	set_physics_process(false)

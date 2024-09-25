@@ -1,0 +1,41 @@
+extends Node2D
+
+@export var randomStrength: float = 100.0
+@export var shakeFade: float = 10.0
+
+var parent: Node
+var is_shaking: bool = false
+var initial_position: Vector2
+var rng = RandomNumberGenerator.new()
+var shake_strength: float = 0.0
+var shake_fade: float = 0.0
+
+
+func _ready() -> void:
+	parent = get_parent()
+
+
+func apply_shake(strength = randomStrength, fade = shakeFade):
+	initial_position = parent.position
+	is_shaking = true
+	shake_strength = strength
+	shake_fade = fade
+
+
+func _process(delta: float) -> void:
+	if not is_shaking:
+		return
+
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+		parent.position = initial_position + randomOffset()
+	else:
+		parent.position = initial_position
+		is_shaking = false
+
+
+func randomOffset() -> Vector2:
+	return Vector2(
+		rng.randf_range(-shake_strength, shake_strength),
+		rng.randf_range(-shake_strength, shake_strength)
+	)
