@@ -7,6 +7,7 @@ signal player_killed(body: Node2D)
 signal restart_level
 signal level_finished
 signal start_level(level: Node2D)
+signal level_started  # Countdown is done
 signal next_level(level: Node2D)
 signal savegame_selected(savegame_name: String)
 signal savegame_deleted(savegame_name: String)
@@ -34,6 +35,7 @@ func _ready() -> void:
 	add_point.connect(_on_add_point)
 	restart_level.connect(reset_level_score)
 	start_level.connect(_on_start_level)
+	level_started.connect(_on_level_started)
 	level_finished.connect(save_level_score)
 	savegame_selected.connect(_on_save_game_selected)
 	savegame_deleted.connect(_on_save_game_deleted)
@@ -108,6 +110,9 @@ func _on_add_point(coin: Area2D) -> void:
 func _on_start_level(level: Node2D) -> void:
 	current_level = level
 	reset_level_score()
+
+
+func _on_level_started() -> void:
 	time_started = Time.get_ticks_msec()
 
 

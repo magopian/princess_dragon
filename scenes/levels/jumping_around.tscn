@@ -15,7 +15,7 @@ tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAD3/wQAAAABAAAAAAD4/wQAAAABAAE
 tile_set = ExtResource("2_8tn32")
 
 [node name="KillZone" parent="." index="3"]
-position = Vector2(0, 605)
+position = Vector2(-4, 703)
 
 [node name="Finish" parent="." index="5"]
 position = Vector2(1528, 48)

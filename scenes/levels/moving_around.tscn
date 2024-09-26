@@ -149,6 +149,9 @@ position = Vector2(349, 205)
 [node name="Coin20" parent="Coins" index="43" instance=ExtResource("3_c64af")]
 position = Vector2(349, 229)
 
+[node name="KillZone" parent="." index="4"]
+position = Vector2(-13, 441)
+
 [node name="ShowScoreUINotifier" parent="." index="5"]
 position = Vector2(370, -53)
 scale = Vector2(0.949999, 2.05)

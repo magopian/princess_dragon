@@ -14,7 +14,7 @@ tile_map_data = PackedByteArray("AAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAA
 tile_set = ExtResource("2_pv4lo")
 
 [node name="KillZone" parent="." index="3"]
-position = Vector2(-7, 194)
+position = Vector2(-10, 246)
 
 [node name="Coins" type="Node2D" parent="." index="4"]
 position = Vector2(16, 80)

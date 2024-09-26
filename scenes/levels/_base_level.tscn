@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bs5ektkfh3xp6"]
+[gd_scene load_steps=11 format=4 uid="uid://bs5ektkfh3xp6"]
 
 [ext_resource type="PackedScene" uid="uid://b1hmxu3da7j1u" path="res://scenes/score.tscn" id="1_0rm1m"]
 [ext_resource type="Script" path="res://scripts/time_label.gd" id="2_3i7xn"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="2_qoykj"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="3_4y51c"]
 [ext_resource type="PackedScene" uid="uid://dqd43afhp3wuo" path="res://scenes/show_score_ui_notifier.tscn" id="4_0ow8c"]
+[ext_resource type="PackedScene" uid="uid://b0muc4pwsqwkt" path="res://scenes/count_down_timer.tscn" id="4_cmnkg"]
 [ext_resource type="PackedScene" uid="uid://gxltxotgbr1j" path="res://scenes/finish.tscn" id="5_g2knd"]
 [ext_resource type="PackedScene" uid="uid://bavkiaax6pgda" path="res://scenes/kill_zone.tscn" id="5_ytmho"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r2qdh"]
+distance = 66.0
 
 [node name="Base Level" type="Node2D"]
 position = Vector2(1, 0)
@@ -50,8 +52,10 @@ offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 8
-text = "99.999"
+text = "0"
 script = ExtResource("2_3i7xn")
+
+[node name="CountDownTimer" parent="CanvasLayer" instance=ExtResource("4_cmnkg")]
 
 [node name="Player" parent="." instance=ExtResource("2_qoykj")]
 position = Vector2(34, 64)
