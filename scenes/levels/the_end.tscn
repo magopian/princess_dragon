@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dsrmxjo8jlxei"]
+[gd_scene load_steps=4 format=4 uid="uid://dsrmxjo8jlxei"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_a570u"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_ejfou"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_pv4lo"]
-[ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="4_k6h5y"]
-[ext_resource type="PackedScene" uid="uid://btgmwcwmygfia" path="res://scenes/green_slime.tscn" id="5_o5kps"]
 
 [node name="The End" instance=ExtResource("1_a570u")]
 
@@ -12,7 +10,7 @@
 position = Vector2(83, 80)
 
 [node name="Ground" type="TileMapLayer" parent="TileMap" index="4"]
-tile_map_data = PackedByteArray("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")
+tile_map_data = PackedByteArray("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")
 tile_set = ExtResource("2_pv4lo")
 
 [node name="KillZone" parent="." index="3"]
@@ -45,175 +43,169 @@ position = Vector2(16, -25)
 [node name="Coin6" parent="Coins" index="7" instance=ExtResource("2_ejfou")]
 position = Vector2(33, -36)
 
-[node name="Coin7" parent="Coins" index="8" instance=ExtResource("2_ejfou")]
-position = Vector2(245, -66)
-
-[node name="Coin8" parent="Coins" index="9" instance=ExtResource("2_ejfou")]
+[node name="Coin8" parent="Coins" index="8" instance=ExtResource("2_ejfou")]
 position = Vector2(-37, -47)
 
-[node name="Coin9" parent="Coins" index="10" instance=ExtResource("2_ejfou")]
+[node name="Coin9" parent="Coins" index="9" instance=ExtResource("2_ejfou")]
 position = Vector2(44, -69)
 
-[node name="Coin10" parent="Coins" index="11" instance=ExtResource("2_ejfou")]
+[node name="Coin10" parent="Coins" index="10" instance=ExtResource("2_ejfou")]
 position = Vector2(55, -69)
 
-[node name="Coin32" parent="Coins" index="12" instance=ExtResource("2_ejfou")]
+[node name="Coin32" parent="Coins" index="11" instance=ExtResource("2_ejfou")]
 position = Vector2(44, -25)
 
-[node name="Coin33" parent="Coins" index="13" instance=ExtResource("2_ejfou")]
+[node name="Coin33" parent="Coins" index="12" instance=ExtResource("2_ejfou")]
 position = Vector2(55, -25)
 
-[node name="Coin31" parent="Coins" index="14" instance=ExtResource("2_ejfou")]
+[node name="Coin31" parent="Coins" index="13" instance=ExtResource("2_ejfou")]
 position = Vector2(44, -47)
 
-[node name="Coin11" parent="Coins" index="15" instance=ExtResource("2_ejfou")]
+[node name="Coin11" parent="Coins" index="14" instance=ExtResource("2_ejfou")]
 position = Vector2(-8, -47)
 
-[node name="Coin12" parent="Coins" index="16" instance=ExtResource("2_ejfou")]
+[node name="Coin12" parent="Coins" index="15" instance=ExtResource("2_ejfou")]
 position = Vector2(16, -47)
 
-[node name="Coin13" parent="Coins" index="17" instance=ExtResource("2_ejfou")]
+[node name="Coin13" parent="Coins" index="16" instance=ExtResource("2_ejfou")]
 position = Vector2(33, -47)
 
-[node name="Coin14" parent="Coins" index="18" instance=ExtResource("2_ejfou")]
-position = Vector2(233, -47)
+[node name="Coin14" parent="Coins" index="17" instance=ExtResource("2_ejfou")]
+position = Vector2(233, -45)
 
-[node name="Coin15" parent="Coins" index="19" instance=ExtResource("2_ejfou")]
+[node name="Coin15" parent="Coins" index="18" instance=ExtResource("2_ejfou")]
 position = Vector2(-37, -58)
 
-[node name="Coin16" parent="Coins" index="20" instance=ExtResource("2_ejfou")]
+[node name="Coin16" parent="Coins" index="19" instance=ExtResource("2_ejfou")]
 position = Vector2(-37, -25)
 
-[node name="Coin17" parent="Coins" index="21" instance=ExtResource("2_ejfou")]
+[node name="Coin17" parent="Coins" index="20" instance=ExtResource("2_ejfou")]
 position = Vector2(4, -47)
 
-[node name="Coin18" parent="Coins" index="22" instance=ExtResource("2_ejfou")]
+[node name="Coin18" parent="Coins" index="21" instance=ExtResource("2_ejfou")]
 position = Vector2(-8, -58)
 
-[node name="Coin19" parent="Coins" index="23" instance=ExtResource("2_ejfou")]
+[node name="Coin19" parent="Coins" index="22" instance=ExtResource("2_ejfou")]
 position = Vector2(16, -58)
 
-[node name="Coin20" parent="Coins" index="24" instance=ExtResource("2_ejfou")]
+[node name="Coin20" parent="Coins" index="23" instance=ExtResource("2_ejfou")]
 position = Vector2(33, -58)
 
-[node name="Coin21" parent="Coins" index="25" instance=ExtResource("2_ejfou")]
-position = Vector2(245, -55)
+[node name="Coin21" parent="Coins" index="24" instance=ExtResource("2_ejfou")]
+position = Vector2(233, -58)
 
-[node name="Coin22" parent="Coins" index="26" instance=ExtResource("2_ejfou")]
+[node name="Coin22" parent="Coins" index="25" instance=ExtResource("2_ejfou")]
 position = Vector2(-49, -69)
 
-[node name="Coin23" parent="Coins" index="27" instance=ExtResource("2_ejfou")]
+[node name="Coin23" parent="Coins" index="26" instance=ExtResource("2_ejfou")]
 position = Vector2(-37, -69)
 
-[node name="Coin24" parent="Coins" index="28" instance=ExtResource("2_ejfou")]
+[node name="Coin24" parent="Coins" index="27" instance=ExtResource("2_ejfou")]
 position = Vector2(-25, -69)
 
-[node name="Coin25" parent="Coins" index="29" instance=ExtResource("2_ejfou")]
+[node name="Coin25" parent="Coins" index="28" instance=ExtResource("2_ejfou")]
 position = Vector2(-8, -69)
 
-[node name="Coin26" parent="Coins" index="30" instance=ExtResource("2_ejfou")]
+[node name="Coin26" parent="Coins" index="29" instance=ExtResource("2_ejfou")]
 position = Vector2(16, -69)
 
-[node name="Coin44" parent="Coins" index="31" instance=ExtResource("2_ejfou")]
+[node name="Coin44" parent="Coins" index="30" instance=ExtResource("2_ejfou")]
 position = Vector2(128, -36)
 
-[node name="Coin45" parent="Coins" index="32" instance=ExtResource("2_ejfou")]
+[node name="Coin45" parent="Coins" index="31" instance=ExtResource("2_ejfou")]
 position = Vector2(152, -36)
 
-[node name="Coin46" parent="Coins" index="33" instance=ExtResource("2_ejfou")]
+[node name="Coin46" parent="Coins" index="32" instance=ExtResource("2_ejfou")]
 position = Vector2(128, -25)
 
-[node name="Coin47" parent="Coins" index="34" instance=ExtResource("2_ejfou")]
+[node name="Coin47" parent="Coins" index="33" instance=ExtResource("2_ejfou")]
 position = Vector2(152, -25)
 
-[node name="Coin48" parent="Coins" index="35" instance=ExtResource("2_ejfou")]
+[node name="Coin48" parent="Coins" index="34" instance=ExtResource("2_ejfou")]
 position = Vector2(128, -47)
 
-[node name="Coin49" parent="Coins" index="36" instance=ExtResource("2_ejfou")]
+[node name="Coin49" parent="Coins" index="35" instance=ExtResource("2_ejfou")]
 position = Vector2(152, -47)
 
-[node name="Coin66" parent="Coins" index="37" instance=ExtResource("2_ejfou")]
+[node name="Coin66" parent="Coins" index="36" instance=ExtResource("2_ejfou")]
 position = Vector2(140, -47)
 
-[node name="Coin51" parent="Coins" index="38" instance=ExtResource("2_ejfou")]
+[node name="Coin51" parent="Coins" index="37" instance=ExtResource("2_ejfou")]
 position = Vector2(128, -58)
 
-[node name="Coin52" parent="Coins" index="39" instance=ExtResource("2_ejfou")]
+[node name="Coin52" parent="Coins" index="38" instance=ExtResource("2_ejfou")]
 position = Vector2(152, -58)
 
-[node name="Coin53" parent="Coins" index="40" instance=ExtResource("2_ejfou")]
+[node name="Coin53" parent="Coins" index="39" instance=ExtResource("2_ejfou")]
 position = Vector2(128, -69)
 
-[node name="Coin54" parent="Coins" index="41" instance=ExtResource("2_ejfou")]
+[node name="Coin54" parent="Coins" index="40" instance=ExtResource("2_ejfou")]
 position = Vector2(152, -69)
 
-[node name="Coin55" parent="Coins" index="42" instance=ExtResource("2_ejfou")]
+[node name="Coin55" parent="Coins" index="41" instance=ExtResource("2_ejfou")]
 position = Vector2(168, -36)
 
-[node name="Coin56" parent="Coins" index="43" instance=ExtResource("2_ejfou")]
+[node name="Coin56" parent="Coins" index="42" instance=ExtResource("2_ejfou")]
 position = Vector2(192, -36)
 
-[node name="Coin57" parent="Coins" index="44" instance=ExtResource("2_ejfou")]
+[node name="Coin57" parent="Coins" index="43" instance=ExtResource("2_ejfou")]
 position = Vector2(168, -25)
 
-[node name="Coin67" parent="Coins" index="45" instance=ExtResource("2_ejfou")]
-position = Vector2(221, -67)
+[node name="Coin65" parent="Coins" index="44" instance=ExtResource("2_ejfou")]
+position = Vector2(233, -71)
 
-[node name="Coin65" parent="Coins" index="46" instance=ExtResource("2_ejfou")]
-position = Vector2(233, -76)
-
-[node name="Coin59" parent="Coins" index="47" instance=ExtResource("2_ejfou")]
+[node name="Coin59" parent="Coins" index="45" instance=ExtResource("2_ejfou")]
 position = Vector2(168, -47)
 
-[node name="Coin60" parent="Coins" index="48" instance=ExtResource("2_ejfou")]
+[node name="Coin60" parent="Coins" index="46" instance=ExtResource("2_ejfou")]
 position = Vector2(192, -47)
 
-[node name="Coin61" parent="Coins" index="49" instance=ExtResource("2_ejfou")]
+[node name="Coin61" parent="Coins" index="47" instance=ExtResource("2_ejfou")]
 position = Vector2(180, -25)
 
-[node name="Coin62" parent="Coins" index="50" instance=ExtResource("2_ejfou")]
+[node name="Coin62" parent="Coins" index="48" instance=ExtResource("2_ejfou")]
 position = Vector2(168, -58)
 
-[node name="Coin63" parent="Coins" index="51" instance=ExtResource("2_ejfou")]
+[node name="Coin63" parent="Coins" index="49" instance=ExtResource("2_ejfou")]
 position = Vector2(192, -58)
 
-[node name="Coin64" parent="Coins" index="52" instance=ExtResource("2_ejfou")]
+[node name="Coin64" parent="Coins" index="50" instance=ExtResource("2_ejfou")]
 position = Vector2(168, -69)
 
-[node name="Coin27" parent="Coins" index="53" instance=ExtResource("2_ejfou")]
+[node name="Coin27" parent="Coins" index="51" instance=ExtResource("2_ejfou")]
 position = Vector2(33, -69)
 
-[node name="Coin34" parent="Coins" index="54" instance=ExtResource("2_ejfou")]
+[node name="Coin34" parent="Coins" index="52" instance=ExtResource("2_ejfou")]
 position = Vector2(89, -25)
 
-[node name="Coin35" parent="Coins" index="55" instance=ExtResource("2_ejfou")]
+[node name="Coin35" parent="Coins" index="53" instance=ExtResource("2_ejfou")]
 position = Vector2(89, -36)
 
-[node name="Coin36" parent="Coins" index="56" instance=ExtResource("2_ejfou")]
+[node name="Coin36" parent="Coins" index="54" instance=ExtResource("2_ejfou")]
 position = Vector2(100, -69)
 
-[node name="Coin37" parent="Coins" index="57" instance=ExtResource("2_ejfou")]
+[node name="Coin37" parent="Coins" index="55" instance=ExtResource("2_ejfou")]
 position = Vector2(111, -69)
 
-[node name="Coin38" parent="Coins" index="58" instance=ExtResource("2_ejfou")]
+[node name="Coin38" parent="Coins" index="56" instance=ExtResource("2_ejfou")]
 position = Vector2(100, -25)
 
-[node name="Coin39" parent="Coins" index="59" instance=ExtResource("2_ejfou")]
+[node name="Coin39" parent="Coins" index="57" instance=ExtResource("2_ejfou")]
 position = Vector2(111, -25)
 
-[node name="Coin40" parent="Coins" index="60" instance=ExtResource("2_ejfou")]
+[node name="Coin40" parent="Coins" index="58" instance=ExtResource("2_ejfou")]
 position = Vector2(100, -47)
 
-[node name="Coin41" parent="Coins" index="61" instance=ExtResource("2_ejfou")]
+[node name="Coin41" parent="Coins" index="59" instance=ExtResource("2_ejfou")]
 position = Vector2(89, -47)
 
-[node name="Coin42" parent="Coins" index="62" instance=ExtResource("2_ejfou")]
+[node name="Coin42" parent="Coins" index="60" instance=ExtResource("2_ejfou")]
 position = Vector2(89, -58)
 
-[node name="Coin43" parent="Coins" index="63" instance=ExtResource("2_ejfou")]
+[node name="Coin43" parent="Coins" index="61" instance=ExtResource("2_ejfou")]
 position = Vector2(89, -69)
 
-[node name="Coin28" parent="Coins" index="64" instance=ExtResource("2_ejfou")]
+[node name="Coin28" parent="Coins" index="62" instance=ExtResource("2_ejfou")]
 position = Vector2(180, -69)
 
 [node name="ShowScoreUINotifier" parent="." index="5"]
@@ -221,11 +213,3 @@ position = Vector2(33, 51)
 
 [node name="Finish" parent="." index="6"]
 position = Vector2(-118, 49)
-
-[node name="Slimes" type="Node2D" parent="." index="7"]
-
-[node name="Slime" parent="Slimes" index="0" instance=ExtResource("4_k6h5y")]
-position = Vector2(926, 80)
-
-[node name="GreenSlime" parent="Slimes" index="1" instance=ExtResource("5_o5kps")]
-position = Vector2(770, 80)
