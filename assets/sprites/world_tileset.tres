@@ -311,11 +311,11 @@ texture = ExtResource("1_okfj4")
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Earth"
+terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "Sand"
 terrain_set_0/terrain_1/color = Color(0.573982, 0.504824, 0.297837, 1)
-terrain_set_0/terrain_2/name = "Jungle"
+terrain_set_0/terrain_2/name = "Earth"
 terrain_set_0/terrain_2/color = Color(0.783939, 0.296656, 0.0890522, 1)
 terrain_set_0/terrain_3/name = "Snow"
 terrain_set_0/terrain_3/color = Color(0.528026, 0.953269, 0.835935, 1)

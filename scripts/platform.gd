@@ -1,17 +1,18 @@
 extends AnimatableBody2D
 
-enum PLATFORM_CHOICES {grass, earth, sand, snow}
+enum PLATFORM_CHOICES { grass, earth, sand, snow }
 
-const platform_size =  Vector2(32, 9)
+const platform_size = Vector2(32, 9)
 const platform_regions = {
 	PLATFORM_CHOICES.grass: Vector2(16, 0),
-	PLATFORM_CHOICES.earth: Vector2(16, 16),
-	PLATFORM_CHOICES.sand: Vector2(16, 32),
+	PLATFORM_CHOICES.sand: Vector2(16, 16),
+	PLATFORM_CHOICES.earth: Vector2(16, 32),
 	PLATFORM_CHOICES.snow: Vector2(16, 48),
-	}
+}
 
-@export var platform_type: PLATFORM_CHOICES = PLATFORM_CHOICES.grass 
+@export var platform_type: PLATFORM_CHOICES = PLATFORM_CHOICES.grass
 @onready var player_on_platform: bool = false
+
 
 func _ready() -> void:
 	$Sprite2D.region_rect = Rect2(platform_regions.get(platform_type), platform_size)
