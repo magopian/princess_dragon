@@ -10,9 +10,12 @@ var rng = RandomNumberGenerator.new()
 var shake_strength: float = 0.0
 var shake_fade: float = 0.0
 
+var shake_offset: bool = false
+
 
 func _ready() -> void:
 	parent = get_parent()
+	shake_offset = "offset" in parent
 
 
 func apply_shake(strength = randomStrength, fade = shakeFade):
@@ -28,9 +31,15 @@ func _process(delta: float) -> void:
 
 	if shake_strength > 0:
 		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
-		parent.position = initial_position + randomOffset()
+		if shake_offset:
+			parent.offset = randomOffset()
+		else:
+			parent.position = initial_position + randomOffset()
 	else:
-		parent.position = initial_position
+		if shake_offset:
+			parent.offset = Vector2.ZERO
+		else:
+			parent.position = initial_position
 		is_shaking = false
 
 

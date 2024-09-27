@@ -167,6 +167,10 @@ func _on_player_killed(_body) -> void:
 	collision_layer = 2
 
 
-func emit_jump_particles():
+func emit_jump_particles() -> void:
 	$JumpParticles.restart()
 	$JumpParticles.emitting = true
+
+
+func play_sprite(animation: String) -> void:
+	$AnimatedSprite2D.play(animation)

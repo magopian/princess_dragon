@@ -11,6 +11,8 @@ signal level_started  # Countdown is done
 signal next_level(level: Node2D)
 signal savegame_selected(savegame_name: String)
 signal savegame_deleted(savegame_name: String)
+signal cutscene_finished
+signal pause_menu_enabled(enable: bool)
 # Preferences
 signal muted_preference_changed(muted: bool)
 signal volume_preference_changed(audio_bus: int, volume: float)

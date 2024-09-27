@@ -1,0 +1,174 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvn77df78au71"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_borders.gd" id="1_x1mjt"]
+
+[sub_resource type="Animation" id="Animation_fy3k2"]
+resource_name = "start"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopBorder:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -30), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomBorder:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 180), Vector2(0, 150)]
+}
+
+[sub_resource type="Animation" id="Animation_0kk1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopBorder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomBorder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_bm4yv"]
+resource_name = "stop"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopBorder:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomBorder:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 150), Vector2(0, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it5pn"]
+_data = {
+"RESET": SubResource("Animation_0kk1a"),
+"start": SubResource("Animation_fy3k2"),
+"stop": SubResource("Animation_bm4yv")
+}
+
+[node name="CutsceneBorders" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1mjt")
+
+[node name="TopBorder" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.00152588
+offset_bottom = 29.9985
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogContainer" type="MarginContainer" parent="BottomBorder"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomBorder/DialogContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BottomBorder/DialogContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speaker" type="Label" parent="BottomBorder/DialogContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "Speaker"
+
+[node name="Sentence" type="Label" parent="BottomBorder/DialogContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "The sentence goes here"
+horizontal_alignment = 2
+
+[node name="Next" type="Label" parent="BottomBorder/DialogContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.94902, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "v"
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_it5pn")
+}

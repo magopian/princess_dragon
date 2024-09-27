@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7vcw12swep7q"]
+
+[ext_resource type="Texture2D" uid="uid://bbhswlkgrnkwa" path="res://assets/sprites/villagers.png" id="1_0lguw"]
+[ext_resource type="PackedScene" uid="uid://5bvgxd6v1kol" path="res://scenes/shaker.tscn" id="2_s1qn5"]
+
+[node name="Villagers" type="TextureRect"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = 120.0
+grow_vertical = 0
+texture = ExtResource("1_0lguw")
+
+[node name="Shaker" parent="." instance=ExtResource("2_s1qn5")]
+randomStrength = 1.0
+shakeFade = 0.0

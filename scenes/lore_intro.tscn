@@ -1,9 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://tjg3n4vb8trq"]
+[gd_scene load_steps=9 format=3 uid="uid://cdv31isdstkbu"]
 
-[ext_resource type="Script" path="res://scenes/lore_intro.gd" id="1_wbs06"]
 [ext_resource type="Texture2D" uid="uid://dceui7oeqd8mv" path="res://assets/PrincessDragon.png" id="2_l7mok"]
-[ext_resource type="Texture2D" uid="uid://bbhswlkgrnkwa" path="res://assets/sprites/villagers.png" id="3_jbgnc"]
-[ext_resource type="PackedScene" uid="uid://5bvgxd6v1kol" path="res://scenes/shaker.tscn" id="4_kl8o5"]
+[ext_resource type="PackedScene" uid="uid://c7vcw12swep7q" path="res://scenes/villagers.tscn" id="3_keudk"]
+
+[sub_resource type="GDScript" id="GDScript_ei1t4"]
+script/source = "extends Control
+
+@onready var current_animation: String
+
+
+func _ready() -> void:
+	current_animation = \"Start\"
+	$LoreAnimator.play(current_animation)
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"menu\"):
+		get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
+		return
+
+	if event.is_action_pressed(\"ui_accept\"):
+		if current_animation == \"Start\":
+			current_animation = \"PrincessAnswers\"
+			$LoreAnimator.play(current_animation)
+		else:
+			get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjgj4"]
 texture = ExtResource("2_l7mok")
@@ -237,7 +259,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wbs06")
+script = SubResource("GDScript_ei1t4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -253,19 +275,14 @@ libraries = {
 "": SubResource("AnimationLibrary_xe2vn")
 }
 
-[node name="Villagers" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -70.0
-offset_right = 120.0
-grow_vertical = 0
-texture = ExtResource("3_jbgnc")
-
-[node name="Shaker" parent="Villagers" instance=ExtResource("4_kl8o5")]
-randomStrength = 1.0
-shakeFade = 0.0
+[node name="Villagers" parent="." instance=ExtResource("3_keudk")]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 70.0
+grow_vertical = 1
 
 [node name="DialogBox" type="ColorRect" parent="."]
 visible = false
