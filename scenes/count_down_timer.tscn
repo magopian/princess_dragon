@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0muc4pwsqwkt"]
+[gd_scene load_steps=3 format=3 uid="uid://b0muc4pwsqwkt"]
 
 [ext_resource type="Script" path="res://scripts/count_down_timer.gd" id="1_ikmxh"]
+[ext_resource type="AudioStream" uid="uid://d1ciqsu525jq2" path="res://assets/sounds/countdown.ogg" id="2_d03tw"]
 
 [node name="CountDownTimer" type="ColorRect"]
 process_mode = 3
@@ -63,3 +64,7 @@ unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="CountdownSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_d03tw")

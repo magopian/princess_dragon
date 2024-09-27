@@ -25,10 +25,12 @@ func _on_timeout() -> void:
 func start_level() -> void:
 	visible = false
 	get_tree().paused = false
+	%Timer.stop()
 	GameManager.level_started.emit()
 
 
 func animate_new_number() -> void:
+	%CountdownSound.play()
 	%StartingIn.scale = Vector2(2.5, 2.5)
 	%StartingIn.modulate.a = 1
 	var tween: Tween = get_tree().create_tween()
