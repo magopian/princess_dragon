@@ -218,10 +218,13 @@ tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["cutscene_wear_helmet"],
+"method": &"play_sprite"
+}, {
+"args": ["idle"],
 "method": &"play_sprite"
 }]
 }
