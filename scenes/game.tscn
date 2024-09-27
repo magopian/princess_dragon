@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cxkgr3tnk4cqp"]
+[gd_scene load_steps=30 format=3 uid="uid://cxkgr3tnk4cqp"]
 
 [ext_resource type="PackedScene" uid="uid://cjw38tueccimo" path="res://scenes/levels/moving_around.tscn" id="2_mo0w0"]
 [ext_resource type="PackedScene" uid="uid://ckmg3uavjya6r" path="res://scenes/pause_menu.tscn" id="2_olrm6"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c6xnec6pwkyss" path="res://scenes/levels/purple_jump.tscn" id="17_e1ulb"]
 [ext_resource type="PackedScene" path="res://scenes/levels/bridges.tscn" id="17_gpoy7"]
 [ext_resource type="PackedScene" uid="uid://d3fscnbqpomng" path="res://scenes/levels/leap_of_faith.tscn" id="18_5nung"]
+[ext_resource type="PackedScene" uid="uid://cku06li6k7vhd" path="res://scenes/levels/purple_danger.tscn" id="18_s2jdk"]
 [ext_resource type="PackedScene" uid="uid://cjoeo3ug1js4w" path="res://scenes/levels/deception.tscn" id="19_4ux7q"]
 
 [node name="Game" type="Node2D"]
@@ -81,6 +82,9 @@ visible = false
 visible = false
 
 [node name="Purple jump" parent="Levels" instance=ExtResource("17_e1ulb")]
+visible = false
+
+[node name="Purple danger" parent="Levels" instance=ExtResource("18_s2jdk")]
 visible = false
 
 [node name="Elora\'s Labyrinth" parent="Levels" instance=ExtResource("16_22o2j")]

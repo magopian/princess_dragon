@@ -1,0 +1,187 @@
+[gd_scene load_steps=8 format=4 uid="uid://cku06li6k7vhd"]
+
+[ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_ysath"]
+[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_5ind3"]
+[ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_c73lx"]
+[ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_cq0py"]
+[ext_resource type="PackedScene" uid="uid://0jmcfy3qrj0l" path="res://scenes/path_follower.tscn" id="4_77nt8"]
+[ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="4_ubmpl"]
+
+[sub_resource type="Curve2D" id="Curve2D_sh61b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 298, 1, 0, 0, 0, 0, 298, -106)
+}
+point_count = 2
+
+[node name="Purple danger" instance=ExtResource("1_ysath")]
+
+[node name="Ground" type="TileMapLayer" parent="TileMap" index="4"]
+tile_map_data = PackedByteArray("AAADAAgAAAAEAAEAAAADAAcAAAAEAAEAAAADAAYAAAAEAAEAAAADAAUAAAAEAAEAAAACAAgAAAAFAAAAAAACAAcAAAAEAAEAAAACAAYAAAAEAAEAAAACAAUAAAAEAAEAAAABAAgAAAAFAAEAAAABAAcAAAAEAAEAAAABAAYAAAAEAAEAAAABAAUAAAAEAAEAAAAAAAgAAAAEAAEAAAAAAAcAAAAFAAEAAAAAAAYAAAAEAAEAAAAAAAUAAAAFAAAAAAD//wgAAAAEAAEAAAD//wcAAAAFAAAAAAD//wYAAAAFAAEAAAD//wUAAAAEAAEAAAD//wQAAAAEAAAAAAAAAAQAAAAEAAAAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAIAP3/AAAFAAEAAAAIAPz/AAAEAAEAAAAHAP3/AAAEAAEAAAAHAPz/AAAEAAEAAAAGAP3/AAAEAAEAAAAGAPz/AAAFAAEAAAAFAP3/AAAEAAEAAAAFAPz/AAAEAAEAAAAEAP3/AAAEAAEAAAAEAPz/AAAFAAEAAAAEAPv/AAAEAAAAAAAFAPv/AAAEAAAAAAAGAPv/AAAEAAAAAAAHAPv/AAAEAAAAAAAIAPv/AAAEAAAAAAAOAPz/AAAFAAEAAAAOAPv/AAAEAAEAAAAOAPr/AAAEAAEAAAAOAPn/AAAEAAEAAAAOAPj/AAAEAAEAAAAOAPf/AAAEAAEAAAANAPz/AAAFAAEAAAANAPv/AAAEAAEAAAANAPr/AAAEAAEAAAANAPn/AAAFAAAAAAANAPj/AAAEAAEAAAANAPf/AAAFAAAAAAAMAPz/AAAEAAEAAAAMAPv/AAAEAAEAAAAMAPr/AAAEAAEAAAAMAPn/AAAFAAEAAAAMAPj/AAAEAAEAAAAMAPf/AAAEAAEAAAAOAPb/AAAEAAEAAAAOAPX/AAAEAAEAAAANAPb/AAAEAAEAAAANAPX/AAAEAAEAAAAMAPb/AAAFAAEAAAAMAPX/AAAEAAEAAAAMAPT/AAAEAAAAAAANAPT/AAAEAAAAAAAOAPT/AAAEAAAAAAASAAgAAAAEAAEAAAASAAcAAAAEAAEAAAASAAYAAAAEAAEAAAASAAUAAAAEAAEAAAARAAgAAAAEAAEAAAARAAcAAAAFAAAAAAARAAYAAAAFAAAAAAARAAUAAAAEAAEAAAAQAAgAAAAEAAEAAAAQAAcAAAAFAAEAAAAQAAYAAAAEAAEAAAAQAAUAAAAEAAEAAAAPAAgAAAAFAAAAAAAPAAcAAAAEAAEAAAAPAAYAAAAEAAEAAAAPAAUAAAAFAAAAAAAPAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAARAAQAAAAEAAAAAAASAAQAAAAEAAAAAAAXAAgAAAAEAAEAAAAXAAcAAAAEAAEAAAAXAAYAAAAEAAEAAAAXAAUAAAAFAAEAAAAXAAQAAAAFAAEAAAAXAAMAAAAEAAEAAAAXAAIAAAAFAAAAAAAXAAEAAAAEAAEAAAAXAAAAAAAFAAAAAAAXAP//AAAEAAEAAAAXAP7/AAAEAAEAAAAXAP3/AAAEAAEAAAAXAPz/AAAEAAEAAAAXAPv/AAAFAAEAAAAXAPr/AAAEAAEAAAAXAPn/AAAEAAEAAAAXAPj/AAAEAAEAAAAXAPf/AAAFAAEAAAAXAPb/AAAEAAEAAAAWAAgAAAAEAAEAAAAWAAcAAAAEAAEAAAAWAAYAAAAEAAEAAAAWAAUAAAAEAAEAAAAWAAQAAAAEAAEAAAAWAAMAAAAEAAEAAAAWAAIAAAAEAAEAAAAWAAEAAAAEAAEAAAAWAAAAAAAEAAEAAAAWAP//AAAFAAEAAAAWAP7/AAAEAAEAAAAWAP3/AAAEAAEAAAAWAPz/AAAEAAEAAAAWAPv/AAAFAAAAAAAWAPr/AAAEAAEAAAAWAPn/AAAEAAEAAAAWAPj/AAAEAAEAAAAWAPf/AAAEAAEAAAAWAPb/AAAFAAAAAAAVAAgAAAAEAAEAAAAVAAcAAAAEAAEAAAAVAAYAAAAEAAEAAAAVAAUAAAAEAAEAAAAVAAQAAAAEAAEAAAAVAAMAAAAEAAEAAAAVAAIAAAAFAAEAAAAVAAEAAAAFAAEAAAAVAAAAAAAEAAEAAAAVAP//AAAEAAEAAAAVAP7/AAAEAAEAAAAVAP3/AAAEAAEAAAAVAPz/AAAEAAEAAAAVAPv/AAAEAAEAAAAVAPr/AAAFAAEAAAAVAPn/AAAEAAEAAAAVAPj/AAAEAAEAAAAVAPf/AAAEAAEAAAAVAPb/AAAFAAEAAAAUAAgAAAAFAAEAAAAUAAcAAAAEAAEAAAAUAAYAAAAEAAEAAAAUAAUAAAAEAAEAAAAUAAQAAAAEAAEAAAAUAAMAAAAEAAEAAAAUAAIAAAAFAAAAAAAUAAEAAAAEAAEAAAAUAAAAAAAEAAEAAAAUAP//AAAEAAEAAAAUAP7/AAAEAAEAAAAUAP3/AAAFAAAAAAAUAPz/AAAEAAEAAAAUAPv/AAAFAAEAAAAUAPr/AAAFAAEAAAAUAPn/AAAFAAEAAAAUAPj/AAAEAAEAAAAUAPf/AAAFAAAAAAAUAPb/AAAEAAEAAAATAAgAAAAEAAEAAAATAAcAAAAFAAEAAAATAAYAAAAEAAEAAAATAAUAAAAEAAEAAAATAAQAAAAEAAEAAAATAAMAAAAEAAEAAAATAAIAAAAEAAEAAAATAAEAAAAEAAEAAAATAAAAAAAEAAEAAAATAP//AAAEAAEAAAATAP7/AAAEAAEAAAATAP3/AAAFAAAAAAATAPz/AAAEAAEAAAATAPv/AAAFAAEAAAATAPr/AAAEAAEAAAATAPn/AAAEAAEAAAATAPj/AAAFAAEAAAATAPf/AAAFAAEAAAATAPb/AAAFAAEAAAATAPX/AAAEAAAAAAAUAPX/AAAEAAAAAAAVAPX/AAAEAAAAAAAWAPX/AAAEAAAAAAAXAPX/AAAEAAAAAAA=")
+tile_set = ExtResource("2_5ind3")
+
+[node name="Finish" parent="." index="5"]
+position = Vector2(346, -208)
+
+[node name="Coins" type="Node2D" parent="." index="6"]
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource("3_c73lx")]
+position = Vector2(-16, 8)
+
+[node name="Coin2" parent="Coins" index="1" instance=ExtResource("3_c73lx")]
+position = Vector2(24, -32)
+
+[node name="Coin3" parent="Coins" index="2" instance=ExtResource("3_c73lx")]
+position = Vector2(64, -56)
+
+[node name="Coin4" parent="Coins" index="3" instance=ExtResource("3_c73lx")]
+position = Vector2(64, -72)
+
+[node name="Coin5" parent="Coins" index="4" instance=ExtResource("3_c73lx")]
+position = Vector2(64, -88)
+
+[node name="Coin6" parent="Coins" index="5" instance=ExtResource("3_c73lx")]
+position = Vector2(98, -88)
+
+[node name="Coin7" parent="Coins" index="6" instance=ExtResource("3_c73lx")]
+position = Vector2(114, -88)
+
+[node name="Coin8" parent="Coins" index="7" instance=ExtResource("3_c73lx")]
+position = Vector2(130, -88)
+
+[node name="Coin9" parent="Coins" index="8" instance=ExtResource("3_c73lx")]
+position = Vector2(193, -104)
+
+[node name="Coin10" parent="Coins" index="9" instance=ExtResource("3_c73lx")]
+position = Vector2(193, -120)
+
+[node name="Coin11" parent="Coins" index="10" instance=ExtResource("3_c73lx")]
+position = Vector2(193, -136)
+
+[node name="Coin12" parent="Coins" index="11" instance=ExtResource("3_c73lx")]
+position = Vector2(193, -152)
+
+[node name="Coin13" parent="Coins" index="12" instance=ExtResource("3_c73lx")]
+position = Vector2(193, -184)
+
+[node name="Coin14" parent="Coins" index="13" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -168)
+
+[node name="Coin15" parent="Coins" index="14" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -152)
+
+[node name="Coin16" parent="Coins" index="15" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -136)
+
+[node name="Coin17" parent="Coins" index="16" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -120)
+
+[node name="Coin18" parent="Coins" index="17" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -104)
+
+[node name="Coin19" parent="Coins" index="18" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -88)
+
+[node name="Coin20" parent="Coins" index="19" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -72)
+
+[node name="Coin21" parent="Coins" index="20" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -56)
+
+[node name="Coin22" parent="Coins" index="21" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -40)
+
+[node name="Coin23" parent="Coins" index="22" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -24)
+
+[node name="Coin24" parent="Coins" index="23" instance=ExtResource("3_c73lx")]
+position = Vector2(259, -8)
+
+[node name="Coin28" parent="Coins" index="24" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -168)
+
+[node name="Coin29" parent="Coins" index="25" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -152)
+
+[node name="Coin30" parent="Coins" index="26" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -136)
+
+[node name="Coin31" parent="Coins" index="27" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -120)
+
+[node name="Coin32" parent="Coins" index="28" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -104)
+
+[node name="Coin33" parent="Coins" index="29" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -88)
+
+[node name="Coin34" parent="Coins" index="30" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -72)
+
+[node name="Coin35" parent="Coins" index="31" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -56)
+
+[node name="Coin36" parent="Coins" index="32" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -40)
+
+[node name="Coin37" parent="Coins" index="33" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -24)
+
+[node name="Coin38" parent="Coins" index="34" instance=ExtResource("3_c73lx")]
+position = Vector2(299, -8)
+
+[node name="Coin25" parent="Coins" index="35" instance=ExtResource("3_c73lx")]
+position = Vector2(259, 8)
+
+[node name="Coin26" parent="Coins" index="36" instance=ExtResource("3_c73lx")]
+position = Vector2(259, 24)
+
+[node name="Coin27" parent="Coins" index="37" instance=ExtResource("3_c73lx")]
+position = Vector2(259, 40)
+
+[node name="Platforms" type="Node2D" parent="." index="7"]
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("3_cq0py")]
+position = Vector2(-16, 24)
+platform_type = 2
+
+[node name="Platform3" parent="Platforms" index="1" instance=ExtResource("3_cq0py")]
+position = Vector2(186, -170)
+platform_type = 2
+
+[node name="Platform4" parent="Platforms" index="2" instance=ExtResource("3_cq0py")]
+position = Vector2(298, -139)
+platform_type = 2
+
+[node name="Platform2" parent="Platforms" index="3" instance=ExtResource("3_cq0py")]
+position = Vector2(24, -16)
+platform_type = 2
+
+[node name="PathFollower" parent="Platforms" index="4" instance=ExtResource("4_77nt8")]
+curve = SubResource("Curve2D_sh61b")
+
+[node name="Platform4" parent="Platforms/PathFollower" index="1" instance=ExtResource("3_cq0py")]
+position = Vector2(298, 0)
+platform_type = 2
+
+[node name="Slimes" type="Node2D" parent="." index="8"]
+
+[node name="PurpleSlime" parent="Slimes" index="0" instance=ExtResource("4_ubmpl")]
+position = Vector2(96, -32)
+scale = Vector2(1, -1)
+
+[node name="PurpleSlime2" parent="Slimes" index="1" instance=ExtResource("4_ubmpl")]
+position = Vector2(74, -40)
+rotation = 1.5708
+scale = Vector2(1, -1)
+
+[node name="PurpleSlime4" parent="Slimes" index="2" instance=ExtResource("4_ubmpl")]
+position = Vector2(202, -56)
+rotation = 1.5708
+scale = Vector2(1, -1)
+
+[node name="PurpleSlime5" parent="Slimes" index="3" instance=ExtResource("4_ubmpl")]
+position = Vector2(282, 64)
+
+[node name="PurpleSlime3" parent="Slimes" index="4" instance=ExtResource("4_ubmpl")]
+position = Vector2(154, -64)
+rotation = 1.5708
