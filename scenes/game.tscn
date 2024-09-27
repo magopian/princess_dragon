@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dhuic3x4hmook" path="res://scenes/levels/vertigo.tscn" id="11_3522c"]
 [ext_resource type="PackedScene" uid="uid://d0o87dk8k3fgm" path="res://scenes/level_selection.tscn" id="11_d4od2"]
 [ext_resource type="Script" path="res://scripts/level_selection.gd" id="12_c3qws"]
-[ext_resource type="PackedScene" uid="uid://3fpf08kqt7r5" path="res://scenes/levels/green_slimes.tscn" id="13_3jmtw"]
+[ext_resource type="PackedScene" uid="uid://dhkmt6mvhv1d2" path="res://scenes/levels/green_slimes.tscn" id="13_3jmtw"]
 [ext_resource type="Script" path="res://scripts/touch_controls.gd" id="13_72h71"]
 [ext_resource type="PackedScene" path="res://scenes/levels/slime_jump.tscn" id="14_5sfjp"]
 [ext_resource type="PackedScene" uid="uid://ch4etd2pgpfin" path="res://scenes/levels/slime_danger.tscn" id="15_qoigw"]
