@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=4 uid="uid://c6xnec6pwkyss"]
+
+[ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_ysath"]
+[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_5ind3"]
+[ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_cq0py"]
+[ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_rcpsr"]
+[ext_resource type="PackedScene" uid="uid://btgmwcwmygfia" path="res://scenes/green_slime.tscn" id="3_w50bi"]
+[ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="4_ubmpl"]
+
+[node name="Purple jump" instance=ExtResource("1_ysath")]
+
+[node name="Ground" type="TileMapLayer" parent="TileMap" index="4"]
+tile_map_data = PackedByteArray("AAADAAcAAAADAAAAAAADAAYAAAACAAEAAAADAAUAAAADAAEAAAACAAcAAAACAAEAAAACAAYAAAACAAEAAAACAAUAAAACAAEAAAABAAcAAAACAAEAAAABAAYAAAADAAAAAAABAAUAAAADAAEAAAAAAAcAAAACAAEAAAAAAAYAAAACAAEAAAAAAAUAAAACAAEAAAAAAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAADAAsAAAACAAEAAAADAAoAAAACAAEAAAADAAkAAAACAAEAAAADAAgAAAACAAEAAAACAAsAAAADAAAAAAACAAoAAAACAAEAAAACAAkAAAACAAEAAAACAAgAAAACAAEAAAABAAsAAAACAAEAAAABAAoAAAACAAEAAAABAAkAAAACAAEAAAABAAgAAAADAAEAAAAAAAsAAAACAAEAAAAAAAoAAAACAAEAAAAAAAkAAAACAAEAAAAAAAgAAAACAAEAAAAIAAsAAAACAAEAAAAIAAoAAAACAAEAAAAHAAsAAAADAAAAAAAHAAoAAAADAAAAAAAGAAsAAAACAAEAAAAGAAoAAAADAAEAAAAFAAsAAAACAAEAAAAFAAoAAAACAAEAAAAEAAsAAAACAAEAAAAEAAoAAAACAAEAAAAEAAkAAAACAAAAAAAFAAkAAAACAAAAAAAGAAkAAAACAAAAAAAHAAkAAAACAAAAAAAIAAkAAAACAAAAAAANAAsAAAADAAEAAAANAAoAAAACAAEAAAANAAkAAAADAAAAAAANAAgAAAACAAEAAAAMAAsAAAACAAEAAAAMAAoAAAACAAEAAAAMAAkAAAADAAEAAAAMAAgAAAACAAEAAAALAAsAAAADAAEAAAALAAoAAAACAAEAAAALAAkAAAADAAEAAAALAAgAAAADAAEAAAALAAcAAAACAAAAAAAMAAcAAAACAAAAAAANAAcAAAACAAAAAAATAAsAAAADAAEAAAATAAoAAAADAAAAAAATAAkAAAACAAEAAAATAAgAAAACAAEAAAATAAcAAAACAAEAAAATAAYAAAADAAAAAAATAAUAAAACAAEAAAASAAsAAAACAAEAAAASAAoAAAACAAEAAAASAAkAAAACAAEAAAASAAgAAAACAAEAAAASAAcAAAACAAEAAAASAAYAAAACAAEAAAASAAUAAAACAAEAAAARAAsAAAACAAEAAAARAAoAAAACAAEAAAARAAkAAAADAAEAAAARAAgAAAACAAEAAAARAAcAAAACAAEAAAARAAYAAAADAAAAAAARAAUAAAACAAEAAAAQAAsAAAACAAEAAAAQAAoAAAADAAEAAAAQAAkAAAADAAEAAAAQAAgAAAACAAEAAAAQAAcAAAADAAEAAAAQAAYAAAACAAEAAAAQAAUAAAACAAEAAAAQAAQAAAACAAEAAAARAAQAAAACAAEAAAASAAQAAAACAAEAAAATAAQAAAACAAEAAAATAAMAAAACAAEAAAASAAMAAAACAAEAAAARAAMAAAADAAAAAAAQAAMAAAACAAEAAAAQAAIAAAACAAAAAAARAAIAAAACAAAAAAASAAIAAAACAAAAAAATAAIAAAACAAAAAAAZAAsAAAACAAEAAAAZAAoAAAACAAEAAAAZAAkAAAACAAEAAAAZAAgAAAADAAAAAAAZAAcAAAADAAAAAAAYAAsAAAADAAAAAAAYAAoAAAACAAEAAAAYAAkAAAACAAEAAAAYAAgAAAACAAEAAAAYAAcAAAACAAEAAAAXAAsAAAACAAEAAAAXAAoAAAACAAEAAAAXAAkAAAACAAEAAAAXAAgAAAACAAEAAAAXAAcAAAADAAAAAAAWAAsAAAACAAEAAAAWAAoAAAACAAEAAAAWAAkAAAACAAEAAAAWAAgAAAACAAEAAAAWAAcAAAADAAAAAAAVAAsAAAACAAEAAAAVAAoAAAACAAEAAAAVAAkAAAADAAEAAAAVAAgAAAADAAEAAAAVAAcAAAACAAEAAAAUAAsAAAADAAEAAAAUAAoAAAACAAEAAAAUAAkAAAACAAEAAAAUAAgAAAADAAEAAAAUAAcAAAACAAEAAAAUAAYAAAACAAAAAAAVAAYAAAACAAAAAAAWAAYAAAACAAAAAAAXAAYAAAACAAAAAAAYAAYAAAACAAAAAAAZAAYAAAACAAAAAAAdAAsAAAACAAEAAAAdAAoAAAACAAEAAAAdAAkAAAACAAEAAAAdAAgAAAACAAEAAAAdAAcAAAACAAEAAAAdAAYAAAACAAEAAAAdAAUAAAACAAEAAAAdAAQAAAACAAEAAAAdAAMAAAACAAEAAAAdAAIAAAACAAEAAAAcAAsAAAACAAEAAAAcAAoAAAACAAEAAAAcAAkAAAACAAEAAAAcAAgAAAACAAEAAAAcAAcAAAACAAEAAAAcAAYAAAADAAAAAAAcAAUAAAACAAEAAAAcAAQAAAACAAEAAAAcAAMAAAACAAEAAAAcAAIAAAACAAEAAAAcAAEAAAACAAAAAAAdAAEAAAACAAAAAAAfAAsAAAACAAEAAAAfAAoAAAACAAEAAAAfAAkAAAACAAEAAAAfAAgAAAACAAEAAAAfAAcAAAACAAEAAAAfAAYAAAACAAEAAAAfAAUAAAADAAEAAAAfAAQAAAACAAEAAAAfAAMAAAACAAEAAAAfAAIAAAACAAEAAAAeAAsAAAACAAEAAAAeAAoAAAACAAEAAAAeAAkAAAACAAEAAAAeAAgAAAACAAEAAAAeAAcAAAACAAEAAAAeAAYAAAACAAEAAAAeAAUAAAACAAEAAAAeAAQAAAACAAEAAAAeAAMAAAACAAEAAAAeAAIAAAADAAAAAAAeAAEAAAACAAAAAAAfAAEAAAACAAAAAAA=")
+tile_set = ExtResource("2_5ind3")
+
+[node name="Finish" parent="." index="5"]
+position = Vector2(498, -16)
+
+[node name="Coins" type="Node2D" parent="." index="6"]
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource("3_rcpsr")]
+position = Vector2(119, 104)
+
+[node name="Coin2" parent="Coins" index="1" instance=ExtResource("3_rcpsr")]
+position = Vector2(135, 80)
+
+[node name="Coin3" parent="Coins" index="2" instance=ExtResource("3_rcpsr")]
+position = Vector2(155, 57)
+
+[node name="Coin4" parent="Coins" index="3" instance=ExtResource("3_rcpsr")]
+position = Vector2(179, 43)
+
+[node name="Coin5" parent="Coins" index="4" instance=ExtResource("3_rcpsr")]
+position = Vector2(202, 57)
+
+[node name="Coin6" parent="Coins" index="5" instance=ExtResource("3_rcpsr")]
+position = Vector2(400, 56)
+
+[node name="Coin7" parent="Coins" index="6" instance=ExtResource("3_rcpsr")]
+position = Vector2(416, 32)
+
+[node name="Coin8" parent="Coins" index="7" instance=ExtResource("3_rcpsr")]
+position = Vector2(436, 9)
+
+[node name="Coin9" parent="Coins" index="8" instance=ExtResource("3_rcpsr")]
+position = Vector2(460, -5)
+
+[node name="Coin10" parent="Coins" index="9" instance=ExtResource("3_rcpsr")]
+position = Vector2(483, 9)
+
+[node name="Platforms" type="Node2D" parent="." index="7"]
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("3_cq0py")]
+position = Vector2(346, 69)
+platform_type = 2
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("3_cq0py")]
+position = Vector2(378, 69)
+platform_type = 2
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("3_cq0py")]
+position = Vector2(410, 69)
+platform_type = 2
+
+[node name="Slimes" type="Node2D" parent="." index="8"]
+
+[node name="GreenSlime" parent="Slimes" index="0" instance=ExtResource("3_w50bi")]
+position = Vector2(82, 144)
+
+[node name="GreenSlime2" parent="Slimes" index="1" instance=ExtResource("3_w50bi")]
+position = Vector2(98, 144)
+
+[node name="GreenSlime3" parent="Slimes" index="2" instance=ExtResource("3_w50bi")]
+position = Vector2(114, 144)
+
+[node name="GreenSlime4" parent="Slimes" index="3" instance=ExtResource("3_w50bi")]
+position = Vector2(130, 144)
+
+[node name="GreenSlime5" parent="Slimes" index="4" instance=ExtResource("3_w50bi")]
+position = Vector2(146, 144)
+
+[node name="PurpleSlime" parent="Slimes" index="5" instance=ExtResource("4_ubmpl")]
+position = Vector2(217, 112)
+
+[node name="PurpleSlime2" parent="Slimes" index="6" instance=ExtResource("4_ubmpl")]
+position = Vector2(418, 96)

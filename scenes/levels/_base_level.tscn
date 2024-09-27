@@ -56,6 +56,7 @@ text = "0"
 script = ExtResource("2_3i7xn")
 
 [node name="CountDownTimer" parent="CanvasLayer" instance=ExtResource("4_cmnkg")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_qoykj")]
 position = Vector2(34, 64)
