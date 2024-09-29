@@ -7,6 +7,10 @@ const horizontal_alignment = {
 }
 
 
+func _ready() -> void:
+	visible = true
+
+
 func fade_in() -> void:
 	%AnimationPlayer.play("start")
 

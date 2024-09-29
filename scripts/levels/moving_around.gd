@@ -2,8 +2,10 @@ extends Node2D
 
 const next_anim: Dictionary = {
 	"VillagersEnter": "VillagersTerrified",
-	"VillagersTerrified": "DragonFly",
-	"DragonFly": "PrincessOk",
+	"VillagersTerrified": "DragonFlyIn",
+	"DragonFlyIn": "DragonFire",
+	"DragonFire": "DragonFlyOut",
+	"DragonFlyOut": "PrincessOk",
 	"PrincessOk": "PrincessHelmet",
 	"PrincessHelmet": "PrincessCountOnMe",
 	"PrincessCountOnMe": "VillagersLeave",
@@ -38,7 +40,6 @@ func start_cutscene() -> void:
 	get_tree().paused = false
 	$Player.set_physics_process(false)
 	%CutsceneBorders.fade_in()
-	%Shaker.apply_shake(1, 0)
 	GameManager.pause_menu_enabled.emit(false)
 	%CutsceneAnim.animation_finished.connect(cutscene_animation_finished)
 	%CutsceneAnim.play(current_anim)

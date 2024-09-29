@@ -1,39 +1,202 @@
-[gd_scene load_steps=21 format=4 uid="uid://cjw38tueccimo"]
+[gd_scene load_steps=48 format=4 uid="uid://cjw38tueccimo"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_m4urd"]
 [ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="2_0befv"]
 [ext_resource type="Script" path="res://scripts/levels/moving_around.gd" id="2_bw0ek"]
 [ext_resource type="PackedScene" uid="uid://bvn77df78au71" path="res://scenes/cutscene_borders.tscn" id="3_pscvc"]
 [ext_resource type="FontFile" uid="uid://btbwyj1np053s" path="res://assets/fonts/PixelOperator8.ttf" id="4_16v5f"]
-[ext_resource type="Texture2D" uid="uid://bbhswlkgrnkwa" path="res://assets/sprites/villagers.png" id="6_3nv7n"]
-[ext_resource type="PackedScene" uid="uid://5bvgxd6v1kol" path="res://scenes/shaker.tscn" id="7_jisdn"]
-[ext_resource type="Texture2D" uid="uid://dnrqvlyb67hpv" path="res://assets/sprites/dragon.png" id="8_3okcy"]
+[ext_resource type="Texture2D" uid="uid://cliyvqi8p0c0" path="res://assets/sprites/terrified_villagers.png" id="6_kuivl"]
+[ext_resource type="Texture2D" uid="uid://dtafs8bdkdq1t" path="res://assets/sprites/dragon_lou_fire.png" id="7_3ogk5"]
+[ext_resource type="Texture2D" uid="uid://1ynfdf782up5" path="res://assets/sprites/dragon_lou_idle.png" id="7_agxnc"]
+[ext_resource type="Curve2D" uid="uid://bjutvnqqjin1k" path="res://scenes/moving_around_dragon_fly_out.tres" id="7_nhggc"]
+[ext_resource type="Curve2D" uid="uid://m2xc4x3c3w03" path="res://scenes/moving_around_dragon_fly_in.tres" id="10_x8bns"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gk8l2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8mpq"]
+atlas = ExtResource("6_kuivl")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p7h1"]
+atlas = ExtResource("6_kuivl")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuiy1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_3nv7n")
+"texture": SubResource("AtlasTexture_j8mpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p7h1")
 }],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_qldd0"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -0.370178, -1.29628, 79.9947, -10.8031, -79.9947, 10.8031, -171.481, 55.7407, 80.2519, 19.5486, -80.2519, -19.5486, -350.37, 50.5556, 57.7434, 16.1682, -57.7434, -16.1682, -469.629, 9.07409, 0, 0, 0, 0, -622.592, -16.8518, 0, 0, 0, 0, -747.037, -11.6667, 54.5675, -6.92921, -54.5675, 6.92921, -868.889, -6.48147, 0, 0, 0, 0, -1457.41, 47.963, -110.223, 27.1915, 110.223, -27.1915, -599.259, 79.0741, 0, 0, 0, 0, -340, 3.8889, 0, 0, 0, 0, 33.3335, -19.4444)
-}
-point_count = 11
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ups"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnhd1"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in83e"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6x65"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7er1"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ef65"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veix4"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kob6i"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ren7b"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq1lf"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1cfm"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(192, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac6gf"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(256, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lslhw"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(320, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc7c0"]
+atlas = ExtResource("7_3ogk5")
+region = Rect2(384, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xblw"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lry1y"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kr6e"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6eot"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm6ht"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8nnf"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr2lj"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(384, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymb5a"]
+atlas = ExtResource("7_agxnc")
+region = Rect2(448, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kh3hk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_3okcy")
+"texture": SubResource("AtlasTexture_f2ups")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnhd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in83e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6x65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7er1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ef65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veix4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kob6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ren7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq1lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1cfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac6gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lslhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc7c0")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xblw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lry1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kr6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6eot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm6ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8nnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr2lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymb5a")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -83,6 +246,30 @@ tracks/2/keys = {
 "method": &"play_sprite"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneContent/Path2D:curve")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_x8bns")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneContent/Path2D/PathFollow2D:progress_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_vdnm5"]
 length = 0.001
@@ -122,6 +309,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneContent/Path2D/PathFollow2D/Dragon:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneContent/Path2D:curve")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_nhggc")]
+}
 
 [sub_resource type="Animation" id="Animation_q0qt0"]
 resource_name = "PrincessOk"
@@ -136,51 +347,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["Princess Elora", "Left", "Oh, I see what it is about. I'll take care of it."],
-"method": &"display_text"
-}, {
-"args": [],
-"method": &"display_next"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_aurhn"]
-resource_name = "DragonFly"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CutsceneContent/Path2D/PathFollow2D:progress_ratio")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 4, 8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.5155, 0.5155, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CutsceneContent/Path2D/PathFollow2D/Dragon:flip_h")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/CutsceneBorders")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": ["Dragon", "Center", "ROAAAAARRRR!!!!"],
 "method": &"display_text"
 }, {
 "args": [],
@@ -210,7 +376,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_m3dm1"]
 resource_name = "PrincessHelmet"
-length = 5.0
+length = 3.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -218,7 +384,7 @@ tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["cutscene_wear_helmet"],
@@ -235,7 +401,7 @@ tracks/1/path = NodePath("CanvasLayer/CutsceneBorders")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": ["Princess Elora", "Left", "Let me wear this..."],
@@ -299,9 +465,158 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_lqioq"]
+resource_name = "DragonFire"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneContent/Path2D/PathFollow2D/Dragon:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fire"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CutsceneBorders")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Extremely terrified villagers", "Right", "Look, it's going to breath fire!!!!!!"],
+"method": &"display_text"
+}, {
+"args": [],
+"method": &"display_next"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_j4yjw"]
+resource_name = "DragonFlyOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneContent/Path2D:curve")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_nhggc")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CutsceneBorders")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Panicked villagers", "Right", "AHHHHHHHH!!!!!!!!!"],
+"method": &"display_text"
+}, {
+"args": [],
+"method": &"display_next"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneContent/Path2D/PathFollow2D:progress_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneContent/Path2D/PathFollow2D/Dragon:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_aurhn"]
+resource_name = "DragonFlyIn"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutsceneContent/Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.6385, 0.6385, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneContent/Path2D/PathFollow2D/Dragon:flip_h")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/CutsceneBorders")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Dragon", "Center", "ROAAAAARRRR!!!!"],
+"method": &"display_text"
+}, {
+"args": [],
+"method": &"display_next"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CutsceneContent/Path2D:curve")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_x8bns")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pfwa1"]
 _data = {
-"DragonFly": SubResource("Animation_aurhn"),
+"DragonFire": SubResource("Animation_lqioq"),
+"DragonFlyIn": SubResource("Animation_aurhn"),
+"DragonFlyOut": SubResource("Animation_j4yjw"),
 "PrincessCountOnMe": SubResource("Animation_2tys1"),
 "PrincessHelmet": SubResource("Animation_m3dm1"),
 "PrincessOk": SubResource("Animation_q0qt0"),
@@ -322,6 +637,7 @@ unique_name_in_owner = true
 
 [node name="CutsceneBorders" parent="CanvasLayer" index="3" instance=ExtResource("3_pscvc")]
 unique_name_in_owner = true
+visible = false
 
 [node name="Player" parent="." index="1"]
 position = Vector2(81, 58)
@@ -373,21 +689,18 @@ unique_name_in_owner = true
 
 [node name="Villagers" type="AnimatedSprite2D" parent="CutsceneContent" index="0"]
 position = Vector2(347.143, 47.5)
-scale = Vector2(0.385714, 0.385714)
-sprite_frames = SubResource("SpriteFrames_gk8l2")
-
-[node name="Shaker" parent="CutsceneContent/Villagers" index="0" instance=ExtResource("7_jisdn")]
-unique_name_in_owner = true
-randomStrength = 10.0
-shakeFade = 0.0
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_wuiy1")
+autoplay = "default"
+frame_progress = 0.642329
 
 [node name="Path2D" type="Path2D" parent="CutsceneContent" index="1"]
 position = Vector2(347.143, -16.5)
 scale = Vector2(0.385714, 0.385714)
-curve = SubResource("Curve2D_qldd0")
+curve = ExtResource("7_nhggc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CutsceneContent/Path2D" index="0"]
-position = Vector2(-0.370178, -1.29628)
+position = Vector2(-588.88, 97.22)
 rotation = 2.81984
 scale = Vector2(1, 1)
 rotates = false
@@ -395,8 +708,10 @@ rotates = false
 [node name="Dragon" type="AnimatedSprite2D" parent="CutsceneContent/Path2D/PathFollow2D" index="0"]
 position = Vector2(0.0587158, -1.34683)
 rotation = -2.81984
-scale = Vector2(1, 1)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kh3hk")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CutsceneAnim" type="AnimationPlayer" parent="CutsceneContent" index="2"]
 unique_name_in_owner = true

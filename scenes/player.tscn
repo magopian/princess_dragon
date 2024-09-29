@@ -536,10 +536,9 @@ script = ExtResource("1_xlikq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_oph6r")
-animation = &"cutscene_wear_helmet"
+animation = &"cutscene_idle"
 autoplay = "idle"
-frame = 27
-frame_progress = 1.0
+frame_progress = 0.906693
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
