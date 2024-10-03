@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cu5k6p268vdhq"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://d1twrsck14fe5"]
 
-[ext_resource type="Texture2D" uid="uid://c02fkhclswcla" path="res://assets/sprites/tileset_snow.png" id="1_jtisk"]
+[ext_resource type="Texture2D" uid="uid://c02fkhclswcla" path="res://assets/sprites/tileset_snow.png" id="1_08ofc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4qnl"]
-texture = ExtResource("1_jtisk")
+texture = ExtResource("1_08ofc")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -459,6 +459,12 @@ texture = ExtResource("1_jtisk")
 8:5/0/terrains_peering_bit/top_left_corner = 0
 8:5/0/terrains_peering_bit/top_side = 0
 8:5/0/terrains_peering_bit/top_right_corner = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6, 8, 0, -8, -2)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -6, -8, -6, -8, 1, 8, 1)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -6, -8, 0, 8, -2)
 
 [resource]
 physics_layer_0/collision_layer = 1
