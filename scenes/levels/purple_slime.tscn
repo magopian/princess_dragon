@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=4 uid="uid://cx5t16l4t3ia5"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_n0ypl"]
-[ext_resource type="TileSet" uid="uid://ilhri8lv1agu" path="res://assets/sprites/tileset_earth.tres" id="2_ualr4"]
+[ext_resource type="TileSet" uid="uid://ilhri8lv1agu" path="res://assets/tilesets/tileset_earth.tres" id="2_ualr4"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_18kj2"]
-[ext_resource type="TileSet" uid="uid://clfayh46aavq" path="res://assets/sprites/tileset_earth_decor.tres" id="3_gdrq3"]
+[ext_resource type="TileSet" uid="uid://clfayh46aavq" path="res://assets/tilesets/tileset_earth_decor.tres" id="3_gdrq3"]
 [ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="3_hs3w8"]
 
 [node name="Purple slime" instance=ExtResource("1_n0ypl")]

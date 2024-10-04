@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=4 uid="uid://dowornorqbjdw"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_wcrpi"]
-[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/sprites/tileset_grass.tres" id="2_o66or"]
+[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/tilesets/tileset_grass.tres" id="2_o66or"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_70qhi"]
-[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/sprites/tileset_grass_decor.tres" id="3_lh4a0"]
+[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/tilesets/tileset_grass_decor.tres" id="3_lh4a0"]
 
 [node name="Up and down" instance=ExtResource("1_wcrpi")]
 

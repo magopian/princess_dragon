@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://dm6178pbro41l"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_koi05"]
-[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/sprites/tileset_grass.tres" id="3_2p37t"]
-[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/sprites/tileset_grass_decor.tres" id="3_vyjqr"]
+[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/tilesets/tileset_grass.tres" id="3_2p37t"]
+[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/tilesets/tileset_grass_decor.tres" id="3_vyjqr"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="4_260tu"]
 [ext_resource type="FontFile" uid="uid://btbwyj1np053s" path="res://assets/fonts/PixelOperator8.ttf" id="5_lsqwd"]
 

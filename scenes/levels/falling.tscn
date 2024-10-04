@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://sjqiotmtbj5x"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_4vr0m"]
-[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/sprites/tileset_grass.tres" id="2_2jq3i"]
-[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/sprites/tileset_grass_decor.tres" id="3_cyoht"]
+[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/tilesets/tileset_grass.tres" id="2_2jq3i"]
+[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/tilesets/tileset_grass_decor.tres" id="3_cyoht"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_sgs0r"]
 
 [node name="Falling" instance=ExtResource("1_4vr0m")]

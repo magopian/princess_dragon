@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_a570u"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_ejfou"]
-[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/sprites/tileset_grass_decor.tres" id="3_5fw1l"]
-[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/sprites/tileset_grass.tres" id="3_e0gga"]
+[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/tilesets/tileset_grass_decor.tres" id="3_5fw1l"]
+[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/tilesets/tileset_grass.tres" id="3_e0gga"]
 
 [node name="The End" instance=ExtResource("1_a570u")]
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_3lprk"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_aa0av"]
-[ext_resource type="TileSet" uid="uid://mfpo3uifbwf4" path="res://assets/sprites/tileset_snow_decor.tres" id="3_gy0kc"]
+[ext_resource type="TileSet" uid="uid://mfpo3uifbwf4" path="res://assets/tilesets/tileset_snow_decor.tres" id="3_gy0kc"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_q76bj"]
-[ext_resource type="TileSet" uid="uid://77j5lq6h5twf" path="res://assets/sprites/tileset_snow.tres" id="3_syali"]
+[ext_resource type="TileSet" uid="uid://77j5lq6h5twf" path="res://assets/tilesets/tileset_snow.tres" id="3_syali"]
 
 [node name="Elora\'s Bridges" instance=ExtResource("1_3lprk")]
 metadata/_edit_horizontal_guides_ = [-6.0, 121.0]

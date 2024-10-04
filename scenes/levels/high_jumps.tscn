@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://tm04dphj77uk"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_av05h"]
-[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/sprites/tileset_grass.tres" id="2_dn7ye"]
+[ext_resource type="TileSet" uid="uid://c3pyame6epat4" path="res://assets/tilesets/tileset_grass.tres" id="2_dn7ye"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="2_jwmhr"]
 [ext_resource type="FontFile" uid="uid://btbwyj1np053s" path="res://assets/fonts/PixelOperator8.ttf" id="3_itsrm"]
-[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/sprites/tileset_grass_decor.tres" id="3_ywpqk"]
+[ext_resource type="TileSet" uid="uid://4qbovw4ynf3h" path="res://assets/tilesets/tileset_grass_decor.tres" id="3_ywpqk"]
 
 [node name="High jumps" instance=ExtResource("1_av05h")]
 

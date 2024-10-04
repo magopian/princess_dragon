@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn3t4irw82k6y"
-path="res://.godot/imported/tileset_earth_decor.png-a9d53b853fc83c8504ae2996da656d51.ctex"
+uid="uid://uefidmij63pw"
+path="res://.godot/imported/tileset_sand.png-245f49a533d012102354563ecac961e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tileset_earth_decor.png"
-dest_files=["res://.godot/imported/tileset_earth_decor.png-a9d53b853fc83c8504ae2996da656d51.ctex"]
+source_file="res://assets/tilesets/tileset_sand.png"
+dest_files=["res://.godot/imported/tileset_sand.png-245f49a533d012102354563ecac961e7.ctex"]
 
 [params]
 

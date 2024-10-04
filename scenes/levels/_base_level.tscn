@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/time_label.gd" id="2_3i7xn"]
 [ext_resource type="Texture2D" uid="uid://be8hi7w0tq6fr" path="res://assets/nine_patch_rounded_box.png" id="2_d7rgo"]
 [ext_resource type="PackedScene" uid="uid://dtrhqf8ws4yxy" path="res://scenes/player.tscn" id="2_qoykj"]
-[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/sprites/world_tileset.tres" id="3_4y51c"]
+[ext_resource type="TileSet" uid="uid://bikb2x45eislk" path="res://assets/tilesets/world_tileset.tres" id="3_4y51c"]
 [ext_resource type="PackedScene" uid="uid://dqd43afhp3wuo" path="res://scenes/show_score_ui_notifier.tscn" id="4_0ow8c"]
 [ext_resource type="PackedScene" uid="uid://b0muc4pwsqwkt" path="res://scenes/count_down_timer.tscn" id="4_cmnkg"]
 [ext_resource type="PackedScene" uid="uid://gxltxotgbr1j" path="res://scenes/finish.tscn" id="5_g2knd"]

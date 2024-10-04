@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=4 uid="uid://d3fscnbqpomng"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_tbykd"]
-[ext_resource type="TileSet" uid="uid://brgaea0usmpco" path="res://assets/sprites/tileset_sand.tres" id="3_csx44"]
+[ext_resource type="TileSet" uid="uid://brgaea0usmpco" path="res://assets/tilesets/tileset_sand.tres" id="3_csx44"]
 [ext_resource type="PackedScene" uid="uid://btgmwcwmygfia" path="res://scenes/green_slime.tscn" id="3_dttid"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_lawrj"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="4_dcygb"]
-[ext_resource type="TileSet" uid="uid://cft67r1vhamm2" path="res://assets/sprites/tileset_sand_decor.tres" id="4_hhf7l"]
+[ext_resource type="TileSet" uid="uid://cft67r1vhamm2" path="res://assets/tilesets/tileset_sand_decor.tres" id="4_hhf7l"]
 
 [node name="Elora\'s Leap of faith" instance=ExtResource("1_tbykd")]
 

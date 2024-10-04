@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=4 uid="uid://cku06li6k7vhd"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_ysath"]
-[ext_resource type="TileSet" uid="uid://brgaea0usmpco" path="res://assets/sprites/tileset_sand.tres" id="2_lxwc0"]
+[ext_resource type="TileSet" uid="uid://brgaea0usmpco" path="res://assets/tilesets/tileset_sand.tres" id="2_lxwc0"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_c73lx"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_cq0py"]
-[ext_resource type="TileSet" uid="uid://cft67r1vhamm2" path="res://assets/sprites/tileset_sand_decor.tres" id="3_xibnj"]
+[ext_resource type="TileSet" uid="uid://cft67r1vhamm2" path="res://assets/tilesets/tileset_sand_decor.tres" id="3_xibnj"]
 [ext_resource type="PackedScene" uid="uid://0jmcfy3qrj0l" path="res://scenes/path_follower.tscn" id="4_77nt8"]
 [ext_resource type="PackedScene" uid="uid://dgjd6atikx8hg" path="res://scenes/purple_slime.tscn" id="4_ubmpl"]
 

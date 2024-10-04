@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://c6xnec6pwkyss"]
 
 [ext_resource type="PackedScene" uid="uid://bs5ektkfh3xp6" path="res://scenes/levels/_base_level.tscn" id="1_ysath"]
-[ext_resource type="TileSet" uid="uid://ilhri8lv1agu" path="res://assets/sprites/tileset_earth.tres" id="2_ydmh3"]
-[ext_resource type="TileSet" uid="uid://clfayh46aavq" path="res://assets/sprites/tileset_earth_decor.tres" id="3_2yjeu"]
+[ext_resource type="TileSet" uid="uid://ilhri8lv1agu" path="res://assets/tilesets/tileset_earth.tres" id="2_ydmh3"]
+[ext_resource type="TileSet" uid="uid://clfayh46aavq" path="res://assets/tilesets/tileset_earth_decor.tres" id="3_2yjeu"]
 [ext_resource type="PackedScene" uid="uid://b8vod4bww124x" path="res://scenes/platform.tscn" id="3_cq0py"]
 [ext_resource type="PackedScene" uid="uid://htjv5ac81mub" path="res://scenes/coin.tscn" id="3_rcpsr"]
 [ext_resource type="PackedScene" uid="uid://btgmwcwmygfia" path="res://scenes/green_slime.tscn" id="3_w50bi"]
