@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Princess Dragon"
-config/version="2024-10-04 22:10"
+config/version="2024-10-04 22:31"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://assets/PrincessDragon.png"
