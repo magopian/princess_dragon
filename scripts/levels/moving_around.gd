@@ -62,6 +62,8 @@ func _on_cutscene_finished() -> void:
 	%NinePatchRect.show()
 	GameManager.pause_menu_enabled.emit(true)
 	GameManager.level_started.emit()
+	#TODO: unlock in a further level, after the cutscene with the dragon eating gold
+	GameManager.unlock_capability.emit(GameManager.CAPABILITIES.JUMP)
 
 
 func cutscene_animation_finished(animation: String) -> void:

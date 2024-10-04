@@ -13,15 +13,19 @@ signal savegame_selected(savegame_name: String)
 signal savegame_deleted(savegame_name: String)
 signal cutscene_finished
 signal pause_menu_enabled(enable: bool)
+signal unlock_capability(capability: CAPABILITIES)
 # Preferences
 signal muted_preference_changed(muted: bool)
 signal volume_preference_changed(audio_bus: int, volume: float)
+
+enum CAPABILITIES { MOVE, JUMP, DOUBLE_JUMP, WALL_JUMP, DASH }
 
 @onready var score: int:
 	get = get_level_coins,
 	set = set_level_coins
 @onready var current_level: Node2D
 @onready var score_per_level: Dictionary = {}
+@onready var unlocked_capability: CAPABILITIES = CAPABILITIES.MOVE
 @onready var time_started: float
 @onready var user_prefs: UserPreferences
 
@@ -41,6 +45,7 @@ func _ready() -> void:
 	level_finished.connect(save_level_score)
 	savegame_selected.connect(_on_save_game_selected)
 	savegame_deleted.connect(_on_save_game_deleted)
+	unlock_capability.connect(_on_unlock_capability)
 
 
 func manage_user_prefs() -> void:
@@ -122,9 +127,17 @@ func reset_level_score() -> void:
 	score = 0
 
 
+func _on_unlock_capability(capability: CAPABILITIES) -> void:
+	unlocked_capability = capability
+	save_score_to_file(user_prefs.savegame_file)
+
+
 func save_score_to_file(save_name: String) -> void:
 	var save_file: FileAccess = FileAccess.open(SAVEGAME_FILENAME % save_name, FileAccess.WRITE)
-	var json_string: String = JSON.stringify(score_per_level)
+	var user_data: Dictionary = {
+		"score_per_level": score_per_level, "unlocked_capability": unlocked_capability
+	}
+	var json_string: String = JSON.stringify(user_data)
 	save_file.store_line(json_string)
 
 
@@ -142,6 +155,8 @@ func load_game_save(save_name: String) -> void:
 	print("loading save from: ", filename)
 	if not FileAccess.file_exists(filename):
 		score_per_level = {}
+		unlocked_capability = CAPABILITIES.MOVE
+		print("No gamesaves found")
 		return  # Error! We don't have a save to load.
 
 	var save_file: FileAccess = FileAccess.open(filename, FileAccess.READ)
@@ -159,5 +174,9 @@ func load_game_save(save_name: String) -> void:
 			json.get_error_line()
 		)
 		return
-	score_per_level = json.get_data()
-	print("Loaded the saved game: ", score_per_level)
+	var json_data: Dictionary = json.get_data()
+	score_per_level = json_data.get("score_per_level", {})
+	unlocked_capability = json_data.get("unlocked_capability", CAPABILITIES.MOVE)
+
+	print("Loaded the saved score_per_level: ", score_per_level)
+	print("Loaded the saved unlocked_capability: ", unlocked_capability)

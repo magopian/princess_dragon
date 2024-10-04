@@ -42,73 +42,96 @@ visible = false
 
 [node name="Shiny coins" parent="Levels" instance=ExtResource("3_1iolt")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="High jumps" parent="Levels" instance=ExtResource("4_vlujy")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Long jumps" parent="Levels" instance=ExtResource("4_huao0")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Jumping around" parent="Levels" instance=ExtResource("5_h52bv")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Platforms" parent="Levels" instance=ExtResource("6_jx57u")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Platform drop" parent="Levels" instance=ExtResource("7_5cy4t")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Platforms everywhere" parent="Levels" instance=ExtResource("3_d8kc8")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Falling" parent="Levels" instance=ExtResource("9_gyrt6")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Up and down" parent="Levels" instance=ExtResource("10_mkh4s")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Vertigo" parent="Levels" instance=ExtResource("11_3522c")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="I know kung fu" parent="Levels" instance=ExtResource("5_wptdp")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Green Slimes" parent="Levels" instance=ExtResource("13_3jmtw")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Slime Jump" parent="Levels" instance=ExtResource("14_5sfjp")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Slime danger" parent="Levels" instance=ExtResource("15_qoigw")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Purple slime" parent="Levels" instance=ExtResource("16_bpf1x")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Purple jump" parent="Levels" instance=ExtResource("17_e1ulb")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Purple danger" parent="Levels" instance=ExtResource("18_s2jdk")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Elora\'s Labyrinth" parent="Levels" instance=ExtResource("16_22o2j")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Elora\'s Bridges" parent="Levels" instance=ExtResource("17_gpoy7")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Elora\'s Leap of faith" parent="Levels" instance=ExtResource("18_5nung")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Camille\'s deception" parent="Levels" instance=ExtResource("19_4ux7q")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="Intermediate" parent="Levels" instance=ExtResource("5_xs3xh")]
 visible = false
 position = Vector2(2, 0)
+metadata/needs_capability = 1
 
 [node name="The End" parent="Levels" instance=ExtResource("5_omyjy")]
 visible = false
+metadata/needs_capability = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 10

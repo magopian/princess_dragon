@@ -20,3 +20,9 @@ func playSound():
 	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "scale", scale_to, 0.1)
 	tween.tween_property(self, "scale", initial_scale, 0.1)
+
+
+func unlock(is_unlocked: bool) -> void:
+	%LockedContainer.visible = not is_unlocked
+	%ScoreContainer.visible = is_unlocked
+	disabled = not is_unlocked

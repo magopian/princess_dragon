@@ -22,6 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func create_button(level: Node2D) -> void:
 	var button: Button = level_selection_button.instantiate()
 	button.text = level.name
+	var needs_capability = level.get_meta("needs_capability")
+	var is_unlocked: bool = needs_capability <= GameManager.unlocked_capability
+	button.unlock(is_unlocked)
 	var score: Dictionary = GameManager.get_level_score(level)
 	var total_coins: int = 0
 	if level.has_node("Coins"):
