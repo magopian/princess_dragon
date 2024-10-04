@@ -1,22 +1,36 @@
 extends Node2D
 
 const next_anim: Dictionary = {
-	"VillagersEnter": "VillagersTerrified",
-	"VillagersTerrified": "DragonFlyIn",
-	"DragonFlyIn": "DragonFire",
-	"DragonFire": "DragonFlyOut",
-	"DragonFlyOut": "PrincessOk",
-	"PrincessOk": "PrincessHelmet",
-	"PrincessHelmet": "PrincessCountOnMe",
-	"PrincessCountOnMe": "VillagersLeave",
+	"DragonFlyIn": "PrincessYeah",
+	"PrincessYeah": "DragonLaugh",
+	"DragonLaugh": "PrincessPoorVillagers",
+	"PrincessPoorVillagers": "DragonSorry",
+	"DragonSorry": "PrincessNotHappy",
+	"PrincessNotHappy": "DragonHungry",
+	"DragonHungry": "PrincessHeresTheCoin",
+	"PrincessHeresTheCoin": "DragonYummy",
+	"DragonYummy": "PrincessGetsJump",
+	"PrincessGetsJump": "DragonBringMoreCoins",
+	"DragonBringMoreCoins": "DragonFlyOut",
 }
 
-var current_anim: String = "VillagersEnter"
+var current_anim: String = "DragonFlyIn"
 
 
 func _ready() -> void:
+	%CutsceneContent.hide()
+	GameManager.add_point.connect(_on_coin_picked_up)
+
+
+func _on_coin_picked_up(_coin: Area2D) -> void:
+	if not is_inside_tree():
+		return
+	GameManager.add_point.disconnect(_on_coin_picked_up)
+
+	Engine.time_scale = 0.2
+	await get_tree().create_timer(0.4).timeout
+	Engine.time_scale = 1
 	start_cutscene()
-	GameManager.cutscene_finished.connect(_on_cutscene_finished)
 
 
 func _process(_delta: float) -> void:
@@ -33,9 +47,10 @@ func _process(_delta: float) -> void:
 
 
 func start_cutscene() -> void:
-	%CountDownTimer.queue_free()
+	GameManager.cutscene_finished.connect(_on_cutscene_finished)
 	%NinePatchRect.hide()
-	%TutoMoveLabel.hide()
+	%TutoCoinsLabel.hide()
+	%CutsceneContent.show()
 	$Player/AnimatedSprite2D.play("idle")
 	get_tree().paused = false
 	$Player.set_physics_process(false)
@@ -51,17 +66,18 @@ func quit_cutscene() -> void:
 
 
 func _on_cutscene_finished() -> void:
-	if not is_inside_tree() or not %CutsceneContent:
+	if not %CutsceneContent:
 		return
 
 	%CutsceneContent.queue_free()
 	%CutsceneBorders.queue_free()
-	%TutoMoveLabel.show()
 	$Player/AnimatedSprite2D.play("idle")
 	$Player.set_physics_process(true)
 	%NinePatchRect.show()
 	GameManager.pause_menu_enabled.emit(true)
 	GameManager.level_started.emit()
+	# Unlock the JUMP ability
+	GameManager.unlock_capability.emit(GameManager.CAPABILITIES.JUMP)
 
 
 func cutscene_animation_finished(animation: String) -> void:

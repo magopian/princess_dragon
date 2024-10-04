@@ -42,7 +42,6 @@ visible = false
 
 [node name="Shiny coins" parent="Levels" instance=ExtResource("3_1iolt")]
 visible = false
-metadata/needs_capability = 1
 
 [node name="High jumps" parent="Levels" instance=ExtResource("4_vlujy")]
 visible = false
