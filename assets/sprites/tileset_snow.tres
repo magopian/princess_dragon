@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://d1twrsck14fe5"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://77j5lq6h5twf"]
 
 [ext_resource type="Texture2D" uid="uid://c02fkhclswcla" path="res://assets/sprites/tileset_snow.png" id="1_08ofc"]
 
@@ -465,10 +465,15 @@ texture = ExtResource("1_08ofc")
 1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -6, -8, -6, -8, 1, 8, 1)
 2:6/0 = 0
 2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -6, -8, 0, 8, -2)
+3:6/0 = 0
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Grass"
+terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(5.53504e-07, 0.457333, 0.310801, 1)
 sources/0 = SubResource("TileSetAtlasSource_f4qnl")
