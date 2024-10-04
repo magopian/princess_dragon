@@ -147,6 +147,8 @@ func _on_save_game_selected(save_name: String) -> void:
 
 
 func _on_save_game_deleted(save_name: String) -> void:
+	score_per_level = {}
+	unlocked_capability = CAPABILITIES.MOVE
 	DirAccess.remove_absolute(SAVEGAME_FILENAME % save_name)
 
 

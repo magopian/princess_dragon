@@ -30,7 +30,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
-	handle_jump()
+	if GameManager.unlocked_capability >= GameManager.CAPABILITIES.JUMP:
+		handle_jump()
 	var direction: float = get_direction()
 	handle_animations(direction)
 	apply_movement(direction)
